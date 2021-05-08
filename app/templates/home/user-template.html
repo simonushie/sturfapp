@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<title>{{user.first_name}}'s profile</title>
+
+	<link href="{{url_for('static', filename='user-template.css' )}}" rel="stylesheet" type="text/css" />
+
+	<meta name="viewport" content = "width = device-width, initial-scale = 1" charset="utf-8" >
+
+	<script type="text/javascript">
+
+    function back(){
+    	history.back();
+    }
+	
+	</script>
+
+
+
+</head> 
+
+
+
+
+
+<body> 
+
+
+
+<div id = "header">
+
+<label for="check">
+	<buttom  id="btn" type="button" onclick="back()";>&#10095;</button>
+	
+</label>
+
+
+		<a class="header_link" href="{{url_for('home.general')}}">	
+		STURF
+		</a>
+
+
+<div class="headtext">
+	Improving your wellbeing <span class="dots">...</span>
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class = "topicsentence">
+		<center class = "pennyless">  
+				A Glance At {{user.first_name}}'s Profile
+			
+				<br>
+				<br>	
+		</center>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<center>
+
+<div class="tryme">
+
+	<span></span>
+	<span></span>
+	<span></span>
+	<span></span> 
+	
+		<div class = "section1">
+
+
+					<div class="text_container">
+						<p class="p1">
+						{{user.first_name.upper()}}
+						</p>
+						<p class="p2">
+							<span style="background-color: white;  border-radius: 25px 25px 0px 25px;" class="tooltiptext">
+							        {{user.first_name.upper()}}'s Caption
+							</span>
+
+							<b>{{user.first_name}}</b> is {{user.caption}}
+							
+						</p>
+					</div>
+
+					<main class = "label1">
+
+						<a href="{{url_for('home.polaroid_person', email = user.email )}}">
+					    
+					    
+						<div id="light" 
+						style="background: url('{{img}}') no-repeat center;
+								background-size: cover;
+								width: 100%;
+								height:100%;
+								padding-top: 100%;
+								border-radius: 15px 150px 150px 150px;
+								margin-left: 15px;
+								margin-top: 3px;
+								vertical-align: center;
+								max-width: 200px;
+								max-height: 200px;
+								border: 0.5px solid #79ff4d"
+
+	 					/></div>
+
+	 					</a>
+					</main>
+
+					
+		</div>
+</div>
+</center>
+
+
+
+
+
+<div class="contact">
+	<h1>CONTACT</h1>
+	<br>
+	<br>
+		<div class="contact-content">
+
+
+			<p><span> <i style="color: black; font-style: normal;">&phone;</i>Tel: </span>{{user.phone}}
+
+			</p>
+			<br>
+			<p><span><i style="color: black; font-style: normal; font-size:23px;">&commat;</i>Email: </span> 
+
+
+			{{user.email}}
+
+
+			</p>
+		</div>
+	
+</div>
+
+
+<div class="bio">
+	<h1>BIO</h1>
+	<br>
+	<br>
+		<div class="bio-content">
+			<center>
+				<p>
+					<span>
+
+						<i style="color: black; font-style: normal;font-size:30px;">&#9997;</i>More about {{user.first_name}}</span><br>
+						{{user.more_about}}
+				</p>
+
+				<br>
+
+				<p><span>
+
+					<i style="color: black; font-style: normal;font-size:25px;">&#9832;</i>Birthday </span> <br>
+					{{user.birth_day}}
+				</p>
+
+				<p><span>
+
+					<i style="color: black; font-style: normal;">&#10084;</i>likes </span> <br>
+					{{user.likes}}
+				</p>
+
+				<p><span>
+
+					<i style="color: black; font-style: normal; ">&#9876;</i>Dislikes </span> <br>
+					{{user.dislikes}}
+				</p>
+
+			</center>
+		</div>
+</div>
+
+
+
+
+
+<!-- <center > 
+<div id = "buttonscontainer">
+
+	<div>
+		<center>
+	<div class = "login">
+		
+		<a class = "loginbutton" href="{{url_for('home.edit_profile', email = current_user.email)}}">
+			<center>Edit Profile</center>
+		</a>
+		</center>		
+	</div>
+	</div>
+</div>
+</div>
+
+</center> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+<footer id = 'footer'>
+
+
+
+<div class="footerians">
+	<header><span style="margin-right: 5px; color: #ffffff; font-size: 25px;">☎</span>Get in touch with us</header>
+
+	<ul>
+
+	<li><a href="#"><div class="case1"></div></a></li>
+	<li><a href="#"><div class="case2"></div></a></li>
+	<li><a href="#"><div class="case3"></div></a></li>
+	<li><a href="#"><div class="case4"></div></a></li>
+
+	</ul>
+	
+
+</div>
+
+
+
+<div class="t_and_t">
+	<ul>
+	<li><a href="#">Terms and conditions</a></li>
+	<li><a href="#">what more can we do?</a></li>
+	<li><a href="#">Ad policy</a></li>
+	<li><a href="#">Content policy</a></li>
+	</ul>
+</div>
+
+
+	
+
+<div class="links">
+	<ul>
+	<li><a href="#">Home</a></li>
+	<li><a href="file:///C:/Users/SIMON/Documents/site%20work/site/Electricity.html">Electricity</a></li>
+	<li><a href="#">History</a></li>
+	<li><a href="#">About Us</a></li>
+	<li><a href="#">FAQS</a></li>
+	<li><a href="{{url_for('security.logout')}}">logout</a></li>
+	</ul>
+
+</div>
+
+
+	
+<div class="copyright">
+	Copyright &copy; 2020-2025 STURF
+	All rights reserved.
+	STURF is among the federally registered trademarks of
+    STURF LLC and may not be used by third parties without explicit permission.
+
+
+</div>
+
+
+
+
+
+	
+</footer>
+
+
+
+
+
+</html>

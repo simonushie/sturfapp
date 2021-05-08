@@ -1,0 +1,692 @@
+
+#buttonscontainer{
+	margin-top: 50px;
+	margin-bottom: 40px;
+}
+
+.loginbutton1{	
+	position: relative;
+	min-width: 200px;
+	color: #79ff4d;
+	font-size: 15px;  
+	padding: 6px;
+	border-radius: 50px;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-weight: bolder;
+	box-shadow: 5px 5px 14px 0px rgba(0,0,0,0.51);
+	border: 3px solid #79ff4d;
+	background: #FFFFFF;
+}
+
+.loginbutton1:hover {
+background: #4D6F5A; 
+}
+
+.loginbutton1:active {
+background: #4D6F5A;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*----------------------------------------------beginning of modal----------------------------------------------*/
+
+
+
+
+
+
+
+.modalbutton{
+    outline: none;  
+    position: relative;
+    min-width: 160px;
+    color: #79ff4d;
+    font-size: 15px;  
+    padding: 4.5px;
+    border-radius: 50px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-weight: bolder;
+    box-shadow: 5px 5px 14px 0px rgba(0,0,0,0.51);
+    border: 3px solid #79ff4d;
+    background: #FFFFFF;
+}
+
+.modalbutton:hover {
+background: #4D6F5A; 
+}
+
+.modalbutton:active {
+background: #4D6F5A;
+}
+
+
+
+
+
+
+
+
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    border:1px solid #79ff4d;
+    -webkit-border-radius: 50px 0px 50px 0px;
+    border-radius: 50px 0px 50px 0px;
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    width: 95%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: #79ff4d;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 25px;
+    padding: 2px 16px; 
+    color: #79ff4d;
+    text-shadow: 4px 4px 3px rgba(43,60,44,0.71);
+}
+
+.modal-body {
+    padding: 2px 16px;
+    min-height: 250px;
+}
+
+.modal-footer {
+    padding: 2px 16px;
+    
+}
+
+.linke{
+color: #79ff4d;
+font-weight: bold;
+font-size: 16px;
+padding-left: 3%;
+padding-right: 3%;
+font-weight: bolder;
+
+}
+
+
+
+
+
+.texte{
+	margin-top: 20px;
+    font-size: 22px;
+    color: #494949;
+    padding-left: 3%;
+    padding-right: 3%;
+    font-weight: bold;
+}
+
+
+
+.button{
+    float: left;
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    color: #494949;
+    font-size: 13px;  
+    padding: 3px;
+    border-radius: 50px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-weight: bolder;
+    box-shadow: 5px 5px 14px 0px rgba(0,0,0,0.51);
+    border: 3px solid #79ff4d;
+    background: #FFFFFF;
+    outline: none;
+  
+}
+
+
+
+form{
+	margin-left: 15px;
+}
+
+.button1{
+    float: right;
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    color: #494949;
+    font-size: 13px;  
+    padding: 3px;
+    border-radius: 50px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-weight: bolder;
+    box-shadow: 5px 5px 14px 0px rgba(0,0,0,0.51);
+    border: 3px solid #79ff4d;
+    background: #FFFFFF;
+    margin-left: 15px;
+    outline: none;
+}
+
+.button:hover {
+background: #4D6F5A; 
+}
+
+.button1:hover {
+background: #4D6F5A; 
+}
+
+.btnwrap{
+display: flex;
+margin-bottom: 40px;
+max-width: 150px;
+}
+
+/*------------------------------------------ending of modal------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*add to code to show if online or not*/
+
+.tryme:hover .online_indicator{
+    visibility: visible;
+}
+
+
+
+
+.online_indicator{
+    margin-top: 50px;
+    float: right;
+    text-align: right;
+    position: relative;
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    visibility: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*DROP DOWN BUTTON*/
+
+/* Add an active class to the active dropdown button */
+.active {
+    background-color: black;
+    color: white;
+}
+
+
+
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+
+.dropdown-container-a {
+    display: none;
+    background-color: transparent;
+    border-radius: 0px 0px 14px 14px;
+    border-left: 2px solid #79FF4D;
+    border-bottom: 2px solid #79FF4D;
+    transition: .8s;
+    margin-left: 5px;
+
+    
+}
+
+
+
+.dropdown-container-a.active {
+    background-color: red;    
+}
+
+.dropdown-container-a:hover {
+    padding-right: 0px;
+}
+
+
+
+
+.dropdown-container {
+    display: none;
+    background-color: transparent;
+    padding-right: 0px;
+    font-size: 15px;
+    margin-left: 70px;
+    color: black;
+    padding-left: 30px;
+}
+
+
+
+.dropdown-container > .droplink {
+    margin-top: 1px;
+    padding: 3px 0px 3px 0px;
+    color: black;
+    font-size: 13px;
+    font-family:  sans-serif;
+    font-weight: bold;
+    line-height: 20px;
+    text-align: right;
+    letter-spacing: 2px;
+    margin-right: 20px;
+    border-radius: 20px 0px 0px 20px;
+
+}
+
+
+.dropdown-container > .droplink:hover {
+  padding-right: 2px;
+  background-color: #79ff4d;
+  transition: .5s;
+}
+
+
+
+
+/* Style the sidenav links and the dropdown button */
+.dropdown-btn {
+    outline: none;
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 30px;
+    font-size: 22px;
+    color: #79ff4d;
+    padding-left: 5px;
+    box-sizing: border-box;
+    transition: .3s;
+    margin-top: 10px;
+    background: none;
+    border: none;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    text-align: center;
+    text-shadow: 3px 3px 3px rgba(0,0,0,0.26);
+
+}
+
+
+.dropdown-btn.active {
+color: #79ff4d;
+transition: 1s;
+}
+
+
+
+
+/* On mouse-over */
+.dropdown-btn:hover {
+    padding-right: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*pagination links*/
+.pagination{
+
+    display: flex;
+    margin-top: 90%;
+    justify-content: space-between;
+    max-width: 200px;
+}
+
+
+.pagination_normal{
+color: black;
+font-weight: bold;
+border: 1px solid #79ff4d;
+padding: 5px;
+padding-right: 7px;
+padding-left: 7px;
+margin: 3px;
+border-radius: 6px;
+}
+
+
+.pagination_highlight{
+background: #79ff4d; 
+color: black;
+font-weight: bold;
+border: 1px solid #79ff4d;
+padding: 5px;
+padding-right: 7px;
+padding-left: 7px;
+margin: 3px;
+border-radius: 6px;
+}
+
+.pagination a:hover{
+background: #79ff4d;
+}
+
+/*end*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*DROP DOWN BUTTON*/
+
+/* Add an active class to the active dropdown button */
+.active {
+    background-color: black;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+
+.dropdown-container-a {
+    display: none;
+    background-color: transparent;
+    border-radius: 0px 0px 14px 14px;
+    border-left: 2px solid #79FF4D;
+    border-bottom: 2px solid #79FF4D;
+    transition: .8s;
+    margin-left: 5px;
+
+    
+}
+
+
+
+.dropdown-container-a.active {
+    background-color: red;    
+}
+
+.dropdown-container-a:hover {
+    padding-right: 0px;
+}
+
+
+
+
+.dropdown-container {
+    display: none;
+    background-color: transparent;
+    padding-right: 0px;
+    font-size: 15px;
+    margin-left: 70px;
+    color: black;
+    padding-left: 30px;
+}
+
+
+
+.dropdown-container > .droplink {
+    margin-top: 1px;
+    padding: 3px 0px 3px 0px;
+    color: black;
+    font-size: 13px;
+    font-family:  sans-serif;
+    font-weight: bold;
+    line-height: 20px;
+    text-align: right;
+    letter-spacing: 2px;
+    margin-right: 20px;
+    border-radius: 20px 0px 0px 20px;
+
+}
+
+
+.dropdown-container > .droplink:hover {
+  padding-right: 2px;
+  background-color: #79ff4d;
+  transition: .5s;
+}
+
+
+
+
+/* Style the sidenav links and the dropdown button */
+.dropdown-btn {
+    outline: none;
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 30px;
+    font-size: 22px;
+    color: #79ff4d;
+    padding-left: 5px;
+    box-sizing: border-box;
+    transition: .3s;
+    margin-top: 10px;
+    background: none;
+    border: none;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    text-align: center;
+    text-shadow: 3px 3px 3px rgba(0,0,0,0.26);
+
+}
+
+
+.dropdown-btn.active {
+color: #79ff4d;
+transition: 1s;
+}
+
+
+
+
+/* On mouse-over */
+.dropdown-btn:hover {
+    padding-right: 30px;
+}
+
+
+
+

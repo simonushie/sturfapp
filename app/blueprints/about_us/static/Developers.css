@@ -1,0 +1,367 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background:white;
+  font-family: tahoma;
+}
+
+.menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 40px;
+  background: #79FF4D;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.menu ul {
+  list-style: none;
+  margin: 0px;
+  width: 100%;
+  position: relative;
+  padding: 0px;
+  filter: url(#goo);
+  z-index: 1;
+}
+.menu ul li {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu ul span {
+  background: black;
+  border-radius: 50px;
+  font-size: 25pt;
+  width: 30px;
+  height: 30px;
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  color: black;
+}
+.menu ul .goo-index {
+  width: 160px;
+  height: 30px;
+  background: white;
+  position: absolute;
+  left: 10px;
+  top: 0;
+  z-index: -1;
+  border-radius: 100px 0 0 100px;
+  transition: all 1s ease;
+}
+.menu ul .goo-index:before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 20px;
+  border-radius: 20px 0 0 20px;
+  background-image: radial-gradient(circle at 10px 0, transparent 0, transparent 20px, #f4f4f4 20px);
+  top: -20px;
+  left: 60px;
+}
+.menu ul .goo-index:after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 20px;
+  border-radius: 20px 0 0 20px;
+  background-image: radial-gradient(circle at 10px 20px, transparent 0, transparent 20px, #f4f4f4 20px);
+  bottom: -20px;
+  left: 60px;
+}
+
+.content-wrapper {
+  width: calc(100% - 100px);
+  position: relative;
+  left: 60px;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.screen {
+  width: calc(100% - 20px);
+  max-width: 800px;
+  height: 100%;
+  position: absolute;
+  top: -100%;
+  background: #79ff4d;
+  opacity: 0;
+  display: grid;
+  grid-template-rows: 50px auto auto;
+  grid-template-columns: 100%;
+  grid-template-areas: "heading" "text" "image";
+  transition: all 1s ease;
+  transition-delay: 0s;
+  background: linear-gradient(45deg, #FFFFFF 0%, #A0CBA5 0%, #79FF4D 100%);
+}
+
+.screen.visible {
+  top: 30px;
+  opacity: 1;
+  transition: all 1.5s ease;
+  transition-delay: 0.8s ease;
+  border-radius: 650px 650px 30px 30px ;
+}
+
+.screen h2 {
+  /*grid-area: heading;*/
+}
+
+
+.screen p {
+  margin-top: 80px;
+  grid-area: text;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  z-index: 5;
+}
+
+
+
+h2 {
+  
+  position: relative;
+  color: #cf7500;
+  text-align: center;
+  max-width: 200px;
+  width: 160px;
+  min-height: 150px;
+  height:auto;
+  top:  50px;
+  margin: 0 auto;
+  /*border: 1px solid white;*/
+  padding: 0px 20px 50px 20px;
+  border-radius: 5px 5px 20px 20px;
+  border-radius: 50%;
+-webkit-box-shadow: 0px 3px 65px 5px rgba(0,0,0,0.45); 
+box-shadow: 0px 3px 65px 5px rgba(0,0,0,0.45);
+
+}
+
+
+h2:after {
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  background: black;
+  left: 85%;
+  transform: translatex(-50%);
+  bottom: 1px;
+  border-radius: 50%;
+  border: 3px solid  black;
+  z-index: 0;
+}
+
+
+h2#ameer_image:after {
+  content: "";
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  background: white;
+  left: 10%;
+  transform: translatex(-50%);
+  bottom: 1px;
+  border-radius: 50%;
+  border: 3px solid  white;
+}
+
+h2:before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: transparent;
+  right: 80%;
+  transform: translatex(-50%);
+  bottom: 175px;
+  padding: 76px;
+  border-radius: 50%;
+  border: 3px solid  white;
+}
+
+
+
+.heading{
+margin-bottom: -100px;
+margin-top: 10px;
+font-size: 30px;
+font-family: sans-serif;
+font-weight: bolder;
+margin: 0 auto;
+color: white;
+
+
+}
+
+
+.white_circle{
+
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  background: transparent;
+  left: 95%;
+  transform: translatex(-50%);
+  bottom: -75px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 3px solid  white;
+  z-index: 1;
+}
+
+
+.black_circle{
+
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  right: 133px;
+  transform: translatex(-50%);
+  bottom: 135px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 3px solid  black;
+  background: black;
+
+}
+
+.white_dot{
+
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  right: 35px;
+  transform: translatex(-50%);
+  top: 30px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 3px solid  white;
+  background: white;
+  z-index: -1;
+
+}
+
+
+
+
+.ameer_black_dot{
+
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  background: transparent;
+  right: 35px;
+  transform: translatex(-50%);
+  top: 50%;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 3px solid  black;
+  background: black;
+  z-index: 1;
+
+}
+
+.ameer_white_dot{
+
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  right: 12px;
+  transform: translatex(-50%);
+  top: 55%;
+  overflow: hidden;
+  border-radius: 50%;
+
+  background: white;
+    
+}
+
+
+
+.ameer_black_circle{
+
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  right: 123px;
+  transform: translatex(-50%);
+  bottom: 1px;
+  overflow: visible;
+  border-radius: 50%;
+  border: 3px solid  white;
+  background: transparent;
+
+}
+
+
+
+#simon{
+  background: url("simon.jpg") no-repeat center;
+  background-size: cover;
+}
+
+#simon_image{
+  background: url("simon.jpg") no-repeat center;
+  background-size: cover;
+}
+
+
+
+
+#ameer{
+  background: url("ameer_bainze.jpg") no-repeat center;
+  background-size: cover;
+}
+
+#ameer_image{
+  background: url("ameer_bainze.jpg") no-repeat center;
+  background-size: cover;
+}
+
+
+
+.abdul{
+
+}
+
+
+
+
+@viewport{
+  zoom:1.0;
+  width:extend-to-zoom;
+}
+
+@-ms-viewport{
+  width:extend-to-zoom;
+  zoom:1.0;
+}

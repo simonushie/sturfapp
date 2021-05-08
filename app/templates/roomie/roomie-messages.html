@@ -1,0 +1,196 @@
+{% from '_formhelpers.html' import render_field %}
+
+
+
+
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<title>Your messages</title>
+
+	<link href="{{url_for('roomie.static', filename='roomie-messages.css' )}}" rel="stylesheet" type="text/css" />
+
+
+
+	<meta name="viewport" content = "width = device-width, initial-scale = 1" charset="utf-8" >
+
+	<!-- link to my jquery library that is local -->
+    <script src="{{url_for('static', filename='jquery-3.5.1.min.js' )}}"></script>
+   
+
+    
+	<script type="text/javascript">
+	/*function to go back*/ 
+    function back(){
+    	history.back();
+    }
+	
+    /*function to check text input length*/ 
+	function TextCounter(field, limit) {
+    var typedChars = $(field).val().length;
+    $(field).next('span').text(typedChars=0?'0 / '+limit:typedChars+' / '+limit);
+    };
+
+	</script>
+
+
+
+</head> 
+
+
+
+
+
+<body> 
+
+
+
+<div id = "header">
+
+<label for="check">
+	<buttom  id="btn" type="button" onclick="back()";>&#10095;</button>
+	
+</label>
+
+
+		<a class="header_link" href="{{url_for('home.general')}}">	
+		STURF
+		</a>
+
+<div class="headtext">
+	Improving your wellbeing <span class="dots">...</span>
+</div>
+
+
+</div>
+
+
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+	{% if messages %}
+
+		<ul class=flashes>
+
+		{% for category, message in messages %}
+
+			<li class="{{ category }}">
+				{{ message }}
+			</li>
+
+		{% endfor %}
+
+		</ul>
+		
+	{% endif %}
+{% endwith %}
+
+
+
+
+{% for msg in msgs %}
+
+<div class = "commentcontainer">
+<h1>
+{{msg.author.first_name}} 
+</h1>
+
+<br>
+<br>
+
+<p>
+{{msg.body}}
+</p>
+
+
+
+
+<p>
+{{msg.timestamp.strftime("%I : %M  %p, %a %d %B, %Y")}}
+
+</p>
+
+
+
+</div>
+       
+{% endfor %}
+
+
+
+
+
+
+
+
+<center>
+		<div class="container">
+
+	
+			            <form method='post'>
+			            	<dl>
+			            		{{form.csrf_token}}
+			            		{{ render_field(form.message, cols="35", rows="1") }}
+							</dl>
+								<p><input type=submit value= send class="loginbutton"></p>
+			            </form>
+
+			           	            
+
+
+		</div>           
+</center>
+
+   
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

@@ -1,0 +1,93 @@
+
+
+    {% for comment in comments %}
+
+
+
+    {% if not current_user == comment.claimer_sender%}
+
+            <div
+
+            style = "
+
+            border-top: 1px solid #79ff4d; 
+            border-right: 1px solid #79ff4d; 
+            padding: 10px;
+            margin-right: 10px;
+            border-radius: 20px;
+
+
+            " 
+
+             id = "commentcontainer{{comment.id}}" class = "commentcontainer">
+
+
+                    <h1>
+                    {{comment.claimer_sender.first_name}}
+                    </h1>
+
+                    <br>
+
+
+                    <p style = "margin : 0px 0px 5px 0px; font-size: 15px;">
+                    {{comment.message_body}}
+                    </p>
+
+
+                    <p style = " float: right; font-size: 10px;" >
+                    {{comment.date_of_message.strftime("%I : %M  %p, %d %b, %Y")}}
+
+                    </p>
+
+            </div>
+
+    {% elif current_user == comment.claimer_sender%}
+
+            <div style = "
+
+            border-top: 1px solid gray; 
+            border-left: 1px solid gray; 
+            padding: 10px;
+            margin-left: 10px;
+            border-radius: 20px;
+            background-color: #c6ffb3;
+
+            " 
+            id = "commentcontainer{{comment.id}}" class = "commentcontainer">
+
+
+
+            <h1 style = "float:right; margin-right: 10px; color: green;">
+            you
+            </h1>
+
+
+            <br>
+
+
+            <p style = "margin : 0px 0px 20px 0px; font-size: 15px;" >
+            {{comment.message_body}}
+            </p>
+
+
+            <p style = " float: right; font-size: 10px;" >
+            {{comment.date_of_message.strftime("%I : %M  %p, %d %b, %Y")}}
+            </p>
+
+
+
+
+            </div>
+
+
+
+            {% endif %}
+
+
+
+
+
+    {% endfor %}
+
+
+

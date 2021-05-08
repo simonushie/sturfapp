@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<title>{{user.first_name}}'s posts</title>
+
+	<link href="{{url_for('post.static', filename='post-user-template.css' )}}" rel="stylesheet" type="text/css" />
+
+	<meta name="viewport" content = "width = device-width, initial-scale = 1" charset="utf-8" >
+
+	<script type="text/javascript">
+
+    function back(){
+    	history.back();
+    }
+	
+	</script>
+
+
+
+</head> 
+
+
+
+
+
+<body> 
+
+
+
+<div id = "header">
+
+<label for="check">
+	<buttom  id="back"  onclick="back()";>&#10094;</button>
+	
+</label>
+
+
+		<a class="header_link" href="{{url_for('home.general')}}">	
+		STURF
+		</a>
+
+
+<div id="headtext">
+	Improving your wellbeing <span class="dots">...</span>
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<center>
+
+<div class="tryme">
+
+	<span></span>
+	<span></span>
+	<span></span>
+	<span></span> 
+	
+		<div class = "section1">
+
+
+					<div class="text_container">
+						<p class="p1">
+
+						{% if  user == current_user %}
+
+						You
+
+						{% else %}
+
+						{{user.first_name.upper()}}
+
+						{% endif %}
+
+						</p>
+
+
+						<p class="p2">
+							<span style="background-color: white;  border-radius: 25px 25px 0px 25px;" class="tooltiptext">
+							        {{user.first_name.upper()}}'s Caption
+							</span>
+
+
+						{% if  user == current_user %}
+
+						You are {{user.caption}}
+
+
+						{% else %}
+
+							<b>{{user.first_name}}</b> is {{user.caption}}
+						
+						{% endif %}
+
+
+
+						</p>
+
+
+						<p class="p2">
+
+							{% if  user.is_authenticated  %}
+
+								<p class="online_indicator">
+								<b> last login:</b> 
+								{{user.last_login_at.strftime("%I : %M  %p, %a ")}}
+								</p>
+	
+							{% endif %}
+						
+						</p>
+
+
+					</div>
+
+
+
+
+					<main class = "label1">
+
+						<a href="{{url_for('roomie.polaroid_person', email = user.email )}}">
+					    
+					    
+						<div id="light" 
+						style="background: url('{{img}}') no-repeat center;
+								background-size: cover;
+								width: 100%;
+								height:100%;
+								padding-top: 100%;
+								border-radius: 15px 150px 150px 150px;
+								margin-left: 15px;
+								margin-top: 3px;
+								vertical-align: center;
+								max-width: 200px;
+								max-height: 200px;
+								border: 0.5px solid #79ff4d"
+
+	 					/></div>
+
+	 					</a>
+					</main>
+
+					
+		</div>
+</div>
+</center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class = "panel-container" >
+
+{% set followers = user.followers.count() %}
+
+{% set followed = user.followed.count() %}
+
+
+{% if followers %}
+
+
+
+
+<p>
+
+
+
+followers
+
+    <br>
+
+    <span style = "font-size: 18px;" > 
+
+
+   <b > {{ followers }} </b>
+    </span>
+
+
+
+
+</p>
+
+
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+{% if followed %}
+
+
+<p>
+
+  following
+
+    <br>
+
+    <span style = "font-size: 18px;" > 
+
+
+    <b >  {{ followed }}  </b>
+    </span>
+
+
+</p>
+
+
+
+{% endif %}
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="bio">
+	<center>
+	<h1>
+
+
+		{% if  user == current_user %}
+
+		Your
+
+
+		{% if post_count.__len__() > 1  %}
+
+		posts (<span style="color: black;">{{ post_count.__len__() }}</span>)
+
+		{% else %}
+
+		post (<span style="color: black;">{{ post_count.__len__() }}</span>)
+
+		{% endif %}
+
+
+
+
+		{% else %}
+
+
+	
+
+
+		{{ user.first_name }}'s 
+
+
+		{% if post_count.__len__() > 1  %}
+
+		posts (<span style="color: black;">{{ post_count.__len__() }}</span>)
+
+		{% else %}
+
+		post (<span style="color: black;">{{ post_count.__len__() }}</span>)
+
+		{% endif %}
+
+
+		{% endif %}
+
+
+		<br>
+		<br>
+		
+
+
+	</h1>
+	</center>
+
+
+
+	<br>
+	<br>
+
+
+		<div class="bio-content">
+			
+				{% for post in post %}
+					<div class="wrapper">
+
+						<a  href="{{url_for('post.post_view_page', post_id = post.id )}}">
+
+
+							
+							<p>
+								<img  class="image"  src="{{url_for('static', filename='post_sturf/' + post.image_file )}}" alt="{{user.first_name}}" width="35" height="35">
+
+
+
+								{% if  post.is_event %}
+
+								  <i class= "icon"> &#9873; </i> 
+
+								{% elif  post.is_Lost_and_searching %}
+
+								<i class= "icon"> !  </i> 
+
+								{% elif post.is_Lost_and_found %}
+
+								<i class= "icon"> &#10004; </i> 
+								
+								{% else %}
+
+								  <i class= "icon"> &#10148; </i> 
+								
+								{% endif %}
+
+
+
+
+
+
+								<div class="date">
+								 {{post.date_posted.strftime("%a, %d %b %Y")}}
+								</div>
+
+
+								{% if post.title.__len__() >= 20  %}
+
+									{{ post.title[0:20] }}...
+
+								{% else %}
+
+									{{ post.title | truncate(40)}}
+
+								{% endif %}
+
+
+
+
+
+								
+							</p>
+
+
+							
+
+
+						</a>
+
+					</div>
+				{% endfor %}
+
+
+
+		</div>
+</div>
+
+
+
+
+
+
+
+
+
+{% if (user.allows_email_to_be_seen or user.allows_phone_number_to_be_seen) %}
+
+<div class="contact">
+	<h1>CONTACT</h1>
+	<br>
+	<br>
+		<div class="contact-content">
+
+
+	{% if user.allows_phone_number_to_be_seen %}
+
+		{% if user.phone %}
+			<p><span> <i style="color: black; font-style: normal;">&phone;</i>Tel: </span>{{user.phone}}
+			</p>
+		{% endif %}
+
+	{% endif %}
+
+			<br>
+
+
+	{% if user.allows_email_to_be_seen %}
+
+		{% if user.email %}	
+			<p><span><i style="color: black; font-style: normal; font-size:23px;">&commat;</i>Email: </span> 
+
+
+			{{user.email}}
+
+
+			</p>
+
+		{% endif %}
+
+	{% endif %}
+
+
+		</div>
+	
+</div>
+
+
+
+
+{% endif %}
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+</html>

@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+	<title>What type of ad?</title>
+
+	<link href="{{url_for('buy.static', filename='ad-type.css' )}}" rel="stylesheet" type="text/css" />
+
+	<meta name="viewport" content = "width = device-width, initial-scale = 1" charset="utf-8" >
+
+	<script type="text/javascript">
+    function back(){
+        history.back();
+       
+    }
+	</script>
+
+</head>
+
+
+
+
+
+<body> 
+
+
+
+
+<!-- header section -->
+
+<div id = "header">
+
+	<label >
+		<button  id="back" type="button" onclick="back()";>&#10094;</button>
+	</label>
+
+
+
+
+
+
+
+
+
+	<a class="header_link" href="{{url_for('home.general')}}">	
+	STURF
+	</a>
+
+
+
+
+
+<!----------- REPORT BUTTON ---------------->
+	<input type="checkbox" id="check">
+
+	<label for="check">
+		<i  id="btn">&#9868;</i>
+		<i  id="cancel">╳</i>
+	</label>
+
+
+
+
+
+	<div class="sidebar">
+
+			
+
+	<ul>
+		
+
+
+{% if not current_user.paid %}
+	<li>
+		<a style="color: gold;" href="{{url_for('post.post_payment_page')}}">
+
+			<i style="font-style: normal;font-size: 30px; margin-right: 0px; color: gold;">&starf;</i>
+
+		VIP
+
+		</a>
+
+	</li>
+{% endif %}
+
+
+
+	<li>
+		<a href="{{url_for('help.index')}}">
+			<i style="font-style: normal;">&#10067;</i>
+
+		Help 
+
+		</a>
+
+	</li>
+
+
+	</ul>
+			
+			
+
+	</div>
+
+<!----------- END OF REPORT BUTTON ---------------->
+
+
+
+
+
+
+
+
+
+
+
+	<div id="headtext">
+		Improving your wellbeing <span class="dots">...</span>
+	</div>
+
+
+
+
+
+
+
+
+
+	
+
+</div>
+
+
+
+
+
+<!-- end of header section -->
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id = "advertisement">
+		<center> AD</center>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="reduce">
+
+			<h1 class="penny" >WHAT TYPE OF ad are you posting?</h1>
+
+
+
+
+
+
+
+
+
+
+
+			<!-- ..............................section ............................ -->
+
+			<center>
+			<div class="tryme">
+
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span> 
+				
+
+
+			<main class = "label1">
+				<div class = "light2" /></div>
+			</main>
+
+
+			<div id = "textarea">
+				<header class="headr">PHONES</header>
+				<p class="text">Includes mobile phones, tablets and accessories ... </p>
+				
+
+			<center > 
+
+			<div id = "buttonscontainer">
+
+
+
+				<div>
+					<center>
+				<div class = "login">
+					
+					<button id = 'phones' class = "loginbutton" >
+						<center>GO</center>
+					</button>
+				</div>
+					</center>		
+				
+				</div>
+
+
+
+
+
+			</div>
+
+				
+
+			</div>
+			</center>
+
+			<!-- ------------------------------------------------------------------------------------------>
+
+
+
+
+
+
+
+
+			<!-- ..............................section ............................ -->
+
+			<center>
+			<div class="tryme">
+
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span> 
+				
+
+
+			<main class = "label1">
+				<div class = "light2" /></div>
+			</main>
+
+
+			<div id = "textarea">
+				<header class="headr">FASHION</header>
+				<p class="text">Clothes, shoes, jewelries and the likes ... </p>
+				
+
+			<center > 
+
+			<div id = "buttonscontainer">
+
+
+
+				<div>
+					<center>
+				<div class = "login">
+					
+					<button id = 'fashion' class = "loginbutton" >
+						<center>GO</center>
+					</button>
+				</div>
+					</center>		
+				
+				</div>
+
+
+
+
+
+			</div>
+
+				
+
+			</div>
+			</center>
+
+			<!-- ------------------------------------------------------------------------------------------>
+
+
+
+
+
+
+			<!-- ..............................section ............................ -->
+
+			<center>
+			<div class="tryme">
+
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span> 
+				
+
+
+			<main class = "label1">
+				<div class = "light2" /></div>
+			</main>
+
+
+			<div id = "textarea">
+				<header class="headr">ELECTRONICS</header>
+				<p class="text">Laptops, Computer Acessories, Cameras, Video Games... </p>
+				
+
+			<center > 
+
+			<div id = "buttonscontainer">
+
+
+
+				<div>
+					<center>
+				<div class = "login">
+					
+					<button id = 'electronics' class = "loginbutton" >
+						<center>GO</center>
+					</button>
+				</div>
+					</center>		
+				
+				</div>
+
+
+
+
+
+			</div>
+
+				
+
+			</div>
+			</center>
+
+			<!-- ------------------------------------------------------------------------------------------>
+
+
+
+
+
+
+
+			<!-- ..............................section ............................ -->
+
+			<center>
+			<div class="tryme">
+
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span> 
+				
+
+
+			<main class = "label1">
+				<div class = "light2" /></div>
+			</main>
+
+
+			<div id = "textarea">
+				<header class="headr">SERVICES</header>
+				<p class="text">Your skills ca be sold... </p>
+				
+
+			<center > 
+
+			<div id = "buttonscontainer">
+
+
+
+				<div>
+					<center>
+				<div class = "login">
+					
+					<button id = 'services' class = "loginbutton" >
+						<center>GO</center>
+					</button>
+
+				</div>
+					</center>		
+				
+				</div>
+
+
+
+
+
+			</div>
+
+				
+
+			</div>
+			</center>
+
+			<!-- ------------------------------------------------------------------------------------------>
+
+
+
+
+
+
+
+
+			<!-- ..............................section ............................ -->
+
+			<center>
+			<div class="tryme">
+
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span> 
+				
+
+
+			<main class = "label1">
+				<div class = "light2" /></div>
+			</main>
+
+
+			<div id = "textarea">
+				<header class="headr">AUTOMOBILES</header>
+				<p class="text">Bikes, bike parts, bicycles, bicycle parts etc... </p>
+				
+
+			<center > 
+
+			<div id = "buttonscontainer">
+
+
+
+				<div>
+					<center>
+				<div class = "login">
+					
+					<button id = 'automobiles' class = "loginbutton" >
+						<center>GO</center>
+					</button>
+				</div>
+					</center>		
+				
+				</div>
+
+
+
+
+
+			</div>
+
+				
+
+			</div>
+			</center>
+
+			<!-- ------------------------------------------------------------------------------------------>
+
+
+
+
+
+
+
+
+			<!-- ..............................section ............................ -->
+
+			<center>
+			<div class="tryme">
+
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span> 
+				
+
+
+			<main class = "label1">
+				<div class = "light2" /></div>
+			</main>
+
+
+			<div id = "textarea">
+				<header class="headr">FOOD</header>
+				<p class="text">Food and cooking Utensils etc... </p>
+				
+
+			<center > 
+
+			<div id = "buttonscontainer">
+
+
+
+				<div>
+					<center>
+				<div class = "login">
+					
+					<button id = 'automobiles' class = "loginbutton" >
+						<center>GO</center>
+					</button>
+				</div>
+					</center>		
+				
+				</div>
+
+
+
+
+
+			</div>
+
+				
+
+			</div>
+			</center>
+
+			<!-- ------------------------------------------------------------------------------------------>
+
+
+
+
+
+
+
+
+
+
+
+			<!-- ..............................section ............................ -->
+
+			<center>
+			<div class="tryme">
+
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span> 
+				
+
+
+			<main class = "label1">
+				<div class = "light2" /></div>
+			</main>
+
+
+			<div id = "textarea">
+				<header class="headr">HOUSES</header>
+				<p class="text">Lodges, Apartments, Hostel bed spaces etc... </p>
+				
+
+			<center > 
+
+			<div id = "buttonscontainer">
+
+
+
+				<div>
+					<center>
+				<div class = "login">
+					
+					<a id = 'automobiles' class = "loginbutton" href = "{{url_for('home.rent')}}">
+						<center>GO</center>
+					</a>
+				</div>
+					</center>		
+				
+				</div>
+
+
+
+
+
+			</div>
+
+				
+
+			</div>
+			</center>
+
+			<!-- ------------------------------------------------------------------------------------------>
+
+
+
+
+			
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- The PHONE Modal box -->
+
+	<div id="phoneModal" class="modal">
+
+				  <!-- Modal content -->
+				  <div class="modal-content">
+
+				<!-- modal header -->
+				    <div class="modal-header">
+				      <span class="close">╳</span>
+				      <h2>Sturf</h2>
+				    </div>
+				<!---->
+
+
+				<!--modal body -->
+				    <div class="modal-body">
+				      <p class="texte">Please Select A Catergory
+
+				      <br>
+
+				      </p>
+				      <a href="{{url_for('buy.create_phone_ad', adtype = 'mobile_phones' )}}" class="linke"><i>╳</i>Mobile Phones</a>
+				      <br>
+				      <br>
+				      <a href="{{url_for('buy.create_tablet_ad', adtype = 'tablets' )}}" class="linke"><i>╳</i>Tablets</a>
+				      <br>
+				      <br>
+				      <a href="{{url_for('buy.create_phone_ad', adtype = '' )}}" class="linke"><i>╳</i>Accessories</a>
+
+				    </div>
+				<!-- -->
+
+
+				<!-- modal footer -->
+				    <div class="modal-footer">
+
+				      <div class = "btnwrap">
+				        
+			 
+
+				      </div>
+
+				    </div>
+				<!---->
+
+				  </div>
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+	<div id="fashionModal" class="modal">
+
+				  <!-- Modal content -->
+				  <div class="modal-content">
+
+				<!-- modal header -->
+				    <div class="modal-header">
+				      <span class="close">╳</span>
+				      <h2>Sturf</h2>
+				    </div>
+				<!---->
+
+
+				<!--modal body -->
+				    <div class="modal-body">
+				      <p class="texte">Please Select A Catergory
+
+				      <br>
+
+				      </p>
+				      <a href="{{url_for('buy.create_phone_ad', adtype = '' )}}" class="linke"><i>╳</i>Shoes</a>
+				      <br>
+				      <br>
+				      <a href="{{url_for('buy.create_phone_ad', adtype = '' )}}" class="linke"><i>╳</i>Clothing</a>
+				      <br>
+				      <br>
+				      <a href="{{url_for('buy.create_phone_ad', adtype = '' )}}" class="linke"><i>╳</i>Bags</a>
+
+				      <a href="{{url_for('buy.create_phone_ad', adtype = '' )}}" class="linke"><i>╳</i>Jewelries</a>
+				      <br>
+				      <br>
+				      <a href="{{url_for('buy.create_phone_ad', adtype = '' )}}" class="linke"><i>╳</i>Bath and Body</a>
+				      <br>
+				      <br>
+				      <a href="{{url_for('buy.create_phone_ad', adtype = '' )}}" class="linke"><i>╳</i>Fragrances</a>
+
+
+				      <a href="{{url_for('buy.create_phone_ad', adtype = '' )}}" class="linke"><i>╳</i>Hair Weaves</a>
+				      <br>
+				      <br>
+				      <a href="{{url_for('buy.create_phone_ad', adtype = '' )}}" class="linke"><i>╳</i>Makeup</a>
+				      <br>
+				      <br>
+				      <a href="{{url_for('buy.create_phone_ad', adtype = '' )}}" class="linke"><i>╳</i>Skin Care</a>
+
+				    </div>
+				<!-- -->
+
+
+				<!-- modal footer -->
+				    <div class="modal-footer">
+
+				      <div class = "btnwrap">
+				        
+			 
+
+				      </div>
+
+				    </div>
+				<!---->
+
+				  </div>
+
+	</div>
+
+
+
+
+
+
+	<div id="electronicModal" class="modal">
+
+				  <!-- Modal content -->
+				  <div class="modal-content">
+
+				<!-- modal header -->
+				    <div class="modal-header">
+				      <span class="close">╳</span>
+				      <h2>Sturf</h2>
+				    </div>
+				<!---->
+
+
+				<!--modal body -->
+				    <div class="modal-body">
+				      <p class="texte">Please Select A Catergory
+
+				      <br>
+
+				      </p>
+				      
+				      <a href="{{url_for('buy.create_phone_ad', adtype = '' )}}" class="linke"><i>╳</i>Laptops</a>
+				      <br>
+				      <br>
+				      <a href="{{url_for('buy.create_phone_ad', adtype = '' )}}" class="linke"><i>╳</i>Computer Acessories</a>
+				      <br>
+				      <br>
+				      <a href="{{url_for('buy.create_phone_ad', adtype = '' )}}" class="linke"><i>╳</i>Cameras</a>
+				      <br>
+				      <br>
+				      <a href="{{url_for('buy.create_phone_ad', adtype = '' )}}" class="linke"><i>╳</i>Computer Software</a>
+				      <br>
+				      <br>
+				      <a href="{{url_for('buy.create_phone_ad', adtype = '' )}}" class="linke"><i>╳</i>Video Games</a>
+				      <br>
+				      <br>
+				      <a href="{{url_for('buy.create_phone_ad', adtype = '' )}}" class="linke"><i>╳</i>Music Equipement</a>
+
+
+				    </div>
+				<!-- -->
+
+
+				<!-- modal footer -->
+				    <div class="modal-footer">
+
+				      <div class = "btnwrap">
+				        
+			 
+
+				      </div>
+
+				    </div>
+				<!---->
+
+				  </div>
+
+	</div>
+
+
+
+
+	<script>
+	// Get the modal
+	var phonemodal = document.getElementById('phoneModal');
+
+	// Get the button that opens the modal
+	var phones = document.getElementById("phones");
+
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[0];
+
+
+	// When the user clicks on phones button 
+	phones.onclick = function() {
+	    phonemodal.style.display = "block";
+	}
+
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() {
+	    phonemodal.style.display = "none";
+	}
+
+
+
+
+	// Get the modal
+	var fashionmodal = document.getElementById('fashionModal');
+
+	// Get the button that opens the modal
+	var fashion = document.getElementById("fashion");
+
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[1];
+
+
+	// When the user clicks on phones button 
+	fashion.onclick = function() {
+	    fashionmodal.style.display = "block";
+	}
+
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() {
+	    fashionmodal.style.display = "none";
+	}
+
+
+
+
+
+
+
+	// Get the modal
+	var electronicmodal = document.getElementById('electronicModal');
+
+	// Get the button that opens the modal
+	var electronic = document.getElementById("electronics");
+
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[2];
+
+
+	// When the user clicks on phones button 
+	electronic.onclick = function() {
+	    electronicmodal.style.display = "block";
+	}
+
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() {
+	    electronicmodal.style.display = "none";
+	}
+
+
+
+	</script>
+
+</body>
+
+
+
+
+
+<!-- 
+	<script type="text/javascript">
+	        window.setTimeout(function(){document.getElementById('myModal').style.display = "block";},2000);
+	</script>
+ -->
+
+
+
+
+<!-- ..............................footer............................ -->
+
+<footer id = 'footer'>
+
+
+
+<div class="footerians">
+	<header><span style="margin-right: 5px; color: #ffffff; font-size: 25px;">☎</span>Get in touch with us</header>
+
+	<ul>
+
+	<li><a href="#"><div class="case1"></div></a></li>
+	<li><a href="#"><div class="case2"></div></a></li>
+	<li><a href="#"><div class="case3"></div></a></li>
+	<li><a href="#"><div class="case4"></div></a></li>
+
+	</ul>
+	
+
+</div>
+
+
+
+<div class="t_and_t">
+	<ul>
+	<li><a href="#">Terms and conditions</a></li>
+	<li><a href="#">what more can we do?</a></li>
+	<li><a href="#">Ad policy</a></li>
+	<li><a href="#">Content policy</a></li>
+	</ul>
+</div>
+
+
+	
+
+<div id="links">
+	<ul>
+	<li><a href="#">Home</a></li>
+	<li><a href="file:///C:/Users/SIMON/Documents/site%20work/site/Electricity.html">Electricity</a></li>
+	<li><a href="#">History</a></li>
+	<li><a href="#">About Us</a></li>
+	<li><a href="#">FAQS</a></li>
+	<li><a href="{{url_for('security.logout')}}">logout</a></li>
+	</ul>
+
+</div>
+
+
+	
+<div class="copyright">
+	Copyright &copy; 2020-2025 STURF
+	All rights reserved.
+	STURF is among the federally registered trademarks of
+    STURF LLC and may not be used by third parties without explicit permission.
+
+
+</div>
+
+
+
+
+
+	
+</footer>
+
+
+
+</html>

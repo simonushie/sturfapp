@@ -1,0 +1,140 @@
+<canvas id="canvas">
+  
+</canvas>
+
+
+
+
+
+
+
+body{
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+canvas{
+  box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+
+
+
+class Particle{
+  constructor(x, y, size, speed, color){
+    this.x = x;
+    this.y = y;
+    this.xVel = Math.random()*speed - speed/2;
+    this.yVel = Math.random()*speed - speed/2;
+    this.size = size;
+    this.color = color;
+  }
+
+  draw(ctx){
+    ctx.fillStyle = `hsl(${this.color}, 100%, 50%)`;
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+    ctx.fill();
+  }
+
+  update(){
+    this.size > .4 ? this.size -= .2 : this.size -= .1;
+    this.x += this.xVel;
+    this.y += this.yVel;
+  }
+}
+
+class ParticleSystem{
+  constructor(){
+    this.particles = [];
+  }
+
+  add(number, x, y, hue){
+    for(let i =0; i < number; i++){
+      let newParticle = new Particle(x, y, Math.random()*40, Math.random()*8, hue);
+      this.particles.push(newParticle);
+    }
+  }
+
+  update(){
+    for(let i = 0; i < this.particles.length; i++){
+      this.particles[i].update();
+      if(this.particles[i].size < .3){
+        this.particles.splice(i, 1);
+        i--;
+      }
+    }
+  }
+
+  show(ctx){
+    for(let i = 0; i < this.particles.length; i++){
+      this.particles[i].draw(ctx);
+      
+      // to remove lines betwen points comment that inner loop
+      for(let j = i; j < this.particles.length; j++){
+        const dx = this.particles[i].x - this.particles[j].x;
+        const dy = this.particles[i].y - this.particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if(dist < 75){
+          ctx.strokeStyle = 'hsl('+this.particles[i].color+', 100%, 50%)';
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          ctx.moveTo(this.particles[i].x, this.particles[i].y);
+          ctx.lineTo(this.particles[j].x, this.particles[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+  }
+}
+
+const canvas = document.querySelector("#canvas");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+var particleSystem = new ParticleSystem;
+let hue = 0;
+const ctx = canvas.getContext("2d");
+
+//change last value in backgroundColor to .2 co create fading away effect
+const backgroundColor = "rgba(0, 0, 0, 1)";
+
+var mousePos = {
+  x: undefined,
+  y: undefined
+}
+
+window.addEventListener("resize", ()=>{
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  ctx.fillStyle = backgroundColor;
+})
+
+canvas.addEventListener("mousemove", (event)=>{
+  mousePos.x = event.x;
+  mousePos.y = event.y;
+  particleSystem.add(3, mousePos.x, mousePos.y, hue);
+})
+
+canvas.addEventListener("click", (event)=>{
+  particleSystem.add(40, mousePos.x, mousePos.y, hue)
+})
+
+animate();
+
+function animate(){
+  requestAnimationFrame(animate);
+  hue++;
+  ctx.fillStyle = backgroundColor;
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  particleSystem.show(ctx);
+  particleSystem.update();
+}

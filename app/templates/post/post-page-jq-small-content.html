@@ -1,0 +1,389 @@
+
+            <p class="users_count">
+
+            <span style='color: #79ff4d; font-size: 17px; font-weight: bold; font-family: "Comic Sans MS", cursive, sans-serif;
+            '> {{ posts.total }} </span> 
+
+
+
+                {% if posts.total > 1  %}
+
+                        posts
+
+                {% else %}
+
+                        post
+
+                {% endif %}
+
+
+
+
+              in total
+
+
+
+
+
+            </p>
+
+
+
+
+
+
+              
+
+
+
+
+
+
+
+
+
+
+
+            {% if posts.total >= 1  %}
+
+              
+
+                    {% for post in posts.items %}
+                    <!-- <div class="individual-post"> -->
+                          
+                    <div class="wrap">
+
+                                            
+
+                                                            <a  href="{{url_for('post.post_view_page', post_id = post.id )}}">
+                                    <div class="img"  >
+
+                                                                <h1 class="chk" style="font-size: 17px;  ">view</h1>
+                                                            </a>
+                                                                
+                                                                <i style="
+                                                                position: absolute;
+                                                                z-index: 1;
+                                                                padding:5px;
+                                                                padding-top: 0px;
+                                                                font-size: 20px;
+                                                                font-style: normal;
+                                                                color: #79ff4d;
+                                                                text-shadow: 2px 3px 2px #000000;
+                                                                ">
+
+
+                                                                {% if  post.is_event %}
+
+
+
+
+
+<svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.47755 4.24999C6.38139 4.24988 6.24575 4.24972 6.12575 4.26585C5.97451 4.28618 5.74209 4.34371 5.5429 4.5429C5.34371 4.74209 5.28618 4.97451 5.26585 5.12575C5.24972 5.24575 5.24988 5.38139 5.24999 5.47755L5.25001 19C5.25001 19.4142 5.58579 19.75 6.00001 19.75C6.41422 19.75 6.75001 19.4142 6.75001 19V13.75L16.6168 13.75C16.8761 13.7501 17.1426 13.7502 17.3492 13.7224C17.5084 13.7011 18.0425 13.6183 18.2309 13.081C18.4194 12.5438 18.054 12.1455 17.9431 12.0294C17.7991 11.8786 17.5909 11.7122 17.3884 11.5502L15.4207 9.97609C14.9519 9.60108 14.6655 9.36953 14.4858 9.1779C14.4022 9.08876 14.3688 9.03557 14.3561 9.01007L14.3546 9.00692C14.3532 9.00401 14.3515 9.00001 14.3515 9.00001C14.3524 8.99773 14.3539 8.9944 14.3561 8.98994C14.3688 8.96444 14.4022 8.91126 14.4858 8.82212C14.6655 8.63048 14.9519 8.39893 15.4207 8.02392L17.3884 6.44977C17.5909 6.28785 17.7991 6.12143 17.9431 5.97066C18.054 5.85456 18.4194 5.45626 18.2309 4.919C18.0425 4.38174 17.5084 4.29896 17.3492 4.27759C17.1426 4.24983 16.8761 4.24992 16.6168 4.25L6.47755 4.24999Z" fill="#79ff4d"/>
+</svg>
+
+
+
+
+
+
+</i>
+
+
+                                                                {% elif  post.is_Lost_and_found %}
+
+
+                                                                &#10004;
+
+
+                                                                {% elif  post.is_Lost_and_searching%}
+
+
+                                                                !
+
+                                                                {% else %}
+
+                                                                &#10148;
+                                                                
+
+                                                                {% endif %}
+
+                                                               
+
+
+                                                               {% if post.author.paid  %} 
+
+                                                                </i>
+
+
+
+
+                                                                <i style="
+                                                                position: absolute;
+                                                                z-index: 1;
+                                                                padding-top: 4px;
+                                                                font-size: 23px;
+                                                                font-style: normal;
+                                                                color: #79ff4d;
+                                                                
+                                                               
+                                                                ">
+
+                                                                <br>
+
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="gold" width="24" height="24" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+
+
+                                                                </i>
+
+
+
+                                                                {% else %}
+
+                                                                    
+
+                                                                {% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                
+                                                                <img src="{{url_for('static', filename='post_sturf/' + post.image_file )}}" alt="{{post.author.first_name}}" width="300" height="200">
+
+
+
+
+
+                                                                <h1>
+
+                                                                    {% if post.title.__len__() >= 15  %}
+
+                                                                    {{ post.title[0:15].upper() }}...
+
+                                                                    {% else %}
+
+                                                                    {{ post.title.upper()}}
+
+                                                                    {% endif %}
+
+                                                                </h1>
+
+
+
+                                                                <div class="desc">
+
+                                                                    {% if post.content.__len__() >= 20  %}
+
+                                                                    {{ post.content[0:20] }}...
+
+                                                                    {% else %}
+
+                                                                    {{ post.content}}
+
+                                                                    {% endif %}
+
+                                                                </div>
+
+
+
+                                                                <p>
+
+                                                                <span style="color: green; ">by:</span>
+
+
+                                                                {% if post.author == current_user %}
+
+                                                                    you
+
+                                                                    {% else %}
+
+                                                                    {{post.author.first_name}} 
+
+                                                                    {% endif %}
+
+                                                                
+
+                                                                </p>
+                                                                
+                                                                <p>
+
+                                                                <span style="color: green;">on:</span>
+
+                                                                {{post.date_posted.strftime("%a %d %b, %Y")}}
+
+                                                                </p>
+                                    </div>
+                                
+                         
+
+                </div>              
+                    {%endfor%}
+
+
+
+
+
+
+
+
+
+
+            {% else %}
+
+
+
+                        {% if post_value == "normal"  %}
+
+                        <center>
+                            <i style="
+                            padding:5px;
+                            padding-top: 0px;
+                            font-size: 70px;
+                            font-style: normal;
+                            color: #79ff4d;
+                            text-shadow: 2px 3px  black;
+                            font-weight: bold
+                            ">
+
+
+                            &#9925;
+
+
+
+                            </i>
+
+                            <h1 class="damn">
+                            Damn!....no posts? do something about it, will ya?
+                            </h1>
+
+                        </center>
+
+                        {% elif post_value == "followed" %}
+
+                        <center>
+                            <i style="
+                            padding:5px;
+                            padding-top: 0px;
+                            font-size: 70px;
+                            font-style: normal;
+                            color: #79ff4d;
+                            text-shadow: 2px 3px  black;
+                            font-weight: bold
+                            ">
+
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><path d="M23.99 4C12.94 4 4 12.95 4 24s8.94 20 19.99 20S44 35.05 44 24 35.04 4 23.99 4zM24 40c-8.84 0-16-7.16-16-16S15.16 8 24 8s16 7.16 16 16-7.16 16-16 16zm7-18c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3zm-14 0c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3zm17.21 13c-1.6-4.09-5.55-7-10.21-7s-8.61 2.91-10.21 7"/></svg>
+
+
+                            </i>
+
+                            <h1 class="damn">
+                            Dang it!.....You're not following anyone yet
+                            </h1>
+
+                        </center>
+
+
+
+
+
+
+
+
+
+
+
+                        {% endif %}
+
+
+
+            {% endif %}
+
+
+
+
+
+
+
+
+                
+                
+            </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <center>
+                <div class="pagination"> 
+                {% for page_num in posts.iter_pages(left_edge=1, right_edge = 1, left_current = 1, right_current = 2) %}
+
+
+                    {%if page_num %}
+
+
+                        
+
+                                {%if posts.page == page_num%}
+
+                                        {%if post_value == 'followed'%}
+
+                                                <a  class="pagination_highlight" href="{{url_for('post.post', page = page_num, post_type = 'followed')}}">{{page_num}}</a>
+                                        {% else %}
+                                                <a  class="pagination_highlight" href="{{url_for('post.post', page = page_num, post_type = 'normal')}}">{{page_num}}</a>
+                                        {% endif %}
+
+                                {% else %}
+
+
+
+                                        {%if post_value == 'followed'%}
+
+                                                <a  class="pagination_normal" href="{{url_for('post.post', page = page_num, post_type = 'followed')}}">{{page_num}}</a>
+
+                                        {% else %}
+                                                <a  class="pagination_normal" href="{{url_for('post.post', page = page_num, post_type = 'normal')}}">{{page_num}}</a>
+                                        {% endif %}
+
+                                 
+
+
+                                {% endif %}
+
+                        
+
+
+
+                    {% else %}
+
+                    ...
+
+
+                    {% endif %}
+
+
+
+                {% endfor %}
+                </div>
+            </center>
+
+

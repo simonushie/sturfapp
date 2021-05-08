@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<title>Find a roomie with ease</title>
+
+  	<link rel="stylesheet" type="text/css" href="{{url_for('roomie.static', filename='polaroid.css' )}}">
+
+	<meta name="viewport" content = "width = device-width, initial-scale = 1" charset="utf-8" >
+
+	<script src="{{url_for('roomie.static', filename='polaroid.css' )}}"></script>
+
+	<script src="{{url_for('roomie.static', filename='jquery-3.5.1.min.js' )}}"></script>
+
+	<script src="{{url_for('roomie.static', filename='polaroid.js' )}}"></script>
+
+	<meta name="viewport" content = "width = device-width, initial-scale = 1" charset="utf-8" >
+
+
+	<script type="text/javascript">
+
+    function back(){
+    	history.back();
+    }
+	
+	</script>
+
+</head>
+
+
+
+
+<body> 
+
+
+<!-- header section -->
+
+<div id = "header">
+
+	<label>
+        <button  id="back" type="button" onclick="back()";>&#10094;</button>
+    </label>
+
+
+	<a class="header_link" href="{{url_for('home.general')}}">  
+    STURF
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+       <!----------- REPORT BUTTON ---------------->
+    <input type="checkbox" id="check">
+
+    <label for="check">
+        <i  id="btn">═</i>
+        <i  id="cancel">╳</i>
+    </label>
+
+
+
+
+
+    <div class="sidebar">
+
+            
+
+    <ul>
+
+
+        <li >
+
+
+            <button class="dropdown-btn">
+            	<i style="font-style: normal;
+               
+                 ">
+
+                &#9986;
+
+         		</i>
+
+            	Sort by
+
+            </button>
+
+
+			  <div class="dropdown-container-a">
+
+
+
+			  	<button class="dropdown-btn" style="color:black; font-size:17px;  text-align: right; font-family:  sans-serif;">Conventional</button>
+			          <div class="dropdown-container">
+			          <a class = "droplink" href="{{url_for('roomie.find_a_roomie', page = 1, sort = 'normal' )}}">Default</a>
+			          </div>
+
+
+			    <button class="dropdown-btn" style="color:black; font-size:17px;  text-align: right; font-family:  sans-serif;">Religion</button>
+			          <div class="dropdown-container">
+			          <a class = "droplink" href="{{url_for('roomie.find_a_roomie', page = 1, sort = 'Christianity' )}}">Christainity</a>
+			          <a class = "droplink" href="{{url_for('roomie.find_a_roomie', page = 1, sort = 'Islam' )}}">Islam</a>
+			          <a class = "droplink" href="{{url_for('roomie.find_a_roomie', page = 1, sort = 'religion-other' )}}">Other</a>
+			          </div>
+
+			    <button class="dropdown-btn" style="color:black; font-size:17px;  text-align: right; font-family:  sans-serif;">Level</button>
+			          <div class="dropdown-container">
+			          <a class = "droplink" href="{{url_for('roomie.find_a_roomie', page = 1, sort = '100L' )}}">100l</a>
+			          <a class = "droplink" href="{{url_for('roomie.find_a_roomie', page = 1, sort = '200L' )}}">200l</a>
+			          <a class = "droplink" href="{{url_for('roomie.find_a_roomie', page = 1, sort = '300L' )}}">300l</a>
+			          <a class = "droplink" href="{{url_for('roomie.find_a_roomie', page = 1, sort = '400L' )}}">400l</a>
+			          <a class = "droplink" href="{{url_for('roomie.find_a_roomie', page = 1, sort = '500L' )}}">500l</a>
+			          </div>
+
+			    <button class="dropdown-btn" style="color:black; font-size:17px;  text-align: right; font-family:  sans-serif;">Current location</button>
+			          <div class="dropdown-container">
+			          <a class = "droplink" href="{{url_for('roomie.find_a_roomie', page = 1, sort = 'gidan-kwano' )}}">Gidan Kwano</a>
+			          <a class = "droplink" href="{{url_for('roomie.find_a_roomie', page = 1, sort = 'bosso' )}}">Bosso</a>
+			          <a class = "droplink" href="{{url_for('roomie.find_a_roomie', page = 1, sort = 'based-other' )}}">Other</a>
+			          </div>
+
+			  </div>
+
+        </li>
+
+
+
+
+
+        
+
+
+    <li>
+        <a style="color: gold;" href="{{url_for('post.post_payment_page')}}">
+
+            <i style="font-style: normal;font-size: 30px; margin-right: 0px; color: gold;">&starf;</i>
+
+        VIP
+
+        </a>
+
+    </li>
+
+
+
+    <li>
+        <a href="{{url_for('help.index')}}">
+            <i style="font-style: normal;">&#10067;</i>
+
+        Help 
+
+        </a>
+
+    </li>
+
+
+    <li>
+        <a href="{{url_for('roomie.roomie_details_update', id = current_user.id)}}">
+            <i style="font-style: normal;">&#10067;</i>
+
+        Update info
+
+        </a>
+
+    </li>
+
+
+    <li>
+        <a href="{{url_for('roomie.roomie_requests', request_type = 'requesters')}}">
+            <i style="font-style: normal;">&#10067;</i>
+
+        Requests
+
+        </a>
+
+    </li>
+
+
+    <li>
+        <a href="{{url_for('roomie.messages')}}">
+
+            <i style="font-style: normal;">&#10067;</i>
+
+            
+					{% set new_messages = current_user.new_messages() %}
+                    {% if new_messages %}
+                    <span class="badge">{{ new_messages }}</span>
+                    {% endif %}
+
+
+        Messages
+
+        </a>
+
+    </li>
+
+
+
+
+
+
+
+
+    </ul>
+            
+            
+
+    </div>
+
+<!----------- END OF REPORT BUTTON ---------------->
+
+
+
+
+
+
+
+
+
+	<div id="headtext">
+		Improving your wellbeing <span class="dots">...</span>
+	</div>
+
+
+</div>
+
+
+
+<!-- end of header section -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+
+        <ul class=flashes>
+
+        {% for category, message in messages %}
+        	<center>
+            <li class="{{ category }}">
+                {{ message }}
+            </li>
+            </center>
+        {% endfor %}
+
+        </ul>
+        
+    {% endif %}
+{% endwith %}
+
+
+
+
+
+
+
+
+{{sort_value}}
+
+
+
+
+{% if roomies.total >= 10 %}
+
+
+
+					<div class = "topicsentence">
+
+					       You and
+					       {{roomies.total}}
+					       others here are searching
+					                   
+					</div>
+
+			
+{% elif roomies.total == 0 %}
+
+
+
+		<div class = "topicsentence">
+				       
+				     Nobody was found
+				                   
+		</div>
+
+{% elif roomies.total == 1 %}
+
+
+
+		<div class = "topicsentence">
+				       
+				     only one person was found
+				                   
+		</div>
+
+
+
+{% elif roomies.total < 10 %}
+
+
+
+		<div class = "topicsentence">
+				       
+				      {{roomies.total}} people were found
+				                   
+		</div>
+
+
+
+		
+
+
+
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% if roomies.total < 10 %}
+
+
+<a href="#pagination" class="downlink">
+		<i>&#10136;</i>
+</a>
+
+
+
+
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="reduce">
+{% for roomie in roomies.items %}
+
+
+		{% if roomies.total >= 10 %}
+
+											<div class="div">
+												<ul class="gallery"> 
+											     
+													<li draggable="true">
+
+														<img src="{{url_for('static', filename = 'profile_pics/uploads/' +  roomie.candidate.image_file)}}"/>
+
+
+
+
+														{% if roomie.candidate == current_user %}
+
+														<h1>
+
+
+															you
+
+
+
+
+																{% if roomie.candidate.paid == True  %}
+
+																 <h1> (paid) </h1>
+
+																{% endif %}
+
+														</h1>
+
+														{% else %}
+
+														<h1>
+
+															{{roomie.candidate.first_name.lower()}}  rid:{{roomie.id}} uid:{{roomie.candidate.id}} rela:{{roomie.candidate}}
+
+
+																{% if roomie.candidate.paid == True  %}
+
+																 <h1> (paid) </h1>
+
+																{% endif %}
+
+
+
+														</h1>
+
+														{% endif %}
+
+
+
+
+													
+
+
+														<a href="{{url_for('roomie.roomie_template', email = roomie.candidate.email )}}" target="_blank">
+														<p>view bio</p>
+														</a>
+													</li> 
+
+												</ul> 
+											</div>
+
+		{% elif roomies.total < 10 %}
+
+
+
+
+
+										<div class="cover">
+
+
+											
+											
+												
+												<main class = "label1">
+														<div  class="image" style="background: url('{{url_for('static', filename = 'profile_pics/uploads/' +  roomie.candidate.image_file)}}') no-repeat center;
+																				background-size: cover;
+																				"
+
+													 					/>
+													 						
+
+													 	</div>
+												</main>
+
+												{% if roomie.candidate == current_user %}
+
+												<h1>you</h1>
+
+												{% else %}
+
+												<h1>{{roomie.candidate.first_name.lower()}} </h1>
+
+												{% endif %}
+
+
+
+												{% if roomie.candidate.paid == True  %}
+
+																 <h1> (paid) </h1>
+
+																{% endif %}
+											
+
+
+												<a href="{{url_for('roomie.roomie_template', email = roomie.candidate.email )}}" target="_blank">
+												<p>view bio</p>
+												</a>
+
+											
+
+
+										</div>
+
+		{% endif %}
+
+
+{%endfor%}
+
+</div>
+</body> 
+
+
+
+
+
+
+
+
+
+<!-- javascript handling the dropdown menu -->
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<center>
+		    <div id="pagination"> 
+		    {% for page_num in roomies.iter_pages(left_edge=1, right_edge = 1, left_current = 1, right_current = 2) %}
+
+
+		        {%if page_num %}
+
+		            {%if roomies.page == page_num%}
+		            <a  class="pagination_highlight" href="{{url_for('roomie.find_a_roomie', page = page_num, sort = sort_value )}}">{{page_num}}</a>
+
+		            {% else %}
+
+		             <a  class="pagination_normal" href="{{url_for('roomie.find_a_roomie', page = page_num, sort = sort_value )}}">{{page_num}}</a>
+		            {% endif %}
+
+		        {% else %}
+
+		        ...
+
+
+		        {% endif %}
+
+
+
+		    {% endfor %}
+		    </div>
+		</center>
+
+
+
+<!-- ..............................footer............................ -->
+
+<footer id = 'footer'>
+
+
+
+<div class="footerians">
+	<header><span style="margin-right: 5px; color: #ffffff; font-size: 25px;">☎</span>Get in touch with us</header>
+
+	<ul>
+
+	<li><a href="#"><div class="case1"></div></a></li>
+	<li><a href="#"><div class="case2"></div></a></li>
+	<li><a href="#"><div class="case3"></div></a></li>
+	<li><a href="#"><div class="case4"></div></a></li>
+
+	</ul>
+	
+
+</div>
+
+
+
+<div class="t_and_t">
+	<ul>
+	<li><a href="#">Terms and conditions</a></li>
+	<li><a href="#">what more can we do?</a></li>
+	<li><a href="#">Ad policy</a></li>
+	<li><a href="#">Content policy</a></li>
+	</ul>
+</div>
+
+
+	
+
+<div id="links">
+	<ul>
+	<li><a href="#">Home</a></li>
+	<li><a href="file:///C:/Users/SIMON/Documents/site%20work/site/Electricity.html">Electricity</a></li>
+	<li><a href="#">History</a></li>
+	<li><a href="#">About Us</a></li>
+	<li><a href="#">FAQS</a></li>
+	<li><a href="{{url_for('security.logout')}}">logout</a></li>
+	</ul>
+
+</div>
+
+
+	
+<div class="copyright">
+	Copyright &copy; 2020-2025 STURF
+	All rights reserved.
+	STURF is among the federally registered trademarks of
+    STURF LLC and may not be used by third parties without explicit permission.
+
+
+</div>
+
+
+
+
+
+	
+</footer>
+
+
+
+</html>
+

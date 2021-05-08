@@ -1,0 +1,84 @@
+/*
+feedback section*/
+
+.feedback_container{
+	margin-top: 0 auto;
+	border-radius: 3px solid red;
+}
+
+.penny{
+  margin-bottom: 50px;
+  float: left;
+  margin-top: 120px;
+  text-transform: uppercase;
+  font-size: 30px;
+  line-height: 42px;
+  letter-spacing: 3px;
+  font-weight: 200;
+  text-align: center;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  text-shadow: 2px 0px 3px rgba(28,110,164,0.48);
+  color: #79ff4d;
+}
+
+
+
+.textarea {
+	display: block;
+	float:right;
+    width: 40%;
+    min-height: 200px;
+    padding: 30px 30px;
+    box-sizing: border-box;
+    border: 3px solid #79ff4d;
+    border-radius: 10px;
+    background-color: #ffffff;
+    font-size: 16px;
+    resize: none;
+    transition: width 0.6s ease-in-out;
+    margin-bottom: 50px;
+	-webkit-box-shadow: 5px 5px 10px 5px rgba(0,0,0,0.44); 
+box-shadow: 5px 5px 10px 5px rgba(0,0,0,0.44);
+
+-webkit-border-radius: 60px 0px 52px 60px;
+border-radius: 60px 0px 52px 60px;
+}
+
+.textarea:focus{
+border: 3px solid #000000;
+width:80%;
+background:#ffffff;
+outline:none;
+margin-right: 10%;
+margin-left: 10%; 
+-webkit-border-radius: 70px 0px 52px 70px;
+border-radius: 70px 0px 52px 70px;
+
+}
+
+
+
+
+.submitbutton{
+	display: grid;
+	float: right;
+	width: 100px;
+	color: #ffffff;
+	font-size: 15px; 
+	line-height: 17px; 
+	padding: 7px;
+	border-radius: 50px;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-weight: bold;
+	text-decoration: none solid rgb(68, 68, 68);
+	box-shadow: 5px 5px 14px 0px rgba(0,0,0,0.51);
+	border: 3px solid #79ff4d;
+	background: #79ff4d;
+	outline: none;
+	margin-bottom: 100px;
+/*	margin-top: 200px;*/
+}
+
+
+
+/*end of feedback section*/

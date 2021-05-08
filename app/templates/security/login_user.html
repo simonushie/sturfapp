@@ -1,0 +1,80 @@
+{% from "security/_macros.html" import render_field_with_errors, render_field %}
+{% include "security/_messages.html" %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login to Sturf</title>
+
+    <link href="{{url_for('static', filename='login.css' )}}" rel="stylesheet" type="text/css" />
+
+	<meta name="viewport" content = "width = device-width, initial-scale = 1" charset="utf-8" >
+
+
+
+
+</head>
+
+
+
+<body>
+    <div class="wrapper">
+        <div class="sct brand"><span class="spanner"><h3>STURF</h3></span></div>
+        <div class="sct login">
+            <form action="{{ url_for_security('login') }}" method="POST" name="login_user_form">
+                <h3>Login</h3>
+                {{ login_user_form.hidden_tag() }}
+
+                {{ render_field_with_errors(login_user_form.email, class="email") }}
+
+                {{ render_field_with_errors(login_user_form.password, class="passwordbox" ) }}
+                
+                <div class="forgot-remember">
+
+
+                    <label class="control">
+                            {{ render_field_with_errors(login_user_form.remember) }}      
+                    </label>
+
+
+                    <div class="forgot">
+                            <a href="#">Forgot Password?</a>
+                    </div> 
+                </div>
+
+                
+
+                {{ render_field(login_user_form.next) }}
+
+                {{ render_field(login_user_form.submit,  class="btn") }}
+
+                <p class="text-center">Don't have an account?<span class ="cls"><a href = "{{url_for('security.register')}}" class="cls">Sign up</a></span></p>
+
+                 <div class="copyright">
+                    Copyright &copy; 2020-2025 STURF
+                    All rights reserved.
+                    STURF is among the federally registered trademarks of
+                    STURF LLC and may not be used by third parties without explicit permission.
+
+
+                </div>
+            </form>
+
+
+
+
+
+        </div> <!--end login-->
+
+
+    </div> <!--end wrapper-->
+
+
+
+  
+
+</body>
+</html>

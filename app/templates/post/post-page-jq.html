@@ -1,0 +1,975 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta name="viewport" content = "width = device-width, initial-scale = 1" >
+
+    <link href="{{url_for('post.static', filename='post-page-jq.css' )}}" rel="stylesheet" type="text/css" />
+
+    <title>Value Awaits </title>
+
+    
+    <script >
+        function back(){
+            history.back()
+        }
+
+    </script>
+
+
+
+<script src="{{url_for('static', filename='jquery-3.5.1.min.js' )}}"></script>
+
+
+<script src="{{url_for('post.static', filename='post-page-section.js' )}}"></script>
+
+
+
+
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+
+<!-- header section -->
+
+
+
+
+
+
+<div id = "header">
+
+    <label>
+        <button  id="back" type="button" onclick="back()";>&#10094;</button>
+    </label>
+
+
+
+
+
+    <label class="search" for="inpt_search">
+
+    <input id="inpt_search" type="text" />
+      
+
+    </label>
+
+
+
+        
+    <a class="header_link" href="{{url_for('home.general')}}">  
+    STURF
+    </a>
+
+
+
+
+    <!----------- search BUTTON ---------------->
+
+<!-- <div class="search_case">
+ -->
+
+
+
+<!-- </div>
+ -->
+
+
+    <!----------- REPORT BUTTON ---------------->
+    <input type="checkbox" id="check">
+
+    <label for="check">
+        <i  id="btn">&#10011;</i>
+        <i  id="cancel">╳</i>
+    </label>
+
+
+
+
+
+    <div class="sidebar">
+
+            
+
+    <ul>
+
+
+
+
+
+
+
+
+
+
+    {% if  current_user.generic or current_user.paid %}
+
+        <li>
+            <a style="margin-top: 35px; " href="{{url_for('post.post_type')}}">
+
+                <i style="font-style: normal;font-size: 25px; margin-right: -2px; ">    &#10011; </i>
+
+                 New Post
+
+            </a>
+
+        </li>
+
+        {% else %}
+
+
+        <li>
+            <a  style="margin-top: 35px;" href="{{url_for('post.post_payment_page') }}">
+
+                <i style="font-style: normal;font-size: 25px; margin-right: -8px; ">  &#10011;   </i>
+
+                 I want to post
+
+            </a>
+
+        </li>
+
+        
+    {% endif %}
+
+
+
+
+        <li>    
+            <a  href="{{url_for('post.my_posts', page = 1, id = current_user.id )}}">
+
+                <i style="font-style: normal;font-size: 25px; margin-right: -8px; ">
+
+
+
+
+            <svg class = 'svg-icon' xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 48 48"><path d="M24 24c4.42 0 8-3.59 8-8 0-4.42-3.58-8-8-8s-8 3.58-8 8c0 4.41 3.58 8 8 8zm0 4c-5.33 0-16 2.67-16 8v4h32v-4c0-5.33-10.67-8-16-8z"/></svg>
+
+
+
+                </i>
+
+                 Your Posts
+
+            </a>
+
+        </li>
+
+
+
+
+
+        <li>    
+            <a  href="{{url_for('post.claim_attempts', page = 1 )}}">
+
+                <i style="font-style: normal;font-size: 25px; margin-right: -3px; line-height: 45px;  ">
+
+
+
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20 6H10v6H8V4h6V0H6v6H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"/></svg>
+
+
+
+                </i>
+
+                 Claim attempts & messages
+
+            </a>
+
+        </li>
+
+
+
+
+
+
+
+        <li>    
+            <a  href="{{url_for('post.my_posts', page = 1, id = current_user.id )}}">
+
+                <i style="font-style: normal;font-size: 25px; margin-right: -3px; line-height: 45px; ">
+
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48"><path d="M46 11v29c0 4.4-3.6 8-8 8H23.4c-2.16 0-4.2-.86-5.7-2.38L2 29.66s2.52-2.46 2.6-2.5c.44-.38.98-.58 1.58-.58.44 0 .84.12 1.2.32.08.02 8.62 4.92 8.62 4.92V8c0-1.66 1.34-3 3-3s3 1.34 3 3v14h2V3c0-1.66 1.34-3 3-3s3 1.34 3 3v19h2V5c0-1.66 1.34-3 3-3s3 1.34 3 3v17h2V11c0-1.66 1.34-3 3-3s3 1.34 3 3z"/></svg>
+
+
+
+                </i>
+
+                 Start Donation Campaign
+
+            </a>
+
+        </li>
+
+
+
+
+
+        
+
+{% if not current_user.paid %}
+    <li>
+        <a style="color: gold;" href="{{url_for('post.post_payment_page')}}">
+
+            <i style="font-style: normal;font-size: 25px; margin-right: -8px;color: gold;">&starf;</i>
+
+        VIP
+
+        </a>
+
+    </li>
+{% endif %}
+
+
+
+
+
+
+
+
+        <li>
+
+          <button id = "lost_item_button" class="nav-btn" page = '1' post_type = 'lost_and_searching'>
+
+
+                <i style="font-style: normal;font-size: 30px; margin-right: -8px;  color: red ;">!</i>
+
+
+            Lost Items
+
+          </button>
+
+        </li>
+
+
+
+
+
+        <li>
+
+          <button id = "found_item_button" class="nav-btn" page = '1' post_type = 'lost_and_found'>
+
+
+
+                <i style="font-style: normal;font-size: 25px; margin-right: -8px; color: #79ff4d;"> &#10004;  </i>
+
+
+            Found Items
+
+          </button>
+
+        </li>
+
+
+
+
+
+
+
+
+
+
+
+    <li>
+        <a href="{{url_for('help.index')}}">
+            <i style="font-style: normal; margin-right: -8px; font-size: 25px;">&#10067;</i>
+
+        Help 
+
+        </a>
+
+    </li>
+
+
+
+
+
+
+
+
+
+
+
+
+    </ul>
+            
+            
+
+    </div>
+
+<!----------- END OF REPORT BUTTON ---------------->
+
+
+
+
+
+
+
+    <div id="headtext">
+        Improving your wellbeing <span class="dots">...</span>
+    </div>
+
+
+
+
+<section class = " svg-loader">
+
+
+<!-- partial:index.partial.html -->
+<svg>
+  <g>
+    <path d="M 50,100 A 1,1 0 0 1 50,0"/>
+  </g>
+  <g>
+    <path d="M 50,75 A 1,1 0 0 0 50,-25"/>
+  </g>
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+
+      <stop offset="0%" style="stop-color: #79ff4d ; stop-opacity:1" />
+      <stop offset="100%" style="stop-color: black; stop-opacity:1" />
+
+    </linearGradient>
+  </defs>
+</svg>
+
+
+
+</section >
+
+
+</div>
+
+
+
+
+
+
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+
+        <ul class=flashes>
+
+        {% for category, message in messages %}
+            <center>
+
+            <li class="{{ category }}">
+                {{ message }}
+            </li>
+
+            </center>
+        {% endfor %}
+
+        </ul>
+        
+    {% endif %}
+{% endwith %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{%if page < 2 %}
+
+
+<div id="myDIV" class = "nav-container" >
+
+  <button id = "normal_button" class="nav-btn active" page = '1' post_type = 'normal'>LATEST</button>
+
+
+  <button id = "followed_button" class="nav-btn"   page = '1' post_type = 'followed' >FOLLOWED</button>
+
+</div>
+
+
+{% endif %}
+
+
+
+
+
+
+
+
+
+     
+
+
+<div id = "encapsulator">
+
+
+
+
+
+
+
+
+
+            {%if page < 2 %}
+
+
+
+
+
+
+                            {% if post_value == 'normal'  %}
+
+                            <div class = "topicsentence">
+
+                      
+                                           
+                                   
+                                           Explore posts by everyone
+                                        
+                                            <br>
+                                            <br>    
+                                    
+                            </div>
+
+
+                            {% elif post_value == 'followed'  %}
+
+
+                            <div class = "topicsentence">
+
+                                         
+                                   
+                                           Posts from those you followed  
+                                        
+                                            <br>
+                                            <br>    
+                                    
+                            </div>
+
+
+
+
+                            {% elif post_value == 'lost_and_searching'  %}
+
+
+                            <div class = "topicsentence">
+
+                                         
+                                   
+                                           Lost items around you 
+                                        
+                                            <br>
+                                            <br>    
+                                    
+                            </div>
+
+
+
+
+                            {% elif post_value == 'lost_and_found'  %}
+
+
+                            <div class = "topicsentence">
+
+                                         
+                                   
+                                           Found items around you 
+                                        
+                                            <br>
+                                            <br>    
+                                    
+                            </div>
+
+
+
+            
+
+                            {% endif %}
+
+
+
+
+                    {% else %}
+
+                                            <br>
+                                            <br>
+                                            <br>
+                    <!-- add space-->
+
+
+            {% endif %}
+
+
+
+
+
+
+
+
+
+
+
+<!--             <p class="users_count">
+
+            <span style='color: #79ff4d; font-size: 17px; font-weight: bold; font-family: "Comic Sans MS", cursive, sans-serif;
+            '> 90 </span> % of all our users visited this page today
+
+            </p>
+ -->
+
+
+
+
+<div id="small_content">
+
+
+            <p class="users_count">
+
+            <span style='color: #79ff4d; font-size: 17px; font-weight: bold; font-family: "Comic Sans MS", cursive, sans-serif;
+            '> {{ posts.total }} </span> 
+
+
+
+                {% if posts.total > 1  %}
+
+                        posts
+
+                {% else %}
+
+                        post
+
+                {% endif %}
+
+
+
+
+              in total
+
+            </p>
+
+
+
+
+
+
+              
+
+
+
+
+
+
+                    
+
+
+
+
+            {% if posts.total >= 1  %}
+
+              
+
+                    {% for post in posts.items %}
+                    <!-- <div class="individual-post"> -->
+                          
+                    <div class="wrap">
+
+                                            
+
+                                                            <a  href="{{url_for('post.post_view_page', post_id = post.id )}}">
+                                    <div class="img"  >
+
+                                                                <h1 class="chk" style="font-size: 17px;  ">view</h1>
+                                                            </a>
+                                                                
+                                                                <i style="
+                                                                position: absolute;
+                                                                z-index: 1;
+                                                                padding:5px;
+                                                                padding-top: 0px;
+                                                                font-size: 20px;
+                                                                font-style: normal;
+                                                                color: #79ff4d;
+                                                                text-shadow: 2px 3px 2px #000000;
+                                                                ">
+
+
+                                                                {% if  post.is_event %}
+
+
+
+
+
+<svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.47755 4.24999C6.38139 4.24988 6.24575 4.24972 6.12575 4.26585C5.97451 4.28618 5.74209 4.34371 5.5429 4.5429C5.34371 4.74209 5.28618 4.97451 5.26585 5.12575C5.24972 5.24575 5.24988 5.38139 5.24999 5.47755L5.25001 19C5.25001 19.4142 5.58579 19.75 6.00001 19.75C6.41422 19.75 6.75001 19.4142 6.75001 19V13.75L16.6168 13.75C16.8761 13.7501 17.1426 13.7502 17.3492 13.7224C17.5084 13.7011 18.0425 13.6183 18.2309 13.081C18.4194 12.5438 18.054 12.1455 17.9431 12.0294C17.7991 11.8786 17.5909 11.7122 17.3884 11.5502L15.4207 9.97609C14.9519 9.60108 14.6655 9.36953 14.4858 9.1779C14.4022 9.08876 14.3688 9.03557 14.3561 9.01007L14.3546 9.00692C14.3532 9.00401 14.3515 9.00001 14.3515 9.00001C14.3524 8.99773 14.3539 8.9944 14.3561 8.98994C14.3688 8.96444 14.4022 8.91126 14.4858 8.82212C14.6655 8.63048 14.9519 8.39893 15.4207 8.02392L17.3884 6.44977C17.5909 6.28785 17.7991 6.12143 17.9431 5.97066C18.054 5.85456 18.4194 5.45626 18.2309 4.919C18.0425 4.38174 17.5084 4.29896 17.3492 4.27759C17.1426 4.24983 16.8761 4.24992 16.6168 4.25L6.47755 4.24999Z" fill="#79ff4d"/>
+</svg>
+
+
+
+
+
+
+</i>
+
+
+                                                                {% elif  post.is_Lost_and_found %}
+
+
+                                                                &#10004;
+
+
+                                                                {% elif  post.is_Lost_and_searching%}
+
+
+                                                                !
+
+                                                                {% else %}
+
+                                                                &#10148;
+                                                                
+
+                                                                {% endif %}
+
+                                                               
+
+
+                                                               {% if post.author.paid  %} 
+
+                                                                </i>
+
+
+
+
+                                                                <i style="
+                                                                position: absolute;
+                                                                z-index: 1;
+                                                                padding-top: 4px;
+                                                                font-size: 23px;
+                                                                font-style: normal;
+                                                                color: #79ff4d;
+                                                                
+                                                               
+                                                                ">
+
+                                                                <br>
+
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="gold" width="24" height="24" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+
+
+                                                                </i>
+
+
+
+                                                                {% else %}
+
+                                                                
+                                                                <!-- render a dummy invisible icon -->
+                                                                </i>
+
+
+
+                                                                {% endif %}
+
+
+
+
+                                                                
+                                                                <img src="{{url_for('static', filename='post_sturf/' + post.image_file )}}" alt="{{post.author.first_name}}" width="300" height="200">
+
+
+
+
+
+                                                                <h1>
+
+                                                                    {% if post.title.__len__() >= 15  %}
+
+                                                                    {{ post.title[0:15].upper() }}...
+
+                                                                    {% else %}
+
+                                                                    {{ post.title.upper()}}
+
+                                                                    {% endif %}
+
+                                                                </h1>
+
+
+
+                                                                <div class="desc">
+
+                                                                    {% if post.content.__len__() >= 20  %}
+
+                                                                    {{ post.content[0:20] }}...
+
+                                                                    {% else %}
+
+                                                                    {{ post.content}}
+
+                                                                    {% endif %}
+
+                                                                </div>
+
+
+
+                                                                <p>
+
+                                                                <span style="color: green; ">by:</span>
+
+
+                                                                {% if post.author == current_user %}
+
+                                                                    you
+
+                                                                    {% else %}
+
+                                                                    {{post.author.first_name}} 
+
+                                                                    {% endif %}
+
+                                                                
+
+                                                                </p>
+                                                                
+                                                                <p>
+
+                                                                <span style="color: green;">on:</span>
+
+                                                                {{post.date_posted.strftime("%a %d %b, %Y")}}
+
+                                                                </p>
+                                    </div>
+                                
+                         
+
+                </div>              
+                    {%endfor%}
+
+
+
+
+            {% elif posts.total == 0  %}
+
+
+
+                <center> we got nothing on this 
+
+
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><path d="M42 20.25H28.43l5.49-5.64c-5.46-5.41-14.3-5.61-19.76-.2-5.46 5.41-5.46 14.17 0 19.58 5.46 5.41 14.3 5.41 19.76 0 2.72-2.7 4.08-5.83 4.07-9.79H42c0 3.96-1.76 9.1-5.28 12.59-7.02 6.95-18.42 6.95-25.44 0s-7.07-18.22-.05-25.17c7.01-6.95 18.29-6.95 25.3 0L42 6v14.25zM25 16v8.5l7 4.16-1.44 2.42L22 26V16h3z"/></svg>
+
+
+
+        </center>
+
+
+
+
+            {% else %}
+
+
+
+                        {% if post_value == "normal"  %}
+
+                        <center>
+                            <i style="
+                            padding:5px;
+                            padding-top: 0px;
+                            font-size: 70px;
+                            font-style: normal;
+                            color: #79ff4d;
+                            text-shadow: 2px 3px  black;
+                            font-weight: bold
+                            ">
+
+
+                            &#9925;
+
+
+
+                            </i>
+
+                            <h1 class="damn">
+                            Damn!....no posts? do something about it, will ya?
+                            </h1>
+
+                        </center>
+
+                        {% elif post_value == "followed" %}
+
+                        <center>
+                            <i style="
+                            padding:5px;
+                            padding-top: 0px;
+                            font-size: 70px;
+                            font-style: normal;
+                            color: #79ff4d;
+                            text-shadow: 2px 3px  black;
+                            font-weight: bold
+                            ">
+
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><path d="M23.99 4C12.94 4 4 12.95 4 24s8.94 20 19.99 20S44 35.05 44 24 35.04 4 23.99 4zM24 40c-8.84 0-16-7.16-16-16S15.16 8 24 8s16 7.16 16 16-7.16 16-16 16zm7-18c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3zm-14 0c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3zm17.21 13c-1.6-4.09-5.55-7-10.21-7s-8.61 2.91-10.21 7"/></svg>
+
+
+                            </i>
+
+                            <h1 class="damn">
+                            Dang it!.....You're not following anyone yet
+                            </h1>
+
+                        </center>
+
+                        {% endif %}
+
+
+
+            {% endif %}
+
+
+
+
+
+
+
+
+                
+                
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- javascript handling the search button -->
+<script type="text/javascript">
+
+$("#inpt_search").on('focus', function () {
+    $(this).parent('label').addClass('active');
+/*     $('header_link').css("color", "black");*/
+});
+
+$("#inpt_search").on('blur', function () {
+    if($(this).val().length == 0)
+        $(this).parent('label').removeClass('active');
+});
+
+</script>
+
+
+
+
+<!-- javascript handling the dropdown menu -->
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+</script>
+
+
+
+
+
+
+
+
+
+<!-- javascript handling the navbar menu -->
+
+<script type="text/javascript">
+
+// Get the container element
+var btnContainer = document.getElementById("myDIV");
+
+// Get all buttons with class="btn" inside the container
+var btns = btnContainer.getElementsByClassName("nav-btn");
+
+// Loop through the buttons and add the active class to the current/clicked button
+for (var i = 0; i < btns.length; i++) {
+
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+
+}
+
+
+
+</script>
+
+
+
+
+
+
+
+
+</html>
+
+
+
+
+	
+

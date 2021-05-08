@@ -1,0 +1,111 @@
+
+
+
+
+
+
+<div class = "topicsentence">
+
+
+
+
+		<center class = "pennyless">
+
+				  
+		<span style="color: black;"> {{requesters.__len__()}}</span> people sent you a request to be your roomates
+
+
+
+				<br>
+				<br>	
+
+
+
+
+		
+
+
+
+
+<div class="bio">
+	<br>
+	<br>
+
+
+		<div class="bio-content">
+			
+				{% for user in requesters %}
+					<div class="wrapper">
+
+						<a  href="{{url_for('roomie.roomie_requests', request_type = 'requesters' )}}">
+
+
+							
+							<p>
+
+
+								<img  class="image"  src="{{url_for('static', filename='profile_pics/uploads/' + user.image_file )}}" alt="{{user.first_name}}" width="35" height="35">
+
+
+
+								{% if  user.paid %}
+
+								  <i class= "icon" style="text-shadow: none; color: gold; position: absolute; margin-top: -18px; margin-left: -18px;"> &star; </i> 
+								
+								{% else %}
+
+ 								<!-- do nothing -->
+								
+								{% endif %}
+
+<span style="float: left;"> {{user.first_name}} </span>
+
+
+
+
+								
+								 
+								 <button class="date" id="request_btn"> Accept </button>
+
+<br>
+								
+
+
+
+								
+							</p>
+
+
+							
+
+
+						</a>
+
+					</div>
+				{% endfor %}
+
+
+
+		</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

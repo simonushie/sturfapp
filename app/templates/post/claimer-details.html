@@ -1,0 +1,453 @@
+{% from '_formhelpers.html' import render_field %}
+
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<title> Verify ownership of this {{post.title}} </title>
+
+	<link href="{{url_for('post.static', filename='claimer-details.css' )}}" rel="stylesheet" type="text/css" />
+
+	<meta name="viewport" content = "width = device-width, initial-scale = 1" charset="utf-8" >
+
+	<script type="text/javascript">
+
+    function back(){
+    	history.back();
+    }
+	
+	</script>
+
+
+
+</head> 
+
+
+
+
+
+<body> 
+
+
+
+<div id = "header">
+
+<label for="check">
+	<button  id="back"  onclick="back()";>&#10094;</button>
+	
+</label>
+
+
+		
+STURF
+
+<div id="headtext">
+	Improving your wellbeing <span class="dots">...</span>
+</div>
+
+
+</div>
+
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+
+        <ul class=flashes>
+
+        {% for category, message in messages %}
+
+            <li class="{{ category }}">
+                {{ message }}
+            </li>
+
+        {% endfor %}
+
+        </ul>
+        
+    {% endif %}
+{% endwith %}
+
+
+
+
+
+
+
+
+
+
+
+
+<div class = "topicsentence">
+		<center style = "color:red;" class = "pennyless">  
+		
+
+            <i style="font-style: normal; margin-right: 0px;">
+
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="34" fill="red" height="34" viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
+
+            </i>
+			warning
+	
+		</center>
+</div>
+
+
+
+<ul class="warninglist">
+	
+<li>
+	
+Before trying to claim an item, please be 100% certain the lost item belonged to you, otherwise you might end up dealing with the police or other law enforcement agencies for false acquisition   
+
+</li>
+
+
+<li>
+	
+	Make your credentials crystal clear, so that the person who found your belonging(s) can easily identify you  
+
+</li>
+
+
+<li>
+	
+	In the event that you decide to meet with this person, make sure it is in broad day light and advisably with a friend in an open space with people around, never meet anyone in a lonely environment
+
+</li>
+
+
+<li>
+	
+	You are grossly advised to report your whereabouts to the authorities or any official that can  help provide a timeline of the happenings preceeding and following said meetup
+
+
+</li>
+
+
+<li>
+	
+Excercise caution every step of the way, safety first
+
+
+</li>
+
+
+
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+
+
+<center>
+<p style="color: #787878; font-size: 18px; margin-bottom: 40px;">
+
+ &#9751; what is already known
+</p>
+</center>
+
+
+
+
+<div class="stored-details">
+
+<label>
+Name  
+</label>
+
+
+<p class="stored-credential">
+{{current_user.first_name}}   {{current_user.last_name}}
+</p>
+
+</div>
+
+
+
+
+{% if current_user.phone %}
+<div class="stored-details">
+
+<label>
+Tel
+</label>
+
+
+
+<p class="stored-credential">
+{{current_user.phone}}
+</p>
+
+
+
+</div>
+{% endif %}
+
+
+
+
+
+
+
+<div class="stored-details">
+
+<label>
+Email
+</label>
+
+<p class="stored-credential">
+{{current_user.email}}
+</p>
+
+
+
+</div>
+
+
+
+<div class="stored-details">
+
+<label>
+You're trying to claim a 
+</label>
+
+<p class="stored-credential">
+{{post.item_category}}
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<center>
+        <div class="container">
+
+                        <form method="POST" enctype="multipart/form-data">
+
+                        	<center>
+							<p style="color: #787878; font-size: 18px; margin-bottom: 40px;">
+
+							 &#9751; what is  needed right now
+
+							</p>
+
+							</center>
+
+
+
+                            <dl>
+                                {{form.csrf_token}}
+                                
+
+
+
+                                	<label > Clear picture of yourself please
+                                	<br>
+
+
+                                	</label>
+
+
+                                <label  style = "margin-top: 40px;"class="choose_file">
+
+
+
+                                    {{ render_field(form.photo) }}
+
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><path d="M6 8V2h4v6h6v4h-6v6H6v-6H0V8h6zm6 12v-6h6V8h14l3.66 4H42c2.2 0 4 1.8 4 4v24c0 2.2-1.8 4-4 4H10c-2.2 0-4-1.8-4-4V20h6zm14 18c5.52 0 10-4.48 10-10s-4.48-10-10-10-10 4.48-10 10 4.48 10 10 10zm-6.4-10c0 3.54 2.86 6.4 6.4 6.4s6.4-2.86 6.4-6.4-2.86-6.4-6.4-6.4-6.4 2.86-6.4 6.4z"/></svg> 
+
+
+
+
+                                </label>
+
+
+
+                                {{ render_field(form.content) }}
+
+
+
+
+                                
+                            </dl>
+
+
+
+                            <p><input type=submit value= "{{val}}"  class="loginbutton"></p>
+                           
+                        </form>
+
+
+                        
+                       
+        </div>           
+</center>
+
+
+
+
+
+
+
+
+
+
+<footer id = 'footer'>
+
+
+
+<div class="footerians">
+	<header><span style="margin-right: 5px; color: #ffffff; font-size: 25px;">☎</span>Get in touch with us</header>
+
+	<ul>
+
+	<li><a href="{{url_for('home.set_avatar', email = current_user.email, img = 'default2.jpg')}}"><div class="case1"></div></a></li>
+	<li><a href="{{url_for('home.set_avatar', email = current_user.email, img = 'default2.jpg')}}"><div class="case2"></div></a></li>
+	<li><a href="{{url_for('home.set_avatar', email = current_user.email, img = 'default2.jpg')}}"><div class="case3"></div></a></li>
+	<li><a href="{{url_for('home.set_avatar', email = current_user.email, img = 'default2.jpg')}}"><div class="case4"></div></a></li>
+
+	</ul>
+	
+
+</div>
+
+
+
+<div class="t_and_t">
+	<ul>
+	<li><a href="{{url_for('home.set_avatar', email = current_user.email, img = 'default2.jpg')}}">Terms and conditions</a></li>
+	<li><a href="{{url_for('home.set_avatar', email = current_user.email, img = 'default2.jpg')}}">what more can we do?</a></li>
+	<li><a href="{{url_for('home.set_avatar', email = current_user.email, img = 'default2.jpg')}}">Ad policy</a></li>
+	<li><a href="{{url_for('home.set_avatar', email = current_user.email, img = 'default2.jpg')}}">Content policy</a></li>
+	</ul>
+</div>
+
+
+	
+
+<div class="links">
+	<ul>
+	<li><a href="{{url_for('home.set_avatar', email = current_user.email, img = 'default2.jpg')}}">Home</a></li>
+	<li><a href="file:///C:/Users/SIMON/Documents/site%20work/site/Electricity.html">Electricity</a></li>
+	<li><a href="{{url_for('home.set_avatar', email = current_user.email, img = 'default2.jpg')}}">History</a></li>
+	<li><a href="{{url_for('home.set_avatar', email = current_user.email, img = 'default2.jpg')}}">About Us</a></li>
+	<li><a href="{{url_for('home.set_avatar', email = current_user.email, img = 'default2.jpg')}}">FAQS</a></li>
+	<li><a href="{{url_for('security.logout')}}">logout</a></li>
+	</ul>
+
+</div>
+
+
+	
+<div class="copyright">
+	Copyright &copy; 2020-2025 STURF
+	All rights reserved.
+	STURF is among the federally registered trademarks of
+    STURF LLC and may not be used by third parties without explicit permission.
+
+
+</div>
+
+
+
+
+
+	
+</footer>
+
+
+
+
+
+</html>

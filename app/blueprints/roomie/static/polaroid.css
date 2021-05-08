@@ -1,0 +1,1647 @@
+#header{
+	min-height:100px;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	background: #FFFFFF;
+	background: linear-gradient(45deg, #FFFFFF 0%, #A0CBA5 0%, #79FF4D 100%);
+	font-size: 50px;
+	letter-spacing: 6px;
+	font-weight: 700;
+	text-decoration: none solid rgb(68, 68, 68);
+	font-style: normal;
+	font-variant: normal;
+	color: #ffffff;
+	font-weight:bold;
+	text-align:center;
+	height:200px; 
+	text-shadow: 8px 7px 3px rgba(43,60,44,0.71);
+	position:relative;
+	border-radius: 15px 0px 15px 0px;
+	box-shadow: 8px -3px 29px 0px #000000;
+
+
+}
+
+#headtext{ 
+font-size: 15px;
+text-shadow: 5px 4px 3px rgba(0,0,0,0.26);
+margin-top: 75px;
+}
+
+
+
+
+.header_link{
+	color: white;
+}
+
+
+
+
+.dots{
+	font-size: 30px;	
+}
+
+
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+
+
+
+
+
+.topicsentence{
+word-spacing: 2px;
+color: #79ff4d;
+text-decoration: none solid rgb(68, 68, 68);
+text-align: center;
+margin-top: 60px;
+text-transform: uppercase;
+font-size: 22px;
+line-height: 42px;
+letter-spacing: 3px;
+font-weight: 200;
+font-family: "Comic Sans MS", cursive, sans-serif;
+text-shadow: 2px 0px 3px rgba(28,110,164,0.48);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-------------------RIGHT-SIDEBAR CSS-------------------*/
+.sidebar{
+	z-index: 2; 
+	position: fixed;
+	top: 3px;
+	right: -250px;
+	width: 250px;
+	height: 100%;
+	background: #ffffff;
+	max-height: 800px;
+	transition: all .4s ease;
+	box-shadow: 4px 5px 8px 5px rgba(0,0,0,0.12);
+
+}
+
+
+.sidebar ul a{
+	font-family: "sda Sans Unicode", "Lucida Grande", sans-serif;
+	font-weight: bold;
+	text-align: center; 
+	border-radius: 22px 0px 0px 22px;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.26);
+	letter-spacing: 1px;
+	display: block;
+	height: 100%;
+	width: 100%;
+	line-height: 10px;
+	font-size: 22px;
+	color: #79ff4d;
+	padding-left: 5px;
+	box-sizing: border-box;
+	transition: .3s;
+	margin-top: 40px;
+
+}
+
+.sidebar ul li:hover a{
+	padding-right: 30px;
+}
+
+
+
+/*this is to fix the issue with message flashes*/
+.sidebar li {
+	list-style: none;
+    border: none;
+    border-radius: none;
+    color: none;
+    background: none;
+    margin-top: 0px;
+    padding: 0px;
+}
+/*end of fix*/
+
+
+
+.sidebar i{
+	margin-right: 5px;
+	text-shadow: none;
+	color: black;
+}
+
+#check{
+	display: none;
+}
+
+label #btn, label #cancel{
+	cursor: pointer;
+	background: transparent;
+}
+
+label #btn{
+	position: fixed;
+	z-index: 2;
+	right: -5px;
+	top: -15px;
+	font-size: 40px;
+	color: #ffffff;
+	border-radius: 50%;
+	padding:6px 12px;
+	transition: all .5s;
+	font-style: normal;
+	background: #79ff4d;
+
+}
+
+label #cancel{
+	position: fixed;
+	z-index: 3;
+	right: -180px;
+	top: 1px;
+	font-size: 25px;
+	color: #79ff4d;
+	padding: 4px 9px;
+	transition: all .5s ease;
+	text-shadow: 3px 3px 3px rgba(0,0,0,0.26);
+}
+
+
+
+
+
+#check:checked ~ .sidebar{
+	right: 0;
+}
+
+
+#check:checked ~ label #btn{
+	right: -250px;
+	opacity: 0;
+	pointer-events: none;
+
+}
+
+#check:checked ~ label #cancel{
+	right: 5px;
+}
+
+/*-------------------END OF RIGHT-SIDEBAR -------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*back button*/
+#check{
+	display: none;
+}
+
+
+
+label #back{
+	position: absolute;
+	left:10px;
+	top: 5px;
+	font-size: 40px;
+	color: #ffffff;
+	background: none;
+	border: none;
+	outline: none;
+	padding:6px 12px;
+	text-shadow: 7px 8.5px 3px rgba(43,60,44,0.71);
+
+
+
+	
+}
+/*end of back button*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*DROP DOWN BUTTON*/
+
+/* Add an active class to the active dropdown button */
+.active {
+    background-color: black;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+
+.dropdown-container-a {
+    display: none;
+    background-color: transparent;
+    border-radius: 0px 0px 14px 14px;
+    border-left: 2px solid #79FF4D;
+    border-bottom: 2px solid #79FF4D;
+    transition: .8s;
+    margin-left: 5px;
+
+    
+}
+
+
+
+.dropdown-container-a.active {
+    background-color: red;    
+}
+
+.dropdown-container-a:hover {
+    padding-right: 0px;
+}
+
+
+
+
+.dropdown-container {
+    display: none;
+    background-color: transparent;
+    padding-right: 0px;
+    font-size: 15px;
+    margin-left: 70px;
+    color: black;
+    padding-left: 30px;
+}
+
+
+
+.dropdown-container > .droplink {
+    margin-top: 1px;
+    padding: 3px 0px 3px 0px;
+    color: black;
+    font-size: 13px;
+    font-family:  sans-serif;
+    font-weight: bold;
+    line-height: 20px;
+    text-align: right;
+    letter-spacing: 2px;
+    margin-right: 20px;
+    border-radius: 20px 0px 0px 20px;
+
+}
+
+
+.dropdown-container > .droplink:hover {
+  padding-right: 2px;
+  background-color: #79ff4d;
+  transition: .5s;
+}
+
+
+
+
+/* Style the sidenav links and the dropdown button */
+.dropdown-btn {
+    outline: none;
+    display: block;
+	height: 100%;
+	width: 100%;
+	line-height: 30px;
+	font-size: 22px;
+	color: #79ff4d;
+	padding-left: 5px;
+	box-sizing: border-box;
+	transition: .3s;
+	margin-top: 10px;
+	background: none;
+	border: none;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	text-align: center;
+	text-shadow: 3px 3px 3px rgba(0,0,0,0.26);
+
+}
+
+
+.dropdown-btn.active {
+color: #79ff4d;
+transition: 1s;
+}
+
+
+
+
+/* On mouse-over */
+.dropdown-btn:hover {
+    padding-right: 30px;
+}
+
+
+
+
+.badge{
+	background: black;
+	padding: 0px 1px 0px 5px;
+	border-radius: 50%;
+	position: absolute;
+	z-index: 5;
+	margin-top: -15px;
+	margin-left: -18px;
+	font-size: 15px;
+}
+
+
+
+
+
+
+
+body{ 
+	background:#f0f0f0;
+	justify-content: center;
+	} 
+
+
+
+.reduce{
+	-moz-transform: scale(0.4);
+-webkit-transform: scale(0.4);
+-o-transform: scale(0.4);
+-ms-transform: scale(0.4);
+transform: scale(0.4);
+margin-top: 90px;
+margin-bottom: 500px;
+
+}
+
+
+
+
+
+
+	.gallery{ 
+		/*float: left;
+*/position:relative; 
+top:100px;  
+
+} 
+
+
+	.gallery li{ 
+		position:absolute; 
+	display:block; 
+	margin:0; 
+	list-style-type:none; 
+	padding:10px 10px 30px 10px; 
+	background:#fff; 
+	border:solid black 1px; 
+	-webkit-box-shadow:2px 2px 4px #333333; 
+	-webkit-transition: 
+	-webkit-transform 0.5s ease; 
+	-moz-box-shadow:2px 2px 4px #333333; 
+	-moz-transition: -moz-transform 0.5s ease; 
+	box-shadow:2px 2px 4px #333333; 
+	transition: transform 0.5s ease; 
+
+border-radius: 0px;} 
+
+
+.gallery h1{ 
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-weight: bold;
+	font-size: 30px;
+	color:  black;
+	margin-left: 5px;
+
+	 } 
+
+
+.gallery p{ 
+	display: none;
+
+	 } 
+
+
+	.gallery li.active{ 
+		-webkit-transform:rotate(0deg) !important; 
+	-moz-transform:rotate(0deg) !important; 
+	transform:rotate(0deg) !important; } 
+
+
+	.gallery img{ 
+		display:block; 
+		width:120px; 
+	-webkit-transition: width 0.75s; 
+	-moz-transition: width 0.75s; 
+	transition: width 0.75s; } 
+
+
+	.gallery .active img{ 
+		display:block; width:640px; }
+
+
+
+	.gallery .active h1{ 
+		font-size: 45px }
+
+
+.gallery .active p{ 
+	margin-top: 30px;
+	display: inline-block;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-weight: bolder;
+	font-size: 26px;
+	color:  black;
+	border: 5px solid #79ff4d;
+	border-radius: 50px;
+	padding: 10px;
+	padding-top: 0px;
+	padding-left: 20px;
+	padding-right: 20px;
+
+	}
+
+
+
+
+
+
+
+.cover{
+margin-bottom: 120px;
+top: -720px;
+
+z-index: 3;
+position: relative; 
+padding: 20px;
+border-right: 2px solid #79ff4d;
+border-bottom: 2px solid #79ff4d;
+border-radius: 0px 0px 60px 0px;
+margin-right: none;
+
+
+
+
+
+} 
+
+
+
+.cover h1{ 
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-weight: bold;
+	font-size: 35px;
+	color:  black;
+	margin-left: 5px;
+	margin-bottom: 30px;
+
+	 } 
+
+
+.cover p{ 
+	margin-top: 30px;
+	display: inline-block;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-weight: bolder;
+	font-size: 27px;
+	color:  black;
+	border: 5px solid #79ff4d;
+	border-radius: 50px;
+	padding: 10px;
+	padding-top: 0px;
+	padding-left: 20px;
+	padding-right: 20px;
+	transition: all .5s ease;
+	outline: none;
+
+	}
+
+
+.cover p:hover{ 
+	background: #79ff4d;
+	color: white;
+	}
+
+
+.cover:hover  .image{ 
+	margin-left: 40px;
+	transition: all ease-out .8s;
+	}
+
+
+.cover:hover  .label1{ 
+	border: 2px solid #79ff4d;
+	}
+
+.image{
+width: 100%;
+height:100%;
+padding-top: 100%;
+border-radius: 1px 150px 150px 150px;
+margin-left: 20px;
+margin-top: 3px;
+max-width: 110%;
+max-height: 110%;
+border: 0.5px solid #79ff4d;
+}
+
+
+
+
+
+.label1{
+	max-width: 400px;
+	position: relative;	
+	min-height: 400px;
+	min-width:  400px;
+	border: 2px solid black;
+	border-radius: 15px 150px 150px 150px;
+	box-shadow: 1px 1px 9px 1px rgba(0,0,0,0.34);
+	background: transparent;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/*pagination links*/
+#pagination{
+	margin-top: 70%;
+	display: flex;
+	justify-content: space-between;
+	max-width: 200px;
+}
+
+
+.pagination_normal{
+color: black;
+font-weight: bold;
+border: 1px solid #79ff4d;
+padding: 5px;
+padding-right: 7px;
+padding-left: 7px;
+margin: 3px;
+border-radius: 6px;
+}
+
+
+.pagination_highlight{
+background: #79ff4d; 
+color: black;
+font-weight: bold;
+border: 1px solid #79ff4d;
+padding: 5px;
+padding-right: 7px;
+padding-left: 7px;
+margin: 3px;
+border-radius: 6px;
+}
+
+#pagination a:hover{
+background: #79ff4d;
+}
+
+/*end*/
+
+
+
+
+
+
+.uplink{
+	outline: none;
+	position: sticky;
+	float: right;
+	border-radius: 150px 15px 150px 150px ;
+	padding: 5px;
+	z-index: 3;
+	color: black;
+	font-weight: bolder;
+	font-size: 30px;
+	top: 80%;
+	border: 1px solid #79ff4d;
+	transition: all  .25s ease-out;
+	background: white;
+}
+
+
+.uplink i{
+font-style: normal;
+position: relative;
+
+}
+
+
+.uplink:hover {
+	background: #79ff4d;
+	color: white;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.downlink{
+	outline: none;
+	position: sticky;
+	float: right;
+	border-radius: 15px 150px 150px 150px ;
+	padding: 5px;
+	z-index: 3;
+	color: black;
+	font-weight: bolder;
+	font-size: 30px;
+	top: 80%;
+	border: 1px solid #79ff4d;
+	transition: all  .25s ease-out;
+	margin-right: 3px;
+	background: white;
+}
+
+
+.downlink i{
+font-style: normal;
+position: relative;
+
+}
+
+
+.downlink:hover {
+	background: #79ff4d;
+	color: white;
+
+}
+
+
+
+
+
+
+
+
+/*message flashes*/
+li{
+	margin-top: 16px;
+    list-style: none;
+    border: 2px solid black;
+    border-radius: 25px;
+    color: white;
+    background: black;
+    margin-top: 6px;
+    padding: 5px;
+}
+
+li.info{
+  /* padding: 10px;*/
+   width: 92%;
+   text-align: center;
+   font-weight: bold;
+  }
+
+li.info:marker{
+    display: none;
+}
+
+
+
+li.success{
+
+   color: black;
+   width: 92%;
+   text-align: center;
+   font-weight: bold;
+   background: #79ff4d;
+    border: 2px solid #79ff4d;
+  }
+
+li.success:marker{
+    display: none;
+}
+
+
+li.error{
+   color: black;
+   width: 92%;
+   text-align: center;
+   font-weight: bold;
+   background: red;
+   border: 2px solid red;
+  }
+
+li.error:marker{
+    display: none;
+}
+
+
+ul.flashes{
+	 font-family: "Comic Sans MS", cursive, sans-serif;
+	 font-size: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*footer section*/
+
+
+
+
+
+
+
+#footer{
+	max-height:300px;
+	min-height:300px;
+	font-family: cursive, sans-serif;
+	background: #FFFFFF;
+	background: linear-gradient(45deg, #FFFFFF 0%, #A0CBA5 0%, #79FF4D 100%);
+	text-decoration: none solid rgb(68, 68, 68);
+	font-style: normal;
+	font-variant: normal;
+	color: #000000;
+	position:relative;
+	border-radius: 15px 0px 15px 0px;
+	box-shadow: 8px -3px 29px 0px #000000;
+	margin-top: 200px;
+
+}
+
+
+
+.footerians{
+	display: inline-grid;
+	position: relative;
+	width: 60px;
+	height: 250px;
+	background: #79ff4d;
+	max-height: 200px;
+	min-height: 200px;
+	transition: all .4s ease;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-weight: bold;
+	text-align:left; 
+	border-radius: 0px 0px 22px 0px;
+}
+
+
+
+.footerians header{
+	width: 250px;
+	height: 70px;
+	font-size: 17px;
+	color: #000000;
+	text-align: left;
+	line-height: 70px;
+	background: none;
+	user-select: none;
+	transition: all .6s ease;
+	border-radius: 0px 50px 50px 0px;
+	text-shadow: 2px 4px 5px rgba(0,0,0,0.7);
+}
+
+.footerians ul a{
+	margin-top: 10px;
+	display: block;
+	height: 100%;
+	width: 10px;
+	line-height: 50px;
+	font-size: 24px;
+	color: #79ff4d;
+	padding-left: 20px;
+	box-sizing: border-box;
+	transition: .3s;
+}
+
+.footerians ul li:hover a{
+	padding-left: 70px;
+}
+
+.footerians ul a {
+	margin-right: 0px;
+}
+
+/*this is to fix the issue with message flashes*/
+.footerians li {
+	list-style: none;
+    border: none;
+    border-radius: none;
+    color: none;
+    background: none;
+    margin-top: 0px;
+    padding: 0px;
+}
+/*end of fix*/
+
+.footerians ul {
+width: 20px;
+}
+
+
+.img{
+	margin-right: 10px
+}
+
+.case1,.case2,.case3,.case4{
+	border-radius: 50%;
+	box-shadow: 6px 5px 7px 0px rgba(0,0,0,0.7);
+	vertical-align: center;
+	background-size: contain;
+	max-height: 25px;
+	min-height: 25px;
+	max-width: 25px;
+	min-width: 25px;
+	width: 25px;
+	height: 25px;
+	padding-top: 1%;
+	border-radius: 50%;
+	border: 3px solid #FFFFFF;
+
+}
+
+.case1{
+	background: url('facebook.png') no-repeat center;
+}
+
+.case2{
+	background: url('twitter.png') no-repeat center;
+}
+
+.case3{
+	background: url('linkedin.png') no-repeat center;
+}
+
+.case4{
+	background: url('instagram.png') no-repeat center;
+}
+
+
+
+.linkr{
+color: #ffffff;
+font-weight: bold;
+text-shadow: 2px 4px 5px rgba(0,0,0,0.7);
+}
+
+
+.linkr2{
+color: #000000;
+font-weight: bold;
+text-shadow: 2px 4px 5px rgba(0,0,0,0.7);
+}
+
+
+
+#links {
+	position: relative;
+	display: inline-flex;
+	margin-left: 30%;
+}
+
+#links ul a{
+	margin-top: 0px;
+	display: block;
+	height: 100%;
+	width: 100%;
+	line-height: 25px;
+	font-size: 14px;
+	color: #ffffff;
+	transition: .3s;
+	text-shadow: 2px 4px 5px rgba(0,0,0,0.7);
+}
+
+.copyright{
+	position: relative;
+	display: inline-table;
+	max-width: 500px;
+	float: right;
+	font-size: 10px; 
+	margin-top:20px; 
+}
+
+.t_and_t{
+	position: relative;
+	display: inline-flex;
+	margin-left: 20%;
+	font-size: 14px;
+	transition: .3s;
+	text-shadow: 2px 4px 5px rgba(0,0,0,0.7);
+	line-height: 40px;
+	margin-bottom: 25px;
+}
+
+.t_and_t ul a{
+color: #ffffff;
+	
+}
+
+/*end of footer section*/
+
+
+
+/**solve the li trouble with message flashes*/*/
+.footerians li {
+	list-style: none;
+    border: none;
+    border-radius: none;
+    color: none;
+    background: none;
+    margin-top: 0px;
+    padding: 0px;
+}
+
+
+.t_and_t li, a{
+	list-style: none;
+    border: none;
+    border-radius: none;
+    color: none;
+    background: none;
+    margin-top: 0px;
+    padding: 0px;
+}
+
+#links li, a{
+	list-style: none;
+    border: none;
+    border-radius: none;
+    color: none;
+    background: none;
+    margin-top: 0px;
+    padding: 0px;
+}
+
+/*end of fix*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+.img{
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------*/
+/*-------------------------------ALL HEADERS ONLY------------------------------*/
+/*-----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------
+--------------------MEDIA SCREEN 600--------------------
+--------------------------------------------------------*/
+
+
+/*---------------HEADER-------------*/
+@media screen and (max-width: 600px){
+#header{
+	min-height: 50px;
+	height: 50px;
+	border-radius: 0px;
+	font-size: 25px;
+}
+
+#headtext{
+	display: none;
+}
+
+}
+/*----------------------------------*/
+
+/*------------------------------------------------------
+--------------------END OF MEDIA SCREEN 600-------------
+--------------------------------------------------------*/
+
+
+/*-----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------*/
+/*-----------------------------END OF ALL HEADERS------------------------------*/
+/*-----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------*/
+/*-------------------------------ALL FOOTERS ONLY------------------------------*/
+/*-----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------*/
+
+
+
+
+/*-------------------------------------------------------
+--------------------MEDIA SCREEN FOOTER 800--------------
+--------------------------------------------------------*/
+
+
+@media screen and (max-width: 800px){
+.footerians header{
+	font-size: 12px;
+	color: #000000;
+}
+
+#links {
+	margin-left: 20%;
+}
+
+
+/*------------------------------------------------------
+--------------------END OF MEDIA SCREEN 800-------------
+--------------------------------------------------------*/
+
+
+/*-------------------------------------------------------
+--------------------MEDIA SCREEN FOOTER 600--------------
+--------------------------------------------------------*/
+
+/*--------------FOOTER-------------*/
+@media screen and (max-width: 600px){
+
+.footerians header{
+	font-size: 12px;
+}
+
+.copyright{
+	max-width: 250px;
+}
+
+#footer{
+	min-height: 500px;
+}
+
+#links {
+	margin-left: 60%;
+}
+
+.t_and_t{
+	margin-left: 40%;
+}
+
+}
+
+/*------------------------------------------------------
+--------------------END OF MEDIA SCREEN 600--------------------
+--------------------------------------------------------*/
+
+
+
+
+
+
+
+
+/*------------------------------------------------------
+--------------------MEDIA SCREEN FOOTER 346--------------------
+--------------------------------------------------------*/
+
+/*--------------FOOTER-------------*/
+@media screen and (max-width: 346px){
+.t_and_t{
+	margin-left: 22%;
+}
+
+.footerians header{
+	font-size: 10px;
+}
+}
+/*----------------------------------*/
+
+/*------------------------------------------------------
+--------------------END OF MEDIA SCREEN 346---------------
+--------------------------------------------------------*/
+
+
+
+
+/*------------------------------------------------------
+--------------------MEDIA SCREEN FOOTER 320--------------------
+--------------------------------------------------------*/
+
+/*--------------FOOTER-------------*/
+@media screen and (max-width: 320px){
+.footerians header{
+	font-size: 10px;
+}
+
+.copyright{
+	max-width: 150px;
+}
+
+#footer{
+	min-height: 600px;
+}
+
+
+.t_and_t{
+	margin-left: 23%;
+}
+
+}
+/*----------------------------------*/
+
+/*------------------------------------------------------
+--------------------END OF MEDIA SCREEN 320--------------
+--------------------------------------------------------*/
+
+
+
+/*------------------------------------------------------
+--------------------MEDIA SCREEN FOOTER 240--------------------
+--------------------------------------------------------*/
+
+/*--------------FOOTER-------------*/
+@media screen and (max-width: 240px){
+.t_and_t{
+	margin-left: 30%;
+}
+}
+/*----------------------------------*/
+
+
+/*------------------------------------------------------
+--------------------END OF MEDIA SCREEN 240--------------
+--------------------------------------------------------*/
+
+
+/*-----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------*/
+/*-----------------------------END OF ALL FOOTERS------------------------------*/
+/*-----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------*/
+/*-------------------------------ALL OTHERS------------------------------*/
+/*-----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+/*------------------------------------------------------
+--------------------MEDIA SCREEN GRID 900--------
+--------------------------------------------------------*/
+
+/*---------------BACK BUTTON-------------*/
+@media screen and (max-width: 900px){
+.img {
+
+    float: none;
+   
+}	
+}
+/*----------------------------------*/
+
+
+/*------------------------------------------------------
+--------------------END OF MEDIA SCREEN 900-------------
+--------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------------------------
+--------------------MEDIA SCREEN BACK BUTTON 600--------
+--------------------------------------------------------*/
+
+/*---------------BACK BUTTON-------------*/
+@media screen and (max-width: 600px){
+label #back{
+	left:10px;
+	top: -16px;
+	font-size: 40px;
+}
+
+
+label #btn{
+	right: -2px;
+	font-size: 35px;
+}
+
+
+#headtext{
+	display: none;
+}
+
+.reduce{
+-moz-transform: scale(0.35);
+-webkit-transform: scale(0.35);
+-o-transform: scale(0.35);
+-ms-transform: scale(0.35);
+transform: scale(0.35);
+margin-right: 90%;
+
+}
+
+
+
+
+
+.cover{
+padding-right: auto;
+margin-left: auto;
+border-right: none;
+border-bottom: none;
+
+}
+
+
+
+
+.cover h1{ 
+font-size: 40px;
+margin-top: 20px;
+} 
+
+
+.cover p{ 	
+width: 130px;
+text-align: center;
+margin-top: 10px;
+}
+
+
+
+
+
+
+}
+/*----------------------------------*/
+
+
+/*------------------------------------------------------
+--------------------END OF MEDIA SCREEN 600-------------
+--------------------------------------------------------*/
+
+
+
+
+
+/*------------------------------------------------------
+--------------------MEDIA SCREEN 389-------
+--------------------------------------------------------*/
+
+/*---------------POLAROID-------------*/
+@media screen and (max-width: 389px){
+	.gallery .active img{ 
+	
+		width: 440px; }
+}
+
+
+
+.gallery li{ 
+ 
+	transition: transform 0.2s ease-out; 
+
+} 
+/*----------------------------------*/
+
+
+/*------------------------------------------------------
+--------------------END OF MEDIA  389-------------
+--------------------------------------------------------*/
+
+
+
+
+
+
+
+/*------------------------------------------------------
+--------------------MEDIA SCREEN 320-------
+--------------------------------------------------------*/
+
+/*---------------POLAROID-------------*/
+@media screen and (max-width: 320px){
+	.gallery .active img{ 
+		width: 290px;
+	 }
+
+
+}
+/*----------------------------------*/
+
+
+/*------------------------------------------------------
+--------------------END OF MEDIA  320-------------
+--------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+/*-----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------*/
+/*-----------------------------END OF ALL OTHERS------------------------------*/
+/*-----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+@viewport{
+	zoom:1.0;
+	width:extend-to-zoom;
+}
+
+@-ms-viewport{
+	width:extend-to-zoom;
+	zoom:1.0;
+}

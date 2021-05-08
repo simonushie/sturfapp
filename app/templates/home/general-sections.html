@@ -1,0 +1,663 @@
+
+
+
+<div id = "advertisement">
+		<center> AD</center>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1 class="penny" >WHERE TO?</h1>
+
+
+
+
+
+
+<div class="list-container">
+
+			<a href = '#light1'>
+			<div class="list">
+
+			I want to check for electricity
+
+			<main class = "label">
+
+						<div class = "light" /></div>
+			</main>
+
+			</div>
+		</a>
+
+
+			<a href = '#light2'>
+			<div class="list">
+
+			I want to buy or sell something 
+
+			<main class = "label">
+
+						<div class = "light2" /></div>
+			</main>
+
+			</div>
+		</a>
+
+
+		<a href = '#light3'>
+			<div class="list">
+
+			I need to buy airtime(VTU),
+			<br> 
+			pay other bills
+
+			<main class = "label">
+
+						<div class = "light3" /></div>
+			</main>
+
+			</div>
+		</a>
+
+
+
+		<a href = '#light4'>
+			<div class="list">
+
+			I want to post something for
+			<br>
+			the entire campus to see
+
+			<main class = "label">
+
+						<div class = "light4" /></div>
+			</main>
+
+			</div>
+		</a>
+
+
+
+
+
+			<a href = '#light6'>
+			<div class="list">
+
+			I need a roomate
+
+			<main class = "label">
+
+						<div class = "light6" /></div>
+			</main>
+
+			</div>
+		</a>
+
+
+
+		<a href = '#light5'>
+			<div class="list">
+
+			I'm looking for an 
+			<br>
+			apartment to rent
+
+			<main class = "label">
+
+						<div class = "light5" /></div>
+			</main>
+
+			</div>
+		</a>
+
+
+
+	
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="reduce">
+
+
+
+
+	
+
+	<!-- ..............................section 1............................ -->
+
+	<center>
+
+	<div class="tryme">
+
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span> 
+		
+
+
+
+
+
+
+
+
+		<main class = "label1">
+			<div id = "light1" /></div>
+		</main>
+
+
+
+
+		<div id = "textarea">
+			<header class="headtext">LIGHT STURF</header>
+			<p class="text">Are you on campus wondering if electricity<br> is offcampus?...and vice versa?...</p>
+
+
+
+
+		<center > 
+		<div id = "buttonscontainer">
+
+			<div>
+
+				
+					<div class = "login">
+
+								{% if current_user.is_anonymous %}
+
+
+									<a class = "loginbutton" href="{{url_for('security.login')}}">
+										<center>LOGIN</center>
+									</a>
+
+
+								{% elif current_user.is_authenticated %}
+
+
+												
+											{% if current_user.login_count >= 10 %}
+												
+												<a class = "loginbutton" href="{{url_for('electricity.where')}}">
+													<center>GO!</center>
+												</a>
+
+												{% else %}
+
+												<a class = "loginbutton" href="{{url_for('home.light')}}">
+													<center>GO!</center>
+												</a>
+
+												{% endif %}
+
+
+								{% endif %}
+						
+				
+					</div>
+				
+
+			</div>
+		</div>
+		</center>
+
+	</div>
+
+	</center>
+
+
+
+
+
+
+
+
+
+	<!-- ..............................section 2............................ -->
+	<center>
+
+		<div class="tryme">
+
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span> 
+
+
+
+
+			<div class = "section">
+
+
+
+
+				<main class = "label1">
+					<div id = "light2" /></div>
+				</main>
+
+
+
+
+				<div id = "textarea">
+					<header class="headtext">COMMERCE STURF</header>
+					<p class="text">Buy and Sell items with great ease...</p>
+
+						<center > 
+
+						<div id = "buttonscontainer">
+
+							<center>
+								<div class = "login">
+
+									{% if current_user.is_anonymous %}
+
+
+									<a class = "loginbutton" href="{{url_for('security.login')}}">
+										<center>LOGIN</center>
+									</a>
+
+
+
+									{% elif current_user.is_authenticated %}
+
+
+												{% if current_user.login_count >= 10 %}
+
+													{% if current_user.is_student  %}
+													
+													<a class = "loginbutton" href="{{url_for('buy.ads', page = 1, sort = 'normal' )}}">
+														<center>GO!</center>
+													</a>
+
+													{% else %}
+
+
+													<a class = "loginbutton" href="{{url_for('buy.buy_user_details' )}}">
+														<center>GO!</center>
+													</a>
+
+
+
+													{% endif %}
+
+
+												{% else %}
+
+												<a class = "loginbutton" href="{{url_for('home.buy')}}">
+													<center>GO!</center>
+												</a>
+
+												{% endif %}
+
+									{% endif %}
+
+								</div>
+							</center>	
+
+						</div>	
+							
+				</div>
+
+
+			</div>
+
+
+		</div>
+
+	</center>	
+
+
+
+
+
+	<!-- ..............................section 3............................ -->
+	<center>
+
+		<div class="tryme">
+
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span> 
+
+
+			<div class = "section">
+
+
+
+
+				<main class = "label1">
+					<div id = "light3" /></div>
+				</main>
+
+
+
+
+				<div id = "textarea">
+					<header class="headtext">RECHARGE & BILLS</header>
+					<p class="text">Recharge your phone, Pay other bills,from wherever you are in record time!
+					 </p>
+
+						<center > 
+
+							<div id = "buttonscontainer">
+
+								
+								<center>
+									<div class = "login">
+
+
+									{% if current_user.is_anonymous %}
+
+
+									<a class = "loginbutton" href="{{url_for('security.login')}}">
+										<center>LOGIN</center>
+									</a>
+
+
+									{% elif current_user.is_authenticated %}
+
+
+												{% if current_user.login_count >= 10 %}
+												
+													<a class = "loginbutton" href="{{url_for('home.recharge')}}">
+														<center>GO!</center>
+													</a>
+
+												{% else %}
+
+													<a class = "loginbutton" href="{{url_for('home.recharge')}}">
+														<center>GO!</center>
+													</a>
+
+												{% endif %}
+
+									{% endif %}
+
+
+									</div>
+
+								</center>	
+
+							</div>
+
+						</center>
+				</div>
+
+
+
+
+
+			</div>
+
+
+		</div>
+	</center>
+
+
+
+
+	<!-- ..............................section 4............................ -->
+	<center>
+
+			<div class="tryme">
+
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span> 
+
+
+				<div class = "section">
+
+
+
+
+					<main class = "label1">
+						<div id = "light4" /></div>
+					</main>
+
+
+
+
+					<div id = "textarea">
+						<header class="headtext">POST STURF</header>
+						<p class="text">You are just clicks away from posting anything for 
+						hundreds of daily views! both on and off campus</p>
+
+						<center > 
+
+							<div id = "buttonscontainer">
+								
+								<center>
+									<div class = "login">
+
+
+									{% if current_user.is_anonymous %}
+
+
+									<a class = "loginbutton" href="{{url_for('security.login')}}">
+										<center>LOGIN</center>
+									</a>
+
+
+									{% elif current_user.is_authenticated %}
+
+
+												{% if current_user.login_count >= 10 %}
+												
+													<a class = "loginbutton" href="{{url_for('post.post', page = 1, post_type = 'normal')}}">
+														<center>GO!</center>
+													</a>
+
+												{% else %}
+
+													<a class = "loginbutton" href="{{url_for('home.post_sturf')}}">
+														<center>GO!</center>
+													</a>
+
+												{% endif %}
+
+									{% endif %}
+										
+
+												
+									</div>
+								</center>
+
+							</div>
+						</center>
+
+				</div>
+
+
+			</div>
+	</center>
+
+
+
+
+
+	<!-- ..............................section 6............................ -->
+	<center>
+
+		<div class="tryme">
+
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span> 
+
+
+				<div class = "section">
+
+					<main class = "label1">
+						<div id = "light6" /></div>
+					</main>
+
+
+
+
+					<div id = "textarea">
+						<header class="headtext">ROOMIE STURF</header>
+						<p class="text">...or maybe you just want to find a compatible roomate ASAP, we got you covered too...</p>
+
+						<center > 
+
+							<div id = "buttonscontainer">
+
+								<center>
+									<div class = "login">
+
+
+
+
+									{% if current_user.is_anonymous %}
+
+
+
+									<a class = "loginbutton" href="{{url_for('security.login')}}">
+										<center>LOGIN</center>
+									</a>
+
+
+									{% elif current_user.is_authenticated %}
+
+
+												{% if current_user.seeks_roomate %}
+												
+													<a class = "loginbutton" href="{{url_for('roomie.find_a_roomie', page = 1, sort = 'normal')}}">
+														<center>GO!</center>
+													</a>
+
+												{% else %}
+
+													<a class = "loginbutton" href="{{url_for('home.roomie')}}">
+														<center>GO!</center>
+													</a>
+
+												{% endif %}
+
+									{% endif %}
+
+
+
+
+										
+
+												
+									</div>
+								</center>
+
+							</div>
+
+						</center>
+
+
+				</div>
+
+
+		</div>
+	</center>
+
+
+
+	<!-- ..............................section 5............................ -->
+	<center>
+		<div class="tryme">
+
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span> 
+
+
+			<div class = "section">
+
+				<main class = "label1">
+					<div id = "light5" /></div>
+				</main>
+
+
+				<div id = "textarea">
+					<header class="headtext">RENT STURF</header>
+					<p class="text">Are you having trouble finding a suitable apartment to rent?<br>
+					you can start here!...</p>
+
+					<center > 
+
+						<div id = "buttonscontainer">
+						
+								<center>
+									<div class = "login">
+
+										{% if current_user.is_anonymous %}
+
+
+
+
+									<a class = "loginbutton" href="{{url_for('security.login')}}">
+										<center>LOGIN</center>
+									</a>	
+
+
+										{% elif current_user.is_authenticated %}
+
+													{% if current_user.login_count >= 10 %}
+												
+													<a class = "loginbutton" href="{{url_for('rent.index')}}">
+														<center>GO!</center>
+													</a>
+
+													{% else %}
+
+													<a class = "loginbutton" href="{{url_for('home.rent')}}">
+														<center>GO!</center>
+													</a>
+
+													{% endif %}
+
+
+										{% endif %}
+
+
+
+
+									</div>
+								</center>		
+
+						</div>
+					</center>
+
+				</div>
+
+			</div>
+		</div>
+
+	</center>

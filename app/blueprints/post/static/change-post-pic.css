@@ -1,0 +1,1039 @@
+#header{
+  font-family: "Comic Sans MS", "chalkboard", sans-serif;
+  background: linear-gradient(45deg, #FFFFFF 0%, #A0CBA5 0%, #79FF4D 100%);
+  letter-spacing: 6px;
+  color: #ffffff;
+  font-weight:bold;
+  text-align:center;
+  text-shadow: 8px 7px 3px rgba(43,60,44,0.71);
+  position:relative;
+  box-shadow: 8px -3px 29px 0px #000000;
+  min-height: 50px;
+  height: 50px;
+  border-radius: 0px;
+  font-size: 25px;
+}
+
+
+
+
+.header_link{
+	color: white;
+}
+
+#headtext{ 
+font-size: 15px;
+text-shadow: 5px 4px 3px rgba(0,0,0,0.26);
+margin-top: 75px;
+}
+
+.dots{
+	font-size: 30px;	
+}
+
+
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+
+
+#check{
+	display: none;
+}
+
+
+
+label #btn{
+	position: absolute;
+	cursor: pointer;
+	background: transparent;
+	left:10px;
+	top: 5px;
+	font-size: 40px;
+	color: #ffffff;
+	border-radius: 50%;
+	padding:6px 12px;
+	transition: all .5s;
+	text-shadow: -7px -8.5px 3px rgba(43,60,44,0.71);
+	-webkit-transform:rotate(180deg);
+	transform:rotate(180deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-------------------RIGHT-SIDEBAR CSS-------------------*/
+.sidebar{
+	z-index: 1; 
+	position: fixed;
+	top: 3px;
+	right: -250px;
+	width: 250px;
+	height: 100%;
+	background: #ffffff;
+	max-height: 250px;
+	min-height: 800px;
+	transition: all .4s ease;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-weight: bold;
+	text-align:center; 
+	border-radius: 22px 0px 0px 22px;
+	text-shadow: 3px 3px 3px rgba(0,0,0,0.26);
+	box-shadow: 4px 5px 8px 5px rgba(0,0,0,0.12);
+
+}
+
+
+.sidebar ul a{
+	display: block;
+	height: 100%;
+	width: 100%;
+	line-height: 65px;
+	font-size: 22px;
+	color: #79ff4d;
+	padding-left: 5px;
+	box-sizing: border-box;
+	transition: .3s;
+
+}
+
+.sidebar ul li{
+	background: none;
+	border: none;
+	
+}
+
+.sidebar ul li:hover a{
+	padding-right: 30px;
+
+}
+
+.sidebar i{
+	margin-right: 5px;
+	text-shadow: none;
+	color: black;
+}
+
+#check{
+	display: none;
+}
+
+label #btn, label #cancel{
+	cursor: pointer;
+	background: transparent;
+}
+
+label #btn{
+	position: fixed;
+	z-index: 2;
+	right: 5px;
+	top: -15px;
+	font-size: 40px;
+	color: #ffffff;
+	border-radius: 50%;
+	padding:6px 12px;
+	transition: all .5s;
+	font-style: normal;
+	background: #79ff4d;
+}
+
+label #cancel{
+	position: fixed;
+	z-index: 3;
+	right: -180px;
+	top: 1px;
+	font-size: 25px;
+	color: #79ff4d;
+	padding: 4px 9px;
+	transition: all .5s ease;
+	text-shadow: 3px 3px 3px rgba(0,0,0,0.26);
+}
+
+
+
+
+
+#check:checked ~ .sidebar{
+	right: 0;
+}
+
+
+#check:checked ~ label #btn{
+	right: -250px;
+	opacity: 0;
+	pointer-events: none;
+
+}
+
+#check:checked ~ label #cancel{
+	right: 5px;
+}
+
+/*-------------------END OF RIGHT-SIDEBAR -------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+/*back button*/
+#check{
+	display: none;
+}
+
+
+
+label #back{
+	position: absolute;
+	left:10px;
+	top: 5px;
+	font-size: 40px;
+	color: #ffffff;
+	background: none;
+	border: none;
+	outline: none;
+	padding:6px 12px;
+	text-shadow: 7px 8.5px 3px rgba(43,60,44,0.71);
+
+
+
+	
+}
+/*end of back button*/
+
+
+
+
+
+
+
+/*this fix snippet will reduce the header size*/
+
+
+#headtext{
+  display: none;
+}
+
+
+label #back{
+  left:10px;
+  top: -12px;
+  font-size: 35px;
+}
+
+
+label #btn{
+  right: -2px;
+  font-size: 35px;
+}
+
+
+
+/*end of fix*/
+
+
+
+
+
+
+
+
+.topicsentence{
+font-size: 32px;
+letter-spacing: 2px;
+word-spacing: 2px;
+color: #79ff4d;
+font-weight: 700;
+text-decoration: none solid rgb(68, 68, 68);
+text-align: center;
+}
+
+
+
+
+.pennyless{
+  margin-top: 100px;
+  margin-bottom: 0px;
+  text-transform: uppercase;
+  font-size: 25px;
+  line-height: 42px;
+  letter-spacing: 3px;
+  font-weight: 200;
+  text-align: center;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  text-shadow: 2px 0px 3px rgba(28,110,164,0.48);
+  color: #79ff4d;
+}
+
+
+
+
+
+
+
+input#photo
+{
+outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.container{
+	min-width:80%;
+	max-width: 80%; 
+	justify-content: center;
+	margin-bottom: 300px;
+}
+
+
+
+.upload-form{
+	display: block;
+	justify-content: space-between;
+}
+
+
+
+
+
+
+.all_done{
+	display: inline-flex;
+	margin-top: 30px;
+	margin-left: 10px;
+	box-sizing: border-box;
+	color: #79ff4d;
+	font-size: 18px;
+	line-height: 20px; 
+	padding: 8px;
+	border-radius: 50px;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-weight: bolder;
+	box-shadow: 5px 5px 14px 0px rgba(0,0,0,0.51);
+	border: 2px solid #79ff4d;
+	background: #FFFFFF;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*section1 of the homepage*/
+
+/*profile*/
+
+main {
+	overflow: hidden;
+}
+
+
+main a:visited{
+	color: white;
+}
+
+main a:hover i{
+	color: white;
+}
+
+.icon{
+	background: #79ff4d;
+	z-index: 1;
+	float: left;
+	position: absolute;
+	font-size: 50px;
+	padding: 40px 20px 40px 40px;
+	font-style: normal;
+	color: black;
+	top: -58px;
+	left: -35px;
+	border-radius: 50%;
+
+
+
+
+
+	-moz-transform: rotate(45deg);
+-webkit-transform: rotate(45deg);
+-o-transform: rotate(45deg);
+-ms-transform: rotate(45deg);
+transform: rotate(45deg);
+}
+
+
+
+
+
+
+
+
+.label1{
+	border: .5px solid #79ff4d;
+	border-radius: 15px 15px 15px 15px;
+	max-width: 500px;
+	position: relative;	
+	min-height: 200px;
+	min-width:  500px;
+	margin: 150px auto  10px auto;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+::-webkit-file-upload-button {
+  background: white ;
+  color: black;
+  font-weight: bolder;
+  padding: 10px 15px 10px 15px ;
+  border: 1px solid #79ff4d;
+  border-radius: 50px;
+  outline: none;
+  transition: all 500ms ease;
+
+}
+
+
+
+/*for the file upload field*/
+::-webkit-file-upload-button:hover {
+  cursor: pointer;
+  background: #79ff4d;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*message flashes*/
+li{
+	margin-top: 16px;
+    list-style: none;
+    border: 2px solid black;
+    border-radius: 25px;
+    color: white;
+    background: black;
+    margin-top: 6px;
+    padding: 5px;
+}
+
+li.info{
+  /* padding: 10px;*/
+   width: 92%;
+   text-align: center;
+   font-weight: bold;
+  }
+
+li.info:marker{
+    display: none;
+}
+
+
+
+li.success{
+
+   color: black;
+   width: 100%;
+   text-align: center;
+   font-weight: bold;
+   background: #79ff4d;
+    border: 2px solid #79ff4d;
+    max-width: 90%;
+  }
+
+li.success:marker{
+    display: none;
+}
+
+
+li.error{
+   color: black;
+   width: 100%;
+   text-align: center;
+   font-weight: bold;
+   background: red;
+   border: 2px solid red;
+   max-width: 90%;
+  }
+
+li.error:marker{
+    display: none;
+}
+
+
+ul.flashes{
+	 font-family: "Comic Sans MS", cursive, sans-serif;
+	 font-size: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.topicsentence,#advertisement,.textarea,#feedback_container,.bottomsentence,.contact-content{
+	margin-left: 10%;
+	margin-right: 10%;
+
+}
+
+
+
+
+
+
+
+
+
+/*-----------------------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------MEDIA QUERIES--------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------------------------
+--------------------MEDIA SCREEN 668--------------------
+--------------------------------------------------------*/
+
+/*---------------OTHERS-------------*/
+@media screen and (max-width: 668px){
+label #btn{
+	left:10px;
+	top: 5px;
+	font-size: 40px;
+}
+
+.light{
+	max-width: 350px;
+	max-height: 350px;
+}
+
+.label1{
+	max-width: 350px;
+	min-height: 350px;
+	min-width:  350px;
+}
+
+.text_container{
+	padding-left: 180px;
+}
+
+
+
+}
+/*----------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------------------------
+--------------------MEDIA SCREEN 600--------------------
+--------------------------------------------------------*/
+
+
+/*---------------HEADER-------------*/
+@media screen and (max-width: 600px){
+#header{
+	min-height: 50px;
+	height: 50px;
+	border-radius: 0px;
+	font-size: 25px;
+	width: 100%;
+}
+
+.headtext{
+	display: none;
+}
+}
+/*----------------------------------*/
+
+
+/*--------------FOOTER-------------*/
+@media screen and (max-width: 600px){
+.footerians header{
+	font-size: 12px;
+}
+
+.copyright{
+	max-width: 250px;
+}
+
+#footer{
+	min-height: 500px;
+}
+
+.links {
+	margin-left: 60%;
+}
+
+.t_and_t{
+	margin-left: 40%;
+
+}
+
+}
+/*----------------------------------*/
+
+
+/*---------------OTHERS-------------*/
+@media screen and (max-width: 600px){
+label #btn{
+	left:10px;
+	top: -5px;
+	font-size: 30px;
+}
+}
+/*----------------------------------*/
+
+
+/*------------------------------------------------------
+--------------------END OF MEDIA SCREEN 600--------------------
+--------------------------------------------------------*/
+
+
+
+
+
+
+
+
+/*------------------------------------------------------
+--------------------MEDIA SCREEN 556--------------------
+--------------------------------------------------------*/
+
+/*---------------OTHERS-------------*/
+@media screen and (max-width: 556px){
+
+.label1{
+	max-width: 350px;
+	min-height: 350px;
+	min-width:  350px;
+}
+
+.light{
+	max-width: 350px;
+	max-height: 350px;
+}
+
+
+}
+/*----------------------------------*/
+
+
+/*------------------------------------------------------
+--------------------END OF MEDIA SCREEN 556--------------------
+--------------------------------------------------------*/
+
+
+
+
+
+
+/*------------------------------------------------------
+--------------------MEDIA SCREEN 350--------------------
+--------------------------------------------------------*/
+
+/*---------------OTHERS-------------*/
+@media screen and (max-width: 350px){
+
+.label1{
+	max-width: 200px;
+	min-height: 200px;
+	min-width:  200px;
+}
+
+.light{
+	max-width: 200px;
+	max-height: 200px;
+}
+
+
+}
+/*----------------------------------*/
+
+
+/*------------------------------------------------------
+--------------------END OF MEDIA SCREEN 350--------------------
+--------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@viewport{
+	zoom:1.0;
+	width:extend-to-zoom;
+}
+
+@-ms-viewport{
+	width:extend-to-zoom;
+	zoom:1.0;
+}

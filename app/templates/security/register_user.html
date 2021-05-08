@@ -1,0 +1,91 @@
+{% from "security/_macros.html" import render_field_with_errors, render_field %}
+{% include "security/_messages.html" %}
+
+
+
+
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+  <title>Signup With Us</title>
+
+  <link href="{{url_for('static', filename='signup.css' )}}" rel="stylesheet" type="text/css" />
+  
+
+  <meta name="viewport" content = "width = device-width, initial-scale = 1" charset="utf-8" >
+
+
+
+</head>
+
+<body id="body">
+
+
+<div class="brand"><h3 class="bra">STURF</h3></div>
+<center>
+ 
+  <div class="deco"></div>
+
+
+
+    
+    <div id = "container">
+
+    <div class = "img"></div>
+       
+  </div>
+
+
+
+
+
+<div class="sct login">
+            <form action="{{ url_for_security('register') }}" method="POST" name="register_user_form">
+              <h3>Sign up</h3>
+              {{ register_user_form.hidden_tag() }}
+              {{ render_field_with_errors(register_user_form.first_name) }}
+              {{ render_field_with_errors(register_user_form.last_name) }}
+              {{ render_field_with_errors(register_user_form.email) }}
+              
+              {{ render_field_with_errors(register_user_form.age) }}
+              {{ render_field_with_errors(register_user_form.password) }}
+              {% if register_user_form.password_confirm %}
+                {{ render_field_with_errors(register_user_form.password_confirm) }}
+              {% endif %}
+              {{ render_field(register_user_form.submit, class="refresh") }}
+
+              
+                
+                <p class="text-center">Already have an account?<span class ="cls"><a href = "{{url_for('security.login')}}" class="cls">Login</a></span></p>
+            </form>
+
+
+    </div> <!--end login-->
+
+
+</center>
+
+
+</div>
+
+
+
+<div class="copyright">
+                    Copyright &copy; 2020-2025 STURF
+                    All rights reserved.
+                    STURF is among the federally registered trademarks of
+                    STURF LLC and may not be used by third parties without explicit permission.
+
+</div>
+
+
+
+
+
+
+</body>
+
+
+
+
+

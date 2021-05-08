@@ -1,0 +1,66 @@
+<!Doctype html>
+<html>
+   <body>
+
+   	<!-- type of location is --- {{var1}}
+   	type of status is --- {{var2}} -->
+   	<br>
+      result  : {{ msg }}
+
+      <br>
+      <br>
+      <br>
+      <br>
+
+      result of recording : {{ record_msg }}
+
+      <br>
+      <br>
+      <br>
+      <br>
+
+      supposed error: {{error}}
+
+
+
+
+
+
+
+
+
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+{%if population %}
+      <div>
+      	<ul>
+      		{% for item in population%}
+      		<li>{{item}}</li>
+      		{%endfor%}
+      	</ul>
+      </div>
+{%endif%}
+     
+     
+
+     <!-- <h1>{{loc}}</h1>
+     <h1>{{stat}}</h1> -->
+      		
+   </body>
+</html>

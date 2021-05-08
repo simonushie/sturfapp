@@ -1,0 +1,435 @@
+#body{
+	background: linear-gradient(45deg, #FFFFFF 0%, #A0CBA5 0%, #79FF4D 100%) ;
+	height: 100%;
+	background-position: cover;
+}
+
+
+#container{
+	background-color: transparent;
+	position: static;
+	border-radius: 50%;
+	text-align: center;
+	margin-top: 10px;
+	transition: all ease .9s;
+	max-width: 250px;
+	max-height: 250px;
+	border: 4px solid #ffffff;
+	box-shadow: 0px 1px 10px 5px rgba(0,0,0,0.6);
+
+}
+
+
+.img{
+	margin-left: 30px;
+	vertical-align: center;
+	background: url('graphic.webp') no-repeat center;
+	background-size: contain;
+	width: 100%;
+	height:100%;
+	padding-top: 100%;
+	border-radius: 50%;
+	max-width: 250px;
+	max-height: 250px;
+	position: relative;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+
+}
+
+
+html, body {
+    font-family: sans-serif;
+    font-size: 100%;
+}
+
+html, body, .wrapper, .sct {
+    height: 100%;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+h1 {
+    font-size: 6rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 30px;
+     font-family: "Comic Sans MS", cursive, sans-serif;
+    color: #ffffff;
+    text-shadow: 2px 0px 3px rgba(28,110,164,0.48);
+    font-weight: none;
+    margin-bottom: 120px;
+ 
+}
+
+h1,h2,h4,h5,h6 {
+    font-weight: 400;
+    color: #2d2d2d;
+}
+
+input:active,
+input:focus,
+input:visited,
+input:hover {
+    outline: none;
+}
+
+input
+
+ {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 10px;
+    background: #fFF;
+    border: .5px solid white;
+    font-family: sans-serif;
+    font-weight: 600;
+    color: rgb(78, 78, 78);
+    border-radius: 50px;
+    margin-top: 10px;
+}
+
+
+input:hover{
+    transition: all .2s;
+    background: #f2f2f2;
+    border: .5px solid black;
+}
+
+
+.text-center {
+    text-align: center;
+}
+
+form > h3 {
+    text-align: center;
+}
+
+.forgot-remember {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "centerLeft centerRight";
+}
+
+.sct {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*keyframe rules for bra*/
+
+
+@keyframes example {
+    0%   {background-color: none; left:0px; top:0px;}
+
+
+    25%  { background-color: none; left:900px; -moz-transform: rotate(359deg);
+-webkit-transform: rotate(359deg);
+-o-transform: rotate(359deg);
+-ms-transform: rotate(359deg);
+transform: rotate(359deg);}
+
+
+    50%  { background-color: none;  left:200px;  top:250px; }
+ 
+    
+
+
+    100% { background-color: none; left:0px; top:0px;}
+}
+
+
+
+/*end of keyframe*/
+
+
+
+
+
+
+
+/*header of page*/
+
+.bra {
+	position: absolute;
+	max-width: 200px;
+	margin-left: 60px;
+	padding: 3px;
+	transition: ease all .5s;
+    font-weight: 800;
+    min-height:50px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 30px;
+    letter-spacing: 6px;
+    color: #ffffff;
+    height:50px; 
+    text-shadow: 8px 7px 3px rgba(43,60,44,0.71);
+    animation-name: example;
+    animation-duration: 4s;
+    animation-delay: 2s;
+    animation-timing-function: ease;
+}
+/*end of header*/
+
+
+
+
+
+
+
+.login {
+    grid-area: centerRight;
+}
+
+.login > form {
+    width: 400px;
+    margin: 0 3rem;
+}
+
+/*Checkbox*/
+
+
+p{
+    margin-bottom: 25px;
+}
+
+
+
+
+
+select {
+    padding: 6px 20px;
+    border-radius: 50px;
+    background-color: #ffffff;
+    outline:none;
+    transition:.3s;
+
+}
+
+select option{
+    background-color: #ffffff;
+}
+
+select:hover{
+    border: 2px solid #000000;
+}
+
+
+
+label{
+    margin-top: 30px; 
+    font-family: "Comic Sans MS";
+    color: white;
+    text-shadow: 2px 2px 2px #000000;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+/*message flashes*/
+li{
+    list-style: none;
+    border: 2px solid black;
+    border-radius: 25px;
+    color: white;
+    background: black;
+    margin-top: 6px;
+    padding: 5px;
+}
+
+
+
+li.info{
+  /* padding: 10px;*/
+   width: 92%;
+   text-align: center;
+   font-size: 16px ;
+   font-weight: bold;
+   font-family: "Comic Sans MS"
+}
+
+
+li.info:marker{
+    display: none;
+}
+
+.show{
+    border: 2px solid #79ff4d;
+    padding: 5px;
+    border-radius: 50%;
+    width: 5%;
+}
+
+ul.flashes{
+  margin-bottom: 6px;
+  justify-content: center;
+  align-content: center;
+}
+
+
+
+
+
+
+.refresh:hover {
+background: #4D6F5A; 
+}
+
+.refresh:active {
+background: #4D6F5A;
+}
+
+
+
+.refresh{
+    margin-top: 60px;
+    margin-bottom: 30px;
+    position: relative;
+    width: 100%;
+    color: black;
+    font-size: 17px; 
+    line-height: 17px; 
+    padding: 15px;
+    border-radius: 50px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-weight: bolder;
+    text-decoration: none solid rgb(68, 68, 68);
+    font-style: normal; font-variant: normal;
+    text-transform: none;
+    border: 2px solid black;
+    display: inline-block;
+    background: #FFFFFF;
+}
+
+.cls{
+    color: #ffffff;
+    margin-left: 12px;
+    font-size: 22px;
+    text-shadow: 2px 0px 3px rgba(28,110,164,0.48);
+}
+
+
+
+.copyright{
+	float: right;
+    max-width: 500px;
+    font-size: 10px; 
+    margin-top:60px;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(20%, 80vmax);
+    grid-template-areas: 
+                        "centerLeft"
+                        "centerRight";
+    }
+
+.bra{
+    position: relative;
+    max-width: 100px;
+    margin-left: 30px;
+    padding: 3px;
+    transition: ease all .5s;
+    font-weight: 800;
+    min-height:50px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 23px;
+    letter-spacing: 6px;
+    color: #ffffff;
+    height:40px; 
+    animation: none;
+    text-align: center;
+
+	
+}
+    .login > form {
+        width: 100%;
+        margin: 0 3rem;
+    }
+}
+
+
+@media (max-width: 375px) {
+
+
+.bra{
+    
+    margin: 0 auto;
+
+}
+
+}
+
+
+
+
+viewport{
+	zoom:1.0;
+	width:extend-to-zoom;
+}
+
+@-ms-viewport{
+	width:extend-to-zoom;
+	zoom:1.0;
+}

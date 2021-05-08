@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<title>Your messages in this section </title>
+
+	<link href="{{url_for('post.static', filename='my-posts.css' )}}" rel="stylesheet" type="text/css" />
+
+	<meta name="viewport" content = "width = device-width, initial-scale = 1" charset="utf-8" >
+
+	<script type="text/javascript">
+
+    function back(){
+    	history.back();
+    }
+	
+	</script>
+
+
+
+</head> 
+
+
+
+
+
+<body> 
+
+
+
+<div id = "header">
+
+    <label>
+        <button  id="back" type="button" onclick="back()";>&#10094;</button>
+    </label>
+
+		<a class="header_link" href="{{url_for('home.general')}}">	
+		STURF
+		</a>
+
+
+<div id="headtext">
+	Improving your wellbeing <span class="dots">...</span>
+</div>
+
+
+
+
+
+
+
+
+    <!----------- REPORT BUTTON ---------------->
+    <input type="checkbox" id="check">
+
+    <label for="check">
+        <i  id="btn">&#9868;</i>
+        <i  id="cancel">╳</i>
+    </label>
+
+
+
+
+
+
+
+
+
+    <div class="sidebar">
+
+            
+
+    <ul>
+
+
+
+
+
+
+
+    <li>
+        <a  href="{{url_for('post.post_payment_page')}}">
+
+            <i style="font-style: normal;font-size: 30px; margin-right: 0px; ">
+            	
+            	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 6h-2v9H6v2c0 .55.45 1 1 1h11l4 4V7c0-.55-.45-1-1-1zm-4 6V3c0-.55-.45-1-1-1H3c-.55 0-1 .45-1 1v14l4-4h10c.55 0 1-.45 1-1z"/></svg>
+
+
+
+            </i>
+
+        messages
+
+        </a>
+
+    </li>
+            
+
+
+
+
+
+
+    </ul>
+            
+           
+
+    </div>
+
+<!----------- END OF SIDEBAR---------------->
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% if posts.total == 0  %}
+
+
+		<center class = "pennyless">
+
+		
+Nobody is trying to claim anything you posted yet
+
+		</center>
+
+			<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+
+
+
+
+{% else %}	
+
+
+
+
+
+<div class = "topicsentence">
+
+
+
+
+
+
+		<center class = "pennyless">
+
+				  
+			 <span style="color: black;">
+
+
+				{{ posts.total }} 
+
+			</span>
+
+
+
+				{% if posts.total == 1 %}
+
+				person is
+
+				{% else  %}
+
+				people are
+
+				{% endif %}
+
+
+
+				trying to claim 
+
+
+
+
+				{% if posts.total <= 1 %}
+
+				a lost
+
+				{% else  %}
+
+				some lost
+
+				{% endif %}
+
+
+
+
+				{% if posts.total <= 1 %}
+
+				 item
+
+				{% else  %}
+
+				 items
+
+				{% endif %}
+
+
+
+
+				 you found
+
+
+
+
+
+				<br>
+				<br>	
+		</center>
+</div>
+
+
+
+
+
+
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% if posts.total == 0  %}
+
+
+
+
+<div class="bio" style="padding-bottom: 20px; padding-top: 20px;">
+
+		<div class="bio-content">
+			
+
+			<center>
+			<svg xmlns="http://www.w3.org/2000/svg" width="68" height="68" viewBox="0 0 48 48"><path d="M24 12c7.73 0 14 6.27 14 14 0 1.69-.31 3.3-.86 4.8l3.04 3.04C41.34 31.47 42 28.81 42 26c0-9.94-8.06-18-18.01-18-2.81 0-5.46.66-7.84 1.81l3.05 3.05c1.5-.55 3.11-.86 4.8-.86zm20-.56l-9.19-7.71-2.57 3.06 9.19 7.71L44 11.44zM5.84 4.59L3.29 7.13l2.66 2.66-2.22 1.86 2.84 2.84 2.22-1.86 1.6 1.6C7.66 17.39 6 21.5 6 26c0 9.94 8.04 18 17.99 18 4.51 0 8.62-1.67 11.77-4.4l4.4 4.4 2.54-2.55L7.79 6.54 5.84 4.59zm27.1 32.19C30.51 38.79 27.4 40 24 40c-7.73 0-14-6.27-14-14 0-3.4 1.21-6.51 3.22-8.94l19.72 19.72zM16.03 6.55l-2.84-2.84-1.7 1.43 2.84 2.84 1.7-1.43z"/></svg>
+
+
+			</center>
+
+
+
+
+				
+
+
+
+</div>
+
+
+</div>
+
+
+
+{% else %}	
+
+
+
+
+
+
+
+<div class="bio">
+	<br>
+	<br>
+
+
+		<div class="bio-content">
+			
+				{% for post in posts.items %}
+					<div class="wrapper">
+
+
+
+
+						<a style="color: black;" href="{{url_for('post.view_claimer_page', post_id = post.post_id, claimer_id = post.claimer_id )}}">
+
+
+							
+
+
+
+							<p style="color: black;">
+
+								{{ post.claimer_name }}
+
+								<img style="margin-left: 10px; " class="image"  src="{{url_for('static', filename='claimers/' + post.claimer_profile_pic )}}" alt="{{post.claimer_name}}" width="35" height="35">
+
+
+
+
+
+
+
+
+
+								<div style="font-size: 10px;" class="date">
+								 {{post.date_of_application.strftime("%a, %d %b %Y")}}
+								</div>
+
+
+
+
+
+								<span style="color: green; font-weight: bold; font-size: 12px;">{{ post.item_category}} </span>
+
+
+
+
+
+
+								
+							</p>
+
+
+							
+
+
+						</a>
+
+					</div>
+				{% endfor %}
+
+
+
+		</div>
+</div>
+
+
+
+
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+<footer id = 'footer'>
+
+
+
+<div class="footerians">
+	<header><span style="margin-right: 5px; color: #ffffff; font-size: 25px;">☎</span>Get in touch with us</header>
+
+	<ul>
+
+	<li><a href="#"><div class="case1"></div></a></li>
+	<li><a href="#"><div class="case2"></div></a></li>
+	<li><a href="#"><div class="case3"></div></a></li>
+	<li><a href="#"><div class="case4"></div></a></li>
+
+	</ul>
+	
+
+</div>
+
+
+
+<div class="t_and_t">
+	<ul>
+	<li><a href="#">Terms and conditions</a></li>
+	<li><a href="#">what more can we do?</a></li>
+	<li><a href="#">Ad policy</a></li>
+	<li><a href="#">Content policy</a></li>
+	</ul>
+</div>
+
+
+	
+
+<div class="links">
+	<ul>
+	<li><a href="#">Home</a></li>
+	<li><a href="file:///C:/Users/SIMON/Documents/site%20work/site/Electricity.html">Electricity</a></li>
+	<li><a href="#">History</a></li>
+	<li><a href="#">About Us</a></li>
+	<li><a href="#">FAQS</a></li>
+	<li><a href="{{url_for('security.logout')}}">logout</a></li>
+	</ul>
+
+</div>
+
+
+	
+<div class="copyright">
+	Copyright &copy; 2020-2025 STURF
+	All rights reserved.
+	STURF is among the federally registered trademarks of
+    STURF LLC and may not be used by third parties without explicit permission.
+
+
+</div>
+
+
+
+
+
+	
+</footer>
+
+
+
+
+
+</html>

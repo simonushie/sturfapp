@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<title>{{user.first_name}}'s profile</title>
+
+	<link href="{{url_for('static', filename='profile.css' )}}" rel="stylesheet" type="text/css" />
+
+	<meta name="viewport" content = "width = device-width, initial-scale = 1" charset="utf-8" >
+
+	<script type="text/javascript">
+
+    function back(){
+    	history.back();
+    }
+	
+	</script>
+
+
+
+</head> 
+
+
+
+
+
+<body> 
+
+
+
+<div id = "header">
+
+<label for="check">
+	<button  id="back"  onclick="back()";>&#10094;</button>
+	
+</label>
+
+
+		<a class="header_link" href="{{url_for('home.general')}}">	
+		STURF
+		</a>
+
+
+
+
+<!----------- REPORT BUTTON ---------------->
+
+
+
+<label for="check">
+<a href="{{url_for('home.edit_profile', email = current_user.email)}}" id="btn">
+
+
+
+
+
+   
+<svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 24 24"><path d="M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69zM12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm0-10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"/></svg>
+
+                            
+
+
+
+
+</a>
+</label>
+
+<div id="headtext">
+	Improving your wellbeing <span class="dots">...</span>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<section class = " svg-loader">
+
+
+<!-- partial:index.partial.html -->
+<svg>
+  <g>
+    <path d="M 50,100 A 1,1 0 0 1 50,0"/>
+  </g>
+  <g>
+    <path d="M 50,75 A 1,1 0 0 0 50,-25"/>
+  </g>
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+
+      <stop offset="0%" style="stop-color: #79ff4d ; stop-opacity:1" />
+      <stop offset="100%" style="stop-color: black; stop-opacity:1" />
+
+    </linearGradient>
+  </defs>
+</svg>
+
+
+
+</section >
+
+
+
+
+<center>
+
+<div id="info_container">
+
+			<section class = "information">
+
+
+			<p>
+				
+			{{info}}
+
+			</p>
+
+
+			</section >
+
+</div>
+
+</center>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+
+        <ul class=flashes>
+
+        {% for category, message in messages %}
+            <center>
+            <li class="{{ category }}">
+                {{ message }}
+            </li>
+            </center>
+        {% endfor %}
+
+        </ul>
+        
+    {% endif %}
+{% endwith %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<center>
+
+<div class="tryme">
+
+	<span></span>
+	<span></span>
+	<span></span>
+	<span></span> 
+	
+		<div class = "section1">
+
+
+					<div class="text_container">
+						<p class="p1">
+						{{user.first_name.upper()}}
+						</p>
+
+						<p class="p2">
+							<span style="background-color: white;  border-radius: 25px 25px 0px 25px;" class="tooltiptext">
+							        Your Caption
+							</span>
+
+							<b>{{user.first_name}}</b> is {{user.caption}}
+
+						</p>
+
+
+						<p class="p2">
+
+							{% if user.is_authenticated  %}
+
+								{% if user.last_login_at  %}
+								
+								<p class="online_indicator">
+								<b> Your last login:</b> 
+								{{user.last_login_at.strftime("%I : %M  %p, %a")}}
+								</p>
+
+								{% endif %}
+	
+							{% endif %}
+						
+						</p>
+						
+					</div>
+
+					<main class = "label1">
+
+						<a href="{{url_for('home.view_profile', id = current_user.id , count = 10 )}}">
+					    
+					    
+						<div id="light" 
+						style="background: url('{{img}}') no-repeat center;
+								background-size: cover;
+								width: 100%;
+								height:100%;
+								padding-top: 100%;
+								border-radius: 15px 150px 150px 150px;
+								margin-left: 15px;
+								margin-top: 3px;
+								vertical-align: center;
+								max-width: 200px;
+								max-height: 200px;
+								border: 0.5px solid #79ff4d"
+
+	 					/></div>
+
+	 					</a>
+					</main>
+
+					
+		</div>
+</div>
+</center>
+
+
+
+
+
+
+
+<div class="contact">
+	<h1>CONTACT</h1>
+	<br>
+	<br>
+		<div class="contact-content">
+
+
+
+	<!-- 		<p>
+
+
+
+				     <section class="sectioncover">
+                        <button class = "edit_btn "  onclick = "showmodal()">
+                        <i class = "edit_pic" >
+
+
+							                            
+							<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 48 48"><path d="M6 34.5V42h7.5l22.13-22.13-7.5-7.5L6 34.5zm35.41-20.41c.78-.78.78-2.05 0-2.83l-4.67-4.67c-.78-.78-2.05-.78-2.83 0l-3.66 3.66 7.5 7.5 3.66-3.66z"/></svg>
+
+                            
+                        </i>
+                        </button>
+                    </section>
+
+
+
+
+
+				<span> <i style="color: black; font-style: normal;">&phone;</i>Tel: </span>
+
+				<br>
+
+
+				current_user.phone
+
+			</p>
+ -->
+
+
+
+			<br>
+
+
+
+
+			<p>
+				     <section class="sectioncover">
+                        <button class = "edit_btn " onclick = "showemailmodal()">
+                        <i class = "edit_pic" >
+                            
+						<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+						                            
+                        </i>
+                        </button>
+                    </section>
+
+
+				<span><i style="color: black; font-style: normal; font-size:23px;">&commat;</i>Email: </span> 
+
+				<br>
+
+			{{current_user.email}}
+
+			</p>
+
+
+
+		</div>
+	
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="bio">
+	<h1>BIO</h1>
+	<br>
+	<br>
+		<div class="bio-content">
+			<center>
+				<p>
+					<span>
+
+						<i style="color: black; font-style: normal;font-size:30px;">&#9997;</i>More about {{current_user.first_name}}
+					</span>
+
+					<br>
+						{{current_user.more_about}}
+				</p>
+
+				<br>
+
+				
+
+
+
+
+		{% if current_user.birthday %}
+
+					
+				<p>
+
+					<span>
+
+
+
+					<i style="color: black; font-style: normal;font-size:25px;">&#9832;</i>
+
+					Birthday 
+
+					</span> 
+
+					<br>
+					{{current_user.birth_day}}
+				</p>
+
+
+
+		{% endif %}
+
+				
+
+
+
+		{% if current_user.likes %}
+
+					
+
+				<p>
+
+					<span>
+
+					<i style="color: black; font-style: normal;">&#10084;</i>
+
+					likes 
+
+					</span> 
+
+					<br>
+					{{current_user.likes}}
+				</p>
+
+
+		{% endif %}
+				
+
+
+
+		{% if current_user.dislikes %}
+
+					
+
+				<p>
+
+					<span>
+
+					<i style="color: black; font-style: normal; ">&#9876;</i>
+
+					Dislikes 
+
+					</span> 
+
+					<br>
+					{{current_user.dislikes}}
+				</p>
+
+
+
+		{% endif %}
+
+
+			</center>
+		</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- The Modal box -->
+
+    <div id="phoneModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+
+    <!-- modal header -->
+        <div class="modal-header">
+          <span class="close">╳</span>
+          <h2>Sturf</h2>
+        </div>
+    <!---->
+
+
+    <!--modal body -->
+        <div class="modal-body">
+
+
+
+
+            <p class="texte"> Do you want your phone number visible to everyone?
+          </p>
+    
+
+          {%if current_user.allows_phone_to_be_seen %}
+          	
+          	<p style=" font-weight: bold; margin-top: 30px; margin-left: 3%; font-size: 19px; color: green;">currently visible</p>
+
+          {% elif not current_user.allows_phone_to_be_seen%}
+
+          	<p style=" font-weight: bold; margin-top: 30px; margin-left: 3%; font-size: 19px; color: green;">currently not visible</p>
+
+
+          {% endif %}
+         
+          
+        </div>
+    <!-- -->
+
+
+    <!-- modal footer -->
+        <div class="modal-footer">
+
+          <div class = "btnwrap">
+            
+            <button class = "button" user_id="{{ current_user.id }}" phone_visibility = 'False' id = "phone_visibility_no">
+                <center>No</center>
+            </button>
+
+
+            <button class = "button" user_id="{{ current_user.id }}" phone_visibility = 'True' id = "phone_visibility_yes">
+                <center>Yes</center>
+            </button>
+ 
+
+          </div>
+
+        </div>
+    <!-- -->
+
+      </div>
+
+    </div>
+
+
+
+
+
+
+
+
+    <div id="emailModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+
+    <!-- modal header -->
+        <div class="modal-header">
+          <span class="close">╳</span>
+          <h2>Sturf</h2>
+        </div>
+    <!---->
+
+
+    <!--modal body -->
+        <div class="modal-body">
+
+
+
+
+            <p class="texte"> Do you want your email visible to everyone?
+          </p>
+    
+
+          {%if current_user.allows_email_to_be_seen %}
+          	
+          	<p style=" font-weight: bold; margin-top: 30px; margin-left: 3%; font-size: 19px; color: green;">currently visible</p>
+
+          {% elif not current_user.allows_email_to_be_seen%}
+
+          	<p style=" font-weight: bold; margin-top: 30px; margin-left: 3%; font-size: 19px; color: green;">currently not visible</p>
+
+
+          {% endif %}
+
+
+
+
+          
+        </div>
+    <!-- -->
+
+
+    <!-- modal footer -->
+        <div class="modal-footer">
+
+          <div class = "btnwrap">
+            
+            <button class = "button" user_id="{{ current_user.id }}" email_visibility = 'False' id = "email_visibility_no">
+                <center>No</center>
+            </button>
+
+
+            <button class = "button" user_id="{{ current_user.id }}" email_visibility = 'True' id = "email_visibility_yes">
+                <center>Yes</center>
+            </button>
+ 
+
+          </div>
+
+        </div>
+    <!-- -->
+
+      </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+    // Get the modal
+    var modal = document.getElementById('phoneModal');
+
+    var emailmodal = document.getElementById('emailModal');
+
+    var Sharemodal = document.getElementById('ShareModal');
+
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+
+    var span1 = document.getElementsByClassName("close")[1];
+
+
+    var span2 = document.getElementsByClassName("close")[2];
+
+
+
+    // Get the <span> element that closes the modal
+    var btn = document.getElementsByClassName("button")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+
+    span1.onclick = function() {
+        emailmodal.style.display = "none";
+    }
+/*
+
+    span2.onclick = function() {
+        Sharemodal.style.display = "none";
+    }*/
+
+    btn.onclick = function() {
+        modal.style.display = "none";
+    }
+
+
+    function close(){
+        modal.style.display = "none";
+    }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="{{url_for('static', filename='jquery-3.5.1.min.js' )}}"></script>
+<script src="{{url_for('home.static', filename='profile.js' )}}"></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+            function showmodal(){document.getElementById('phoneModal').style.display = "block";}
+
+            function showemailmodal(){document.getElementById('emailModal').style.display = "block";}
+
+
+            function showSharemodal(){document.getElementById('ShareModal').style.display = "block";}
+
+
+    </script>
+
+        
+
+
+
+
+
+</html>

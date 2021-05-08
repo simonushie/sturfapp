@@ -1,0 +1,210 @@
+absl-py==0.9.0
+alembic==1.4.2
+altgraph==0.17
+anx @ file:///C:/Users/SIMON/Documents/python_programs/ajaos_work/reasources/network/anx-0.3.3-py3-none-any.whl
+appdirs==1.4.4
+arcade==2.3.15
+astor==0.8.1
+attrs==19.3.0
+Babel==2.9.0
+bcrypt==3.1.7
+beautifulsoup4==4.8.2
+blinker==1.4
+cachetools==4.0.0
+cairocffi==1.1.0
+CairoSVG==2.4.2
+certifi==2019.11.28
+cffi==1.13.2
+chardet==3.0.4
+click==7.1.2
+cryptography==2.9.2
+cssselect2==0.2.2
+cycler==0.10.0
+decorator==4.4.2
+defusedxml==0.6.0
+distlib==0.3.1
+dnspython==1.16.0
+email-validator @ file:///C:/Users/SIMON/Documents/python_programs/flask_project/env/Lib/site-packages/email_validator-1.1.1-py2.py3-none-any.whl
+eventlet==0.25.1
+filelock==3.0.12
+Flask==1.1.2
+Flask-Admin==1.5.6
+Flask-BabelEx==0.9.4
+Flask-Login==0.5.0
+Flask-Mail==0.9.1
+Flask-Migrate==2.5.3
+flask-msearch==0.2.9.1
+Flask-Principal==0.4.0
+Flask-Script==2.0.6
+Flask-Security==3.0.0
+Flask-SocketIO==4.2.1
+Flask-SQLAlchemy==2.4.3
+Flask-User==1.0.2.2
+Flask-WhooshAlchemy @ git+git://github.com/miguelgrinberg/flask-whooshalchemy.git@f6266d34ed836a880a0f81586002770e6fc1b45a
+flask-whooshee==0.7.0
+Flask-WTF==0.14.3
+future==0.18.2
+gast==0.2.2
+gevent==1.4.0
+google-auth==1.11.2
+google-auth-oauthlib==0.4.1
+google-pasta==0.1.8
+greenlet==0.4.15
+grpcio==1.27.2
+h5py==2.10.0
+html5lib==1.0.1
+hupper==1.10.2
+idna==2.9
+importlib-metadata==3.3.0
+inflect==4.1.0
+itsdangerous==1.1.0
+jaraco.itertools==5.0.0
+Jinja2==2.11.2
+joblib==0.14.1
+Keras==2.3.1
+Keras-Applications==1.0.8
+Keras-Preprocessing==1.1.0
+kiwisolver==1.1.0
+Mako==1.1.3
+Markdown==3.2.1
+MarkupSafe==1.1.1
+matplotlib==3.2.1
+monotonic==1.5
+more-itertools==8.2.0
+MouseInfo==0.1.2
+networkx==2.4
+nmap==0.0.1
+numpy==1.18.2
+oauthlib==3.1.0
+opt-einsum==3.2.0
+pandas==1.0.3
+passlib==1.7.4
+PasteDeploy==2.1.0
+pathtools==0.1.2
+pefile==2019.4.18
+Pillow==7.0.0
+plaster==1.0
+plaster-pastedeploy==0.7
+protobuf==3.11.3
+psycopg2==2.8.5
+py-postgresql==1.2.1
+py2exe==0.9.2.2
+pyasn1==0.4.8
+pyasn1-modules==0.2.8
+PyAutoGUI==0.9.48
+pycparser==2.19
+pygame==1.9.6
+PyGetWindow==0.0.8
+pyglet==1.5.7
+Pygments==2.6.1
+PyInstaller==3.6
+pyLibrary==3.47.20042
+PyMsgBox==1.0.7
+pymunk==5.6.0
+pyparsing==2.4.6
+pyperclip==1.7.0
+Pyphen==0.9.5
+pyramid==1.10.4
+PyRect==0.1.4
+PyScreeze==0.1.26
+python-dateutil==2.8.1
+python-editor==1.0.4
+python-engineio==3.11.1
+python-socketio==4.4.0
+pytiled-parser==0.9.3
+PyTweening==1.0.3
+pytz==2020.4
+pywin32-ctypes==0.2.0
+PyYAML==5.3.1
+qrcode==6.2.dev0
+requests==2.23.0
+requests-oauthlib==1.3.0
+rsa==4.0
+scapy==2.4.3
+scikit-learn==0.22.2.post1
+scipy==1.4.1
+seaborn==0.10.0
+selenium==3.141.0
+simpy @ file:///C:/Users/SIMON/Documents/python_programs/ajaos_work/reasources/network/simpy-4.0.1-py2.py3-none-any.whl
+six==1.15.0
+soupsieve==2.0
+speaklater==1.3
+SQLAlchemy==1.3.17
+tensorboard==2.1.1
+tensorflow==2.1.0
+tensorflow-estimator==2.1.0
+termcolor==1.1.0
+terminaltables==3.1.0
+Theano==1.0.4
+tinycss2==1.0.2
+translationstring==1.3
+typing-extensions==3.7.4.3
+urllib3==1.25.8
+venusian==3.0.0
+virtualenv==20.2.2
+watchdog==0.10.2
+WeasyPrint==51
+webencodings==0.5.1
+WebOb==1.8.6
+Werkzeug==1.0.1
+Whoosh==2.7.4
+wikipedia==1.4.0
+wolframalpha==4.0.0
+wrapt==1.12.0
+WTForms==2.3.3
+xgboost==1.0.2
+xmltodict==0.12.0
+zipp==3.4.0
+zope.deprecation==4.4.0
+zope.interface==5.0.1
+
+
+
+Greetings, im an experienced php, html, css, less  developer and seasoned MySQL administrator......
+
+Open Journal Systems is a software based on php, HTML(smarty) and LESS(a variant of css that undergoes compilation before rendering) all of which i have gathered deep experience with over the course of my time using the OJS platform
+
+my experience with the stack relating to this project can be summarized below;
+
+Php
+Apache
+MySQL (or PostgreSQL)
+HTML(smarty template)
+LESS
+Cpanel (on the hosting platform)
+Linux systems administration (including file permissions handling)
+
+now to mention what you can expect from my expertise in the aforementioned stack, you can expect;
+
+1. knowledge of html(smarty), less, css, javascript to beautify the default OJS template which is otherwise just ordinary and unappealing
+
+2.knowledge of php to help in the software installation,debugging and maintainance
+
+3.knowledge of MySQL and PostgreSQl to assist in database setup and maintainance
+
+4.knowledge of Linux administration and Cpanel familiarity to aid a  fast deployment
+
+
+
+
+
+
+
+
+
+I possesses very deep understanding, experience and love for the flask framework and its un-opinionated nature........ive worked with the following flask modules and hence can implement the functionalities they possesses(to mention but a few) 
+
+
+Jinja2
+Flask-Security
+Flask-SocketIO
+Flask-SQLAlchemy
+Flask-WhooshAlchemy
+Flask-WTF
+google-auth
+
+i also possess an effective deployment pipeline to heroku dynos(Heroku is favoured due to their availability of websockets  which is lacking in platforms such as pythonanywhere.com)
+
+have longstanding experience with API integration and maintainance, with python's Http and Json module
+
+expert linux and windows administration and grotesque experience with git

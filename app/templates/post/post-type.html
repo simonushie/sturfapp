@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+	<title>What type of post?</title>
+
+	<link href="{{url_for('post.static', filename='post-type.css' )}}" rel="stylesheet" type="text/css" />
+
+	<meta name="viewport" content = "width = device-width, initial-scale = 1" charset="utf-8" >
+
+	<script type="text/javascript">
+    function back(){
+        history.back();
+       
+    }
+	</script>
+
+</head>
+
+
+
+
+
+<body> 
+
+
+
+
+<!-- header section -->
+
+<div id = "header">
+
+	<label >
+		<button  id="back" type="button" onclick="back()";>&#10094;</button>
+	</label>
+
+
+
+
+
+
+
+
+
+	<a class="header_link" href="{{url_for('home.general')}}">	
+	STURF
+	</a>
+
+
+
+
+
+<!----------- REPORT BUTTON ---------------->
+	<input type="checkbox" id="check">
+
+	<label for="check">
+		<i  id="btn">&#9868;</i>
+		<i  id="cancel">╳</i>
+	</label>
+
+
+
+
+
+	<div class="sidebar">
+
+			
+
+	<ul>
+		
+
+{% if not current_user.paid %}
+	<li>
+		<a style="color: gold;" href="{{url_for('post.post_payment_page')}}">
+
+			<i style="font-style: normal;font-size: 30px; margin-right: 0px; color: gold;">&starf;</i>
+
+		VIP
+
+		</a>
+
+	</li>
+{% endif %}
+
+
+	<li>
+		<a href="{{url_for('help.index')}}">
+			<i style="font-style: normal;">&#10067;</i>
+
+		Help 
+
+		</a>
+
+	</li>
+
+
+	</ul>
+			
+			
+
+	</div>
+
+<!----------- END OF REPORT BUTTON ---------------->
+
+
+
+
+
+
+
+
+
+
+
+	<div id="headtext">
+		Improving your wellbeing <span class="dots">...</span>
+	</div>
+
+
+
+
+
+
+
+
+
+	
+
+</div>
+
+
+
+
+
+<!-- end of header section -->
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id = "advertisement">
+		<center> AD</center>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="reduce">
+
+			<h1 class="penny" >WHAT TYPE OF POST IS THIS?</h1>
+
+
+			<!-- ..............................section ............................ -->
+
+			<center>
+			<div class="tryme">
+
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span> 
+				
+
+
+			<main class = "label1">
+				<div class = "light2" /></div>
+			</main>
+
+
+			<div id = "textarea">
+				<header class="headr">REGULAR POST</header>
+				<p class="text">a regular post with a title, an image and some writeup... </p>
+				
+
+			<center > 
+
+			<div id = "buttonscontainer">
+
+
+
+				<div>
+					<center>
+				<div class = "login">
+					
+					<a class = "loginbutton" href="{{url_for('post.new_announcement')}}">
+						<center>GO</center>
+					</a>
+				</div>
+					</center>		
+				
+				</div>
+
+
+
+
+
+			</div>
+
+				
+
+			</div>
+			</center>
+
+			<!-- ------------------------------------------------------------------------------------------>
+
+
+			<!-- ..............................section ............................ -->
+
+			<center>
+			<div class="tryme">
+
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span> 
+				
+
+			<main class = "label1">
+				<div class = "light" /></div>
+			</main>
+
+
+
+
+			<div id = "textarea">
+				<header class="headr">AN EVENT</header>
+				<p class="text">
+				thesame as a regular post but used to post 
+				upcoming events and requires you 
+				to state the venue and time for said event ...
+				</p>
+
+
+			<center > 
+
+			<div id = "buttonscontainer">
+
+
+
+				<div>
+					<center>
+				<div class = "login">
+					
+					<a class = "loginbutton" href="{{url_for('post.new_event')}}">
+						<center>GO</center>
+					</a>
+					</center>		
+				</div>
+				</div>
+
+
+
+			</div>
+
+
+			</div>
+			</center>
+
+
+			 <!-- ----------------------------------------------------------------------------------------
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<!-- ..............................section ............................ -->
+
+			<center>
+			<div class="tryme">
+
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span> 
+				
+
+			<main class = "label1">
+				<div class = "light3" /></div>
+			</main>
+
+
+
+
+			<div id = "textarea">
+				<header class="headr"> LOST ITEM? </header>
+				<p class="text">
+					Did you loose a personal belonging?, this section helps notify others about such an incident...
+				</p>
+
+
+			<center > 
+
+			<div id = "buttonscontainer">
+
+
+
+				<div>
+					<center>
+				<div class = "login">
+					
+					<a class = "loginbutton" href="{{url_for('post.new_lost_and_searching')}}">
+						<center>GO</center>
+					</a>
+					</center>		
+				</div>
+				</div>
+
+
+
+			</div>
+
+
+			</div>
+			</center>
+
+
+			 <!-- ----------------------------------------------------------------------------------------
+ -->
+
+
+ 		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<!-- ..............................section ............................ -->
+
+			<center>
+			<div class="tryme">
+
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span> 
+				
+
+			<main class = "label1">
+				<div class = "light4" /></div>
+			</main>
+
+
+
+
+			<div id = "textarea">
+				<header class="headr"> FOUND ITEM? </header>
+				<p class="text">
+						Did you find a lost item?, this section helps notify others when you find an item like an ATM card, ID card e.t.c that you presume to be lost...
+				</p>
+
+
+			<center > 
+
+			<div id = "buttonscontainer">
+
+
+
+				<div>
+					<center>
+				<div class = "login">
+					
+					<a class = "loginbutton" href="{{url_for('post.new_lost_but_found_item')}}">
+						<center>GO</center>
+					</a>
+					</center>		
+				</div>
+				</div>
+
+
+
+			</div>
+
+
+			</div>
+			</center>
+
+
+			 <!-- ----------------------------------------------------------------------------------------
+ -->
+
+
+ 			
+
+			
+
+</div>
+
+
+
+
+			<!-- ..............................section ............................ -->
+<!-- 
+			<center>
+			<div class="tryme">
+
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span> 
+				
+
+			<main class = "label1">
+				<div class = "light" /></div>
+			</main>
+
+
+
+
+			<div id = "textarea">
+				<header class="headr"> FOUND ITEM? </header>
+				<p class="text">
+					Did you find a lost item?, this section helps notify others when you find an item like an ATM card, ID card e.t.c that you presume to be lost...
+				</p>
+
+
+			<center > 
+
+			<div id = "buttonscontainer">
+
+
+
+				<div>
+					<center>
+				<div class = "login">
+					
+					<a class = "loginbutton" href="{{url_for('post.new_lost_but_found_item')}}">
+						<center>GO</center>
+					</a>
+					</center>		
+				</div>
+				</div>
+
+
+
+			</div>
+
+
+			</div>
+			</center>
+ -->
+
+			 <!-- ----------------------------------------------------------------------------------------
+ -->
+
+
+ 			
+
+			
+
+</div>
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

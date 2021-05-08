@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta name="viewport" content = "width = device-width, initial-scale = 1" >
+
+    <link href="{{url_for('buy.static', filename='ad-page.css' )}}" rel="stylesheet" type="text/css" />
+
+    <title>Commerce made easy</title>
+    <script >
+        function back(){
+            history.back()
+        }
+
+    </script>
+
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+
+<!-- header section -->
+
+
+
+
+
+
+<div id = "header">
+
+    <label>
+        <button  id="back" type="button" onclick="back()";>&#10094;</button>
+    </label>
+
+
+        
+    <a class="header_link" href="{{url_for('home.general')}}">  
+    STURF
+    </a>
+
+
+    <!----------- REPORT BUTTON ---------------->
+    <input type="checkbox" id="check">
+
+    <label for="check">
+        <i  id="btn">&#10011;</i>
+        <i  id="cancel">╳</i>
+    </label>
+
+
+
+
+
+    <div class="sidebar">
+
+            
+
+    <ul>
+
+
+     <li >
+
+
+            <button class="dropdown-btn">
+                <i style="font-style: normal;
+               
+                 ">
+
+                &#9986;
+
+                </i>
+
+                Filter
+
+            </button>
+
+
+              <div class="dropdown-container-a">
+
+
+
+                <button class="dropdown-btn" style="color:black; font-size:17px;  text-align: right; font-family:  sans-serif;">Phones</button>
+                      <div class="dropdown-container">
+                      <a class = "droplink" href="{{url_for('buy.ads', page = 1, sort = 'phone' )}}">Mobile Phones</a>
+                      <a class = "droplink" href="{{url_for('buy.ads', page = 1, sort = 'tablet' )}}">Tablets</a>
+                      <a class = "droplink" href="{{url_for('buy.ads', page = 1, sort = 'tablet' )}}">Accessories</a>
+                      </div>
+
+
+                <button class="dropdown-btn" style="color:black; font-size:17px;  text-align: right; font-family:  sans-serif;">Electronics</button>
+                      <div class="dropdown-container">
+                      <a class = "droplink" href="{{url_for('roomie.find_a_roomie', page = 1, sort = 'Christianity' )}}">Christainity</a>
+                      <a class = "droplink" href="{{url_for('roomie.find_a_roomie', page = 1, sort = 'Islam' )}}">Islam</a>
+                      <a class = "droplink" href="{{url_for('roomie.find_a_roomie', page = 1, sort = 'religion-other' )}}">Other</a>
+                      </div>
+
+                <button class="dropdown-btn" style="color:black; font-size:17px;  text-align: right; font-family:  sans-serif;">Fashion</button>
+                      <div class="dropdown-container">
+                      <a class = "droplink" href="{{url_for('roomie.find_a_roomie', page = 1, sort = '100L' )}}">100l</a>
+                      <a class = "droplink" href="{{url_for('roomie.find_a_roomie', page = 1, sort = '200L' )}}">200l</a>
+                      <a class = "droplink" href="{{url_for('roomie.find_a_roomie', page = 1, sort = '300L' )}}">300l</a>
+                      <a class = "droplink" href="{{url_for('roomie.find_a_roomie', page = 1, sort = '400L' )}}">400l</a>
+                      <a class = "droplink" href="{{url_for('roomie.find_a_roomie', page = 1, sort = '500L' )}}">500l</a>
+                      </div>
+
+                <button class="dropdown-btn" style="color:black; font-size:17px;  text-align: right; font-family:  sans-serif;">Food</button>
+                      <div class="dropdown-container">
+                      <a class = "droplink" href="{{url_for('roomie.find_a_roomie', page = 1, sort = 'gidan-kwano' )}}">Gidan Kwano</a>
+                      <a class = "droplink" href="{{url_for('roomie.find_a_roomie', page = 1, sort = 'bosso' )}}">Bosso</a>
+                      <a class = "droplink" href="{{url_for('roomie.find_a_roomie', page = 1, sort = 'based-other' )}}">Other</a>
+                      </div>
+
+              </div>
+
+        </li>
+
+
+
+
+
+
+
+    {% if  current_user.generic or current_user.paid %}
+
+        <li>
+            <a  href="{{url_for('buy.ad_type')}}">
+
+                <i style="font-style: normal;font-size: 30px; margin-right: 0px; ">&#9997;</i>
+
+                 Post ad
+
+            </a>
+
+        </li>
+
+
+
+        {% else %}
+
+
+
+        <li>
+            <a  href="{{url_for('buy.buy_payment_page')}}">
+
+                <i style="font-style: normal;font-size: 30px; margin-right: 0px; ">&#9997;</i>
+
+                 I want to post an ad
+
+            </a>
+
+        </li>
+
+        
+    {% endif %}
+
+
+
+        <li>   
+            <a  href="{{url_for('post.post')}}">
+
+                <i style="font-style: normal;font-size: 30px; margin-right: 0px; ">&#9997;</i>
+
+                 For you
+
+            </a>
+
+        </li>
+
+
+
+
+
+
+        <li>    
+            <a  href="{{url_for('post.my_posts', page = 1, email = current_user.email )}}">
+
+                <i style="font-style: normal;font-size: 30px; margin-right: 0px; ">&#9997;</i>
+
+                 Your Ads
+
+            </a>
+
+        </li>
+
+
+
+
+
+        
+
+{% if not current_user.paid %}
+    <li>
+        <a style="color: gold;" href="{{url_for('post.post_payment_page')}}">
+
+            <i style="font-style: normal;font-size: 30px; margin-right: 0px; color: gold;">&starf;</i>
+
+        VIP
+
+        </a>
+
+    </li>
+
+
+{% endif %}
+
+
+
+
+
+    </ul>
+            
+            
+
+    </div>
+
+<!----------- END OF REPORT BUTTON ---------------->
+
+
+
+
+
+
+
+    <div id="headtext">
+        Improving your wellbeing <span class="dots">...</span>
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+
+        <ul class=flashes>
+
+        {% for category, message in messages %}
+            <center>
+
+            <li class="{{ category }}">
+                {{ message }}
+            </li>
+
+            </center>
+        {% endfor %}
+
+        </ul>
+        
+    {% endif %}
+{% endwith %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% set new = sort_value %}
+
+{{new}}
+
+
+
+
+
+
+
+
+{% if sort_value == 'normal'  %}
+
+<!-- do nothing -->
+
+{% else %}
+<a   style = "float:right;"  href="{{url_for('buy.ads', page = 1, sort = new , filtering = 'cheapest' )}}">cheapest first</a>
+
+
+
+<br>
+<br>
+
+
+<a   style = "float:right;"  href="{{url_for('buy.ads', page = 1, sort = new , filtering = 'most_expensive' )}}">highest price first</a>
+
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+{%if page < 2 %}
+
+
+
+
+
+
+                {% if sort_value == 'normal'  %}
+
+                <div class = "topicsentence">
+
+          
+                               
+                       
+                               For You
+                            
+                                <br>
+                                <br>    
+                        
+                </div>
+
+
+                {% else %}
+
+
+                <div class = "topicsentence">
+
+                             
+                       
+                              {{sort_value}}s
+                            
+                                <br>
+                                <br>    
+                        
+                </div>
+
+                {% endif %}
+
+
+
+
+        {% else %}
+
+                                <br>
+                                <br>
+                                <br>
+        <!-- add space-->
+
+
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+{% if posts.total >= 1  %}
+
+  
+
+        {% for ad in posts.items %}
+        <!-- <div class="individual-post"> -->
+              
+        <div class="wrap">
+
+                                
+
+                                                <a  href="{{url_for('buy.ad_view_page', ad_id = ad.id , ad_type = ad.ad_type  )}}">
+                        <div class="img"  >
+
+                                                    <h1 class="chk" style="font-size: 17px;  ">view</h1>
+                                                </a>
+                                                    
+                                                    <i style="
+                                                    position: absolute;
+                                                    z-index: 1;
+                                                    padding:5px;
+                                                    padding-top: 0px;
+                                                    font-size: 20px;
+                                                    font-style: normal;
+                                                    color: #79ff4d;
+                                                    text-shadow: 2px 3px 2px #000000;
+                                                    ">
+
+
+                                                    {% if  ad.is_event %}
+
+                                                    &#9873; 
+
+                                                    {% else %}
+
+                                                    &#10148;
+                                                    
+
+                                                    {% endif %}
+
+                                                    
+
+                                                    </i>
+
+                                                    
+                                                    {% set img = ad.image_files[0] %}
+                                                    {% if img %}
+
+
+
+
+                                                    <img src="{{url_for('static', filename='buy_sturf/' + img )}}" alt="{{ad.seller.first_name}}" width="300" height="200">
+
+                                                    {% endif %}
+
+
+                                                    <h1>
+
+                                                        {% if ad.seller.paid  %}
+
+                                                        $ paid $
+
+                                                        {% else %}
+
+                                                        
+
+                                                        {% endif %}
+
+                                                    </h1>
+
+
+
+                                                    <h1>
+
+                                                        {% if ad.title.__len__() >= 15  %}
+
+                                                        {{ ad.title[0:15].upper() }}...
+
+                                                        {% else %}
+
+                                                        {{ ad.title.upper()}}
+
+                                                        {% endif %}
+
+                                                    </h1>
+
+
+
+                                                    <div class="desc">
+
+                                                        
+
+                                                        # {{ ad.price }}
+                                                        
+
+
+                                                    </div>
+
+
+
+                                                    <p>
+
+                                                    <span style="color: green; ">by:</span>
+
+
+                                                    {% if ad.seller == current_user %}
+
+                                                        you
+
+                                                        {% else %}
+
+                                                        {{ad.seller.first_name}} 
+
+                                                        {% endif %}
+
+                                                    
+
+                                                    </p>
+                                                    
+                                                    <p>
+
+                                                    <span style="color: green;">on:</span>
+
+                                                    {{ad.date_of_post.strftime("%a %d %B, %Y")}}
+
+                                                    </p>
+                        </div>
+                    
+             
+
+    </div>              
+        {%endfor%}
+
+
+
+
+
+{% else %}
+
+
+
+         
+
+            <center>
+                <i style="
+                padding:5px;
+                padding-top: 0px;
+                font-size: 70px;
+                font-style: normal;
+                color: #79ff4d;
+                text-shadow: 2px 3px  black;
+                font-weight: bold
+                ">
+
+
+                &#9925;
+
+                </i>
+
+                <h1 class="damn">
+                Damn!....we got nothing
+                </h1>
+
+            </center>
+
+           
+
+{% endif %}
+
+
+
+
+
+
+
+    
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- javascript handling the dropdown menu -->
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+</script>
+
+
+
+
+<!-- defining variaables to transfer values with -->
+
+{% set new = sort_value %}
+
+{% set filter = filt %}
+
+
+
+
+<center>
+    <div class="pagination"> 
+    {% for page_num in posts.iter_pages(left_edge=1, right_edge = 1, left_current = 1, right_current = 2) %}
+
+
+        {%if page_num %}
+
+
+            
+
+                    {%if posts.page == page_num%}
+
+                            
+                                    <a  class="pagination_highlight" href="{{url_for('buy.ads', page = page_num, sort =  new, filtering = filt )}}">{{page_num}}</a>
+
+                    {% else %}
+
+                                    <a  class="pagination_normal" href="{{url_for('buy.ads', page = page_num, sort =  new, filtering = filt )}}">{{page_num}}</a>
+
+
+                    {% endif %}
+
+            
+
+
+
+        {% else %}
+
+        ...
+
+
+        {% endif %}
+
+
+
+    {% endfor %}
+    </div>
+</center>
+
+
+
+
+
+
+
+<!-- ..............................footer............................ -->
+
+<footer id = 'footer' style="margin-top: 10%">
+
+
+
+<div class="footerians">
+    <header><span style="margin-right: 5px; color: #ffffff; font-size: 25px;">☎</span>Get in touch with us</header>
+
+    <ul>
+
+    <li><a href="#"><div class="case1"></div></a></li>
+    <li><a href="#"><div class="case2"></div></a></li>
+    <li><a href="#"><div class="case3"></div></a></li>
+    <li><a href="#"><div class="case4"></div></a></li>
+
+    </ul>
+    
+
+</div>
+
+
+
+<div class="t_and_t">
+    <ul>
+    <li><a href="#">Terms and conditions</a></li>
+    <li><a href="#">what more can we do?</a></li>
+    <li><a href="#">Ad policy</a></li>
+    <li><a href="#">Content policy</a></li>
+    </ul>
+</div>
+
+
+    
+
+<div id="links">
+    <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="file:///C:/Users/SIMON/Documents/site%20work/site/Electricity.html">Electricity</a></li>
+    <li><a href="#">History</a></li>
+    <li><a href="#">About Us</a></li>
+    <li><a href="#">FAQS</a></li>
+    <li><a href="#">logout</a></li>
+    </ul>
+
+</div>
+
+
+    
+<div class="copyright">
+    Copyright &copy; 2020-2025 STURF
+    All rights reserved.
+    STURF is among the federally registered trademarks of
+    STURF LLC and may not be used by third parties without explicit permission.
+
+
+</div>
+
+
+
+
+
+    
+</footer>
+
+
+</html>
+
+
+
+
+	
+

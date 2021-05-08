@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>About us</title>
+  <link href="{{url_for('about_us.static', filename='Developers.css' )}}" rel="stylesheet" type="text/css" />
+  <meta name="viewport" content = "width = device-width, initial-scale = 1" charset="utf-8" >
+
+</head>
+
+
+<body>
+<!-- partial:index.partial.html -->
+<div class="menu">
+  <ul>
+    <li>
+      <span onclick="hoverEnter(0)" id="simon">
+
+        <!-- <i ></i> -->
+
+      </span>
+    </li>
+
+
+    <li>
+      <span onclick="hoverEnter(1)" id="ameer">
+        <i class="abdul"></i>
+      </span>
+    </li>
+
+
+   <!--  <li>
+      <span onclick="hoverEnter(2)">
+        <i class="fa fa-laptop"></i>
+      </span>
+    </li>
+
+
+    <li>
+      <span onclick="hoverEnter(3)">
+        <i class="fa fa-tag"></i>
+      </span>
+    </li>
+
+
+    <li>
+      <span onclick="hoverEnter(4)">
+        <i class="fa fa-tag"></i>
+      </span>
+    </li>
+
+
+    <li>
+      <span onclick="hoverEnter(5)">
+        <i class="fa fa-tag"></i>
+      </span>
+    </li>
+ -->
+
+
+    <span class="goo-index" id="goo-index"></span>
+  </ul>
+</div>
+
+<span></span>
+
+
+<div class="content-wrapper">
+
+
+  <div id="screen_0" class="screen visible">
+
+    <h2 id="simon_image" ></h2>
+
+    <p>
+
+      <p class="heading">SIMON </p>
+
+        <center style = "font-weight: bold; margin: 0px 5px 0px 5px;">
+            Seasoned Fullstack Developer
+        </center>
+
+
+
+    <section  class="white_dot"></section>
+    <section  class="black_circle"></section>
+    <section  class="white_circle"></section>
+
+    </p>
+
+  </div>
+
+
+
+  <div id="screen_1" class="screen">
+    <h2 id="ameer_image" ></h2>
+    <p>
+
+      <p class="heading">AMEER </p>
+
+        <center style = "font-weight: bold; margin: 0px 5px 0px 5px;">
+            Expert UI/UX designer
+        </center>
+
+
+    <section  class="ameer_black_dot"></section>
+    <section  class="ameer_black_circle"></section>
+
+    </p>
+
+  </div>
+
+
+<!-- 
+  <div id="screen_2" class="screen">
+   
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+  </div>
+
+
+
+  <div id="screen_3" class="screen">
+   
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+  </div>
+
+
+
+  <div id="screen_4" class="screen">
+   
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+  </div>
+
+
+
+  <div id="screen_5" class="screen">
+    
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+  </div> -->
+
+
+
+</div>
+<!-- partial -->
+
+
+  <script type="text/javascript">
+        let gooIndex = document.getElementById("goo-index");
+    let hoverEnter = (index) => {
+      gooIndex.style.top = 50 * index + "px";
+      let allScreens = document.querySelectorAll(".screen");
+      allScreens.forEach((e) => {
+        e.classList.remove("visible");
+      });
+      let nowVisible = document.getElementById("screen_" + index);
+      nowVisible.classList.add("visible");
+    };
+  </script>
+
+
+</body>
+
+
+</html>

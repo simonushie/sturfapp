@@ -1,0 +1,227 @@
+{% from '_formhelpers.html' import render_field %}
+
+
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<title>{{post.title}}</title>
+
+	<link href="{{url_for('post.static', filename='change-post-pic.css' )}}" rel="stylesheet" type="text/css" />
+
+	<meta name="viewport" content = "width = device-width, initial-scale = 1" charset="utf-8" >
+
+	<script type="text/javascript">
+
+    function back(){
+    	history.back();
+    }
+	
+	</script>
+
+
+
+</head> 
+
+
+
+
+
+<body> 
+
+
+
+<div id = "header">
+
+<label for="check">
+	<button  id="back"  onclick="back()";>&#10094;</button>
+	
+</label>
+
+
+		<a class="header_link" href="{{url_for('home.general')}}">	
+		STURF
+		</a>
+
+
+<div id="headtext">
+	Improving your wellbeing <span class="dots">...</span>
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+
+        <ul class=flashes>
+
+        {% for category, message in messages %}
+            <center>
+            <li class="{{ category }}">
+                {{ message }}
+            </li>
+            </center>
+        {% endfor %}
+
+        </ul>
+        
+    {% endif %}
+{% endwith %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class = "topicsentence">
+		<center class = "pennyless"> 
+
+			{{post.title}}
+				<br>
+				<br>	
+		</center>
+</div>
+
+
+
+
+
+
+
+
+
+	
+
+
+						<main class = "label1" >
+
+
+
+
+		 						
+		 					</a>
+
+							<div id="light" 
+							style="background: url('{{img}}') no-repeat center;
+									background-size: contain;
+									width: 100%;
+									height:100%;
+									padding-top: 100%;
+									vertical-align: center;
+									max-width: 500px;
+									max-height: 500px;"
+									
+
+		 					/>
+		 					
+
+
+		 					</div>
+
+
+		 				
+						</main>
+
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+
+
+
+		<!-- photo update form -->
+
+<center>
+	<div class="container"> 
+
+                        <form class="upload-form" method="POST" enctype="multipart/form-data">
+                            <dl>
+                                {{photoForm.csrf_token}}
+                            
+                             
+
+
+                                <label class="choose_file">
+                                    {{ render_field(photoForm.photo) }}
+                                </label>
+
+                                
+                            </dl>
+
+
+                            <p><input type=submit value= "Update &#10148;"  class="all_done"></p>
+                           
+                        </form>
+	</div>
+</center>
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+</html>

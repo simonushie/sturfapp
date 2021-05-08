@@ -1,0 +1,234 @@
+{% from '_formhelpers.html' import render_field %}
+
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+<title>{{title}}</title>
+
+	<link href="{{url_for('post.static', filename='post-event.css' )}}" rel="stylesheet" type="text/css" />
+
+	<meta name="viewport" content = "width = device-width, initial-scale = 1" charset="utf-8" >
+
+	<script type="text/javascript">
+
+    function back(){
+    	history.back();
+    }
+	
+	</script>
+
+
+
+</head> 
+
+
+
+
+
+<body> 
+
+
+
+<div id = "header">
+
+<label for="check">
+	<buttom  id="btn" type="button" onclick="back()";>&#10095;</button>
+	
+</label>
+
+
+		
+STURF
+
+<div class="headtext">
+	Improving your wellbeing <span class="dots">...</span>
+</div>
+
+
+</div>
+
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+
+        <ul class=flashes>
+
+        {% for category, message in messages %}
+            <center>
+
+            <li class="{{ category }}">
+                {{ message }}
+            </li>
+
+            </center>
+        {% endfor %}
+
+        </ul>
+        
+    {% endif %}
+{% endwith %}
+
+
+
+
+
+
+
+
+
+
+
+
+<div class = "topicsentence">
+		<center class = "pennyless">  
+				{{title}}
+				<br>
+				<br>	
+		</center>
+</div>
+
+
+
+
+
+
+
+
+
+
+<center>
+        <div class="container">
+
+                        <form method="POST" enctype="multipart/form-data">
+                            <dl>
+                                {{form.csrf_token}}
+                            
+                                
+
+
+
+
+
+                               
+
+                                {{ render_field(form.title) }}
+
+
+                                {{ render_field(form.content, cols="35", rows="7") }}
+
+                                {{ render_field(form.venue) }}
+
+                                <!-- <div  class="p2"> -->
+
+                                {{ render_field(form.day) }}
+
+
+                                {{ render_field(form.month) }}
+
+
+                                {{ render_field(form.year) }}
+
+
+
+
+
+
+                                <!-- <p class="info">
+	                            	
+	                            	Insert date in format: <span style="color: black; font-size: 14px; font-family: 'Comic Sans MS', cursive, sans-serif;"> year - month - day</span>
+
+	                            	<br>
+	                            	example:
+	                            	<br>
+
+	                            	 <span style="color: black; font-size: 14px; font-family: 'Comic Sans MS', cursive, sans-serif;">2020 - 5 - 6</span>
+	                            </p>
+                                
+ -->
+                               <!--  </div > -->
+
+                                
+
+                                
+
+                       			{% if post_type == 'event_update' %}
+
+                       			<!-- do nothing -->
+
+                       			{% else %}
+
+                                <label class="choose_file">
+                                    {{ render_field(form.photo) }}
+                                    {{info}}  IMAGE &#10011; 
+                                </label>
+
+                                {% endif %}
+
+
+                                
+                            </dl>
+
+
+
+
+                            	
+
+
+
+                            <p><input type=submit value= "{{info}} Event"  class="loginbutton"></p>
+                           
+                        </form>
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!-- title update form --> 
+                        <form method="POST" >
+                            
+                                {{linkForm.csrf_token}}
+
+                                {{ render_field(linkForm.url) }}
+
+                                <input type=submit value= "update"  class="loginbutton">
+
+                        </form>
+
+
+
+
+                        
+                       
+        </div>           
+</center>
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+</html>

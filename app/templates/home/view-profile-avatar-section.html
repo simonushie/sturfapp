@@ -1,0 +1,92 @@
+
+
+			<center >
+
+					<div id="cover" style="margin-bottom: 200px;
+											 border: 2px solid #79ff4d;
+											 max-width: 80%;
+											 min-width: 80%;">
+
+					{% for pic_id in pic_list  %}
+
+								<div class="img">
+									
+									<a href="{{url_for('home.set_avatar', id = current_user.id, img = 'default'+pic_id+'.jpg')}}">
+								    <img src="{{url_for('static', filename='profile_pics/uploads/default'+pic_id+'.jpg' )}}" alt="{{pic_id}}">
+								    </a>
+								</div>
+
+					{% endfor %}
+
+				
+					</div>
+
+
+
+<br>
+<br>
+<br>
+<br>
+					
+
+			</center>
+
+
+
+
+
+
+
+
+
+
+
+
+{% if not count >= 42 %}
+
+			<center>
+
+			<button id = "load_more" class="simple_btn"  count = {{count}} > more </button>
+
+			</center>
+
+
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% if count == 42 %}
+
+
+<!-- add space below -->
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+{% endif %}

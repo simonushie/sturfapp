@@ -1,0 +1,296 @@
+{% from '_formhelpers.html' import render_field %}
+
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<title>create new post</title>
+
+	<link href="{{url_for('post.static', filename='post_sturf_payment.css' )}}" rel="stylesheet" type="text/css" />
+
+	<meta name="viewport" content = "width = device-width, initial-scale = 1" charset="utf-8" >
+
+	<script type="text/javascript">
+
+    function back(){
+    	history.back();
+    }
+	
+	</script>
+
+
+
+</head> 
+
+
+
+
+
+<body> 
+
+
+
+<div id = "header">
+
+<label for="check">
+	<buttom  id="btn" type="button" onclick="back()";>&#10095;</button>
+	
+</label>
+
+
+		
+STURF
+
+<div class="headtext">
+	Improving your wellbeing <span class="dots">...</span>
+</div>
+
+
+</div>
+
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+	{% if messages %}
+
+		<ul class=flashes>
+
+		{% for category, message in messages %}
+
+			<li class="{{ category }}">
+				{{ message }}
+			</li>
+
+		{% endfor %}
+
+		</ul>
+		
+	{% endif %}
+{% endwith %}
+
+
+
+
+<h2>HELLO PUBLISHER</h2>
+
+
+
+
+<!-- ------------------------------------------------------------------ -->
+<center>
+
+
+
+<main class = "label">
+	<div class = "light" /></div>
+</main>
+
+
+
+
+</center>
+
+<!-- ------------------------------------------------------------------ -->
+
+
+
+
+<p>Hello {{current_user.first_name}}, 
+
+<!-- You would understand if we don't want too many irrelevant posts coming in.
+This is to emsure that only users with serious aspirations and 
+valid content can become  publishers and also to improve your overall 
+experience on this platform. -->
+
+
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+
+If you wish to join our VIP users and enjoy its 
+
+<a href="{{url_for('home.vip')}}" class="benefits">benefits</a>,
+
+ please subscribe to any of the packages below. Cheers!
+
+</p>
+
+
+<p >
+
+
+The entire Payment procedure typically takes <span style='color: black; font-size: 20px; font-weight: bold; 
+'> less than 15 seconds </span>with an 
+average internet speed!
+
+</p>
+
+
+
+
+<center>
+<div class = "login1">
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+                
+            <a class = "loginbutton1" href="{{url_for('post.post_sturf_payment', email = current_user.email)}}">
+            	
+                weekly 
+
+                <i style="
+                font-size: 20px;
+                border-radius: 50px;
+                color: black; 
+                background: #79ff4d; 
+                padding: 1px; 
+                padding-right: 8px; 
+                margin: 5px; 
+                ">
+
+            		#199
+
+            	</i>
+            </a>
+
+            <a class = "loginbutton1" href="{{url_for('post.post_sturf_payment', email = current_user.email)}}">
+            	
+                monthly  
+
+                <i style="
+                font-size: 20px;
+                border-radius: 50px;
+                color: black; 
+                background: #79ff4d; 
+                padding: 1px; 
+                padding-right: 8px; 
+                margin: 5px;
+                ">
+
+            		#599
+
+            	</i>
+            </a>
+
+
+            <a class = "loginbutton1" href="{{url_for('post.post_sturf_generic', email = current_user.email)}}">
+            	
+                generic 
+
+                <i style="
+                font-size: 20px;
+                border-radius: 50px;
+                color: black; 
+                background: #79ff4d; 
+                padding: 1px; 
+                padding-right: 8px; 
+                margin: 5px;
+                ">
+
+            		free
+
+            	</i>
+            </a>
+                
+</div>
+</center>
+
+
+
+
+
+
+
+
+
+<footer id = 'footer'>
+
+
+
+<div class="footerians">
+	<header><span style="margin-right: 5px; color: #ffffff; font-size: 25px;">☎</span>Get in touch with us</header>
+
+	<ul>
+
+	<li><a href="{{url_for('home.set_avatar', email = current_user.email, img = 'default2.jpg')}}"><div class="case1"></div></a></li>
+	<li><a href="{{url_for('home.set_avatar', email = current_user.email, img = 'default2.jpg')}}"><div class="case2"></div></a></li>
+	<li><a href="{{url_for('home.set_avatar', email = current_user.email, img = 'default2.jpg')}}"><div class="case3"></div></a></li>
+	<li><a href="{{url_for('home.set_avatar', email = current_user.email, img = 'default2.jpg')}}"><div class="case4"></div></a></li>
+
+	</ul>
+	
+
+</div>
+
+
+
+<div class="t_and_t">
+	<ul>
+	<li><a href="{{url_for('home.set_avatar', email = current_user.email, img = 'default2.jpg')}}">Terms and conditions</a></li>
+	<li><a href="{{url_for('home.set_avatar', email = current_user.email, img = 'default2.jpg')}}">what more can we do?</a></li>
+	<li><a href="{{url_for('home.set_avatar', email = current_user.email, img = 'default2.jpg')}}">Ad policy</a></li>
+	<li><a href="{{url_for('home.set_avatar', email = current_user.email, img = 'default2.jpg')}}">Content policy</a></li>
+	</ul>
+</div>
+
+
+	
+
+<div class="links">
+	<ul>
+	<li><a href="{{url_for('home.set_avatar', email = current_user.email, img = 'default2.jpg')}}">Home</a></li>
+	<li><a href="file:///C:/Users/SIMON/Documents/site%20work/site/Electricity.html">Electricity</a></li>
+	<li><a href="{{url_for('home.set_avatar', email = current_user.email, img = 'default2.jpg')}}">History</a></li>
+	<li><a href="{{url_for('home.set_avatar', email = current_user.email, img = 'default2.jpg')}}">About Us</a></li>
+	<li><a href="{{url_for('home.set_avatar', email = current_user.email, img = 'default2.jpg')}}">FAQS</a></li>
+	<li><a href="{{url_for('security.logout')}}">logout</a></li>
+	</ul>
+
+</div>
+
+
+	
+<div class="copyright">
+	Copyright &copy; 2020-2025 STURF
+	All rights reserved.
+	STURF is among the federally registered trademarks of
+    STURF LLC and may not be used by third parties without explicit permission.
+
+
+</div>
+
+
+
+
+
+	
+</footer>
+
+
+
+
+
+</html>

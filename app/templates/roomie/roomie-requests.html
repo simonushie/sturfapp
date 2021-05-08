@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<title>{{current_user.roomie_requesters.count()}} roomie(s) sent you a request</title>
+
+	<link href="{{url_for('roomie.static', filename='roomie-requests.css' )}}" rel="stylesheet" type="text/css" />
+
+	<meta name="viewport" content = "width = device-width, initial-scale = 1" charset="utf-8" >
+
+	<script type="text/javascript">
+
+    function back(){
+    	history.back();
+    }
+	
+	</script>
+
+
+
+</head> 
+
+
+
+
+
+<body> 
+
+
+
+<!-- header section -->
+
+<div id = "header">
+
+	<label>
+        <button  id="back" type="button" onclick="back()";>&#10094;</button>
+    </label>
+
+
+	<a class="header_link" href="{{url_for('home.general')}}">  
+    STURF
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+       <!----------- REPORT BUTTON ---------------->
+    <input type="checkbox" id="check">
+
+    <label for="check">
+        <i  id="btn">═</i>
+        <i  id="cancel">╳</i>
+    </label>
+
+
+
+
+
+    <div class="sidebar">
+
+            
+
+    <ul>
+
+
+
+
+
+								{% if request_type == 'requesters'  %}
+
+									<li>
+									        <a href="{{url_for('roomie.roomie_requests', request_type = 'roomies')}}">
+									            <i style="font-style: normal;">&#10067;</i>
+
+									        your roomies
+
+									        </a>
+
+									    </li>
+				
+								{%  elif request_type == 'roomies' %}
+
+									 <li>
+									        <a href="{{url_for('roomie.roomie_requests', request_type = 'requesters')}}">
+									            <i style="font-style: normal;">&#10067;</i>
+
+									        Roomie requests
+
+									        </a>
+
+									    </li>
+
+
+								{% endif %} 
+
+
+
+
+		   
+
+
+		    
+
+
+
+    </ul>
+            
+            
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+	<div class="headtext">
+		Improving your wellbeing <span class="dots">...</span>
+	</div>
+
+
+</div>
+
+
+
+<!-- end of header section -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class = "topicsentence">
+
+
+
+
+		<center class = "pennyless">
+
+		
+
+								{% if request_type == 'requesters'  %}
+
+									you have <span style="color: black;"> {{ current_user.roomie_requesters.count() }} </span> roomie requests 
+				
+								{%  elif request_type == 'roomies' %}
+
+									your roomies are <span style="color: black;"> {{ current_user.all_roomies_count() }} </span> total
+
+								{% endif %} 
+
+
+				<br>
+				<br>
+
+ 
+	
+		</center>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="bio">
+	<br>
+	<br>
+
+
+		<div class="bio-content">
+			
+				{% for requester in r %}
+					<div class="wrapper">
+
+						
+
+
+							
+							<p>
+								<img  class="image"  src="{{url_for('static', filename='profile_pics/uploads/' + requester.image_file )}}" alt="{{requester.first_name}}" width="35" height="35">
+
+								<div class="date">
+
+								{% if request_type == 'requesters'  %}
+								
+
+ 								{{ requester.first_name}} sent you a roomie request
+
+
+ 								{%  elif request_type == 'roomies' %}
+
+
+ 								<!-- do nothing -->
+
+
+								{% endif %}
+
+
+								
+								</div>
+
+
+								{% if requester.first_name.__len__() >= 20  %}
+
+									{{ requester.first_name[0:20] }}...
+
+								{% else %}
+
+									{{ requester.first_name}}
+
+								{% endif %}
+
+
+
+								{% if request_type == 'requesters'  %}
+
+
+								<a href="{{url_for('roomie.accept_roomie_request', id = requester.id) }}" >
+								<p id = 'accept_request'>Accept Request</p>
+								</a>
+
+
+								{% elif request_type == 'roomies' %}
+
+								<a href="{{url_for('roomie.send_message', recipient_id = requester.id) }}" >
+								<p id = 'accept_request'>chat</p>
+								</a>
+
+	
+
+
+								<a  href="{{url_for('roomie.remove_roomie', id = requester.id, request_type = 'remove') }}" >
+					             <p id = 'accept_request'>remove roomie</p>
+					            </a>
+							
+
+								{% endif %} 
+
+
+								<br>
+								<br>
+
+
+
+
+
+
+	
+							</p>
+
+
+							
+
+
+						
+
+					</div>
+				{% endfor %}
+
+
+
+
+		</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+<footer id = 'footer'>
+
+
+
+<div class="footerians">
+	<header><span style="margin-right: 5px; color: #ffffff; font-size: 25px;">☎</span>Get in touch with us</header>
+
+	<ul>
+
+	<li><a href="#"><div class="case1"></div></a></li>
+	<li><a href="#"><div class="case2"></div></a></li>
+	<li><a href="#"><div class="case3"></div></a></li>
+	<li><a href="#"><div class="case4"></div></a></li>
+
+	</ul>
+	
+
+</div>
+
+
+
+<div class="t_and_t">
+	<ul>
+	<li><a href="#">Terms and conditions</a></li>
+	<li><a href="#">what more can we do?</a></li>
+	<li><a href="#">Ad policy</a></li>
+	<li><a href="#">Content policy</a></li>
+	</ul>
+</div>
+
+
+	
+
+<div class="links">
+	<ul>
+	<li><a href="#">Home</a></li>
+	<li><a href="file:///C:/Users/SIMON/Documents/site%20work/site/Electricity.html">Electricity</a></li>
+	<li><a href="#">History</a></li>
+	<li><a href="#">About Us</a></li>
+	<li><a href="#">FAQS</a></li>
+	<li><a href="{{url_for('security.logout')}}">logout</a></li>
+	</ul>
+
+</div>
+
+
+	
+<div class="copyright">
+	Copyright &copy; 2020-2025 STURF
+	All rights reserved.
+	STURF is among the federally registered trademarks of
+    STURF LLC and may not be used by third parties without explicit permission.
+
+
+</div>
+
+
+
+
+
+	
+</footer>
+
+
+
+
+
+</html>

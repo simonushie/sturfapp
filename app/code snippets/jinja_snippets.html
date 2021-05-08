@@ -1,0 +1,27 @@
+
+<div class="date_container"> 
+
+
+<label style="font-size: 17px;">
+When's your birthday?	
+</label>
+
+
+
+			            <form method='post'>
+			            	<dl>
+			            		{{birthDay.csrf_token}}
+								
+
+                                {{ render_field(birthDay.day) }}
+
+                                {{ render_field(birthDay.month) }}
+
+                                {{ render_field(birthDay.year) }}
+								
+							</dl>
+								<p><input type=submit value= Update  class="loginbutton"></p>
+			            </form>
+
+
+</div>

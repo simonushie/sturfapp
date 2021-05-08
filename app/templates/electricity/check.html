@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<script>
+		 // Function to change div background color
+    
+    function reloader(){
+    	window.location.reload(true);
+    }
+
+    function back(){
+        history.back();
+        history.back();
+    }
+
+
+	</script>
+
+	<title>{{title}}</title>
+
+	<link href="{{url_for('electricity.static', filename='location.css' )}}" rel="stylesheet" type="text/css" />
+
+	<meta name="viewport" content = "width = device-width, initial-scale = 1" >
+
+</head> 
+
+
+
+
+<body> 
+
+
+
+
+<!-- header section -->
+
+<div id = "header">
+
+	<label for="check">
+		<button  id="btn" type="button" onclick="back()";>&#10094;</button>
+	</label>
+
+
+		
+	STURF
+
+	<div class="headtext">
+		Improving your wellbeing <span class="dots">...</span>
+	</div>
+
+
+</div>
+
+
+
+<!-- end of header section -->
+
+
+
+
+
+
+
+
+<div id = "advertisement">
+		<center> AD</header>
+</div>
+
+
+
+
+
+
+
+
+
+<div id = "textarea">
+
+
+	<center class="text" > 
+
+		Keep refreshing this page regularly to see the update on electricity.
+		<br>
+		We have provided a convenient refresh button below
+
+	</center>
+
+	
+
+
+
+	<hr style="max-width: 500px; margin: 0 auto;">
+
+
+
+
+
+	<h1 style= "
+	  font-size: 37px;
+	  margin-bottom: 120px;
+	  margin-top: 120px;
+	  text-transform: uppercase;
+	  line-height: 45px;
+	  letter-spacing: 3px;
+	  font-weight: 200;
+	  text-align: center;
+	  font-family:cursive, sans-serif;
+	  text-shadow: 2px 0px 3px rgba(28,110,164,0.48);
+	  transition: all ease 9s;
+	  color: {{t2}};"
+	>
+
+	{{status}}
+
+	</h1>
+
+
+
+
+
+	<hr style="max-width: 500px; margin: 0 auto; ">
+
+
+
+
+
+	<h3  style="	
+	max-width: 500px;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 150px;
+	margin-bottom: 150px;
+	font-size: 22px;
+	font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;"> 
+
+				{{report}} 
+
+				<span style = "
+				color: {{t1}}; 
+				font-family:cursive, sans-serif; 
+				font-size: 30px;"> 
+				<br>
+
+				{{light.period.strftime("%I:%M%p  %A, %B %d")}}
+
+
+				</span>
+
+
+	</h3>
+
+
+	
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div >
+
+	<center> 
+
+		<main style="	min-height:200px;
+			background-color: {{color}};
+			position: relative;
+			border-radius: 15px;
+			text-align: center;
+			margin-bottom: 60px;
+			margin-top: 60px;
+			box-shadow: 5px 4px 17px 3px #848484;
+			max-width: 500px;
+			margin-top: 5%;
+			max-height: 500px;
+		">
+
+
+
+
+						<div id="bgimage" style = "
+							vertical-align: center;
+							background: url('{{pic}}') no-repeat center;
+							background-size: contain;
+							width: 100%;
+							height:100%;
+							padding-top: 100%;
+							border-radius: 50%;
+						}">
+							
+
+						</div>
+		
+		</main>
+
+	</center>
+
+</div>
+
+
+
+
+
+<div id = "linkcontainer">
+
+	<div>
+		<center>
+	<div class = "login">
+		
+		<button style = 'margin-top:70px; outline: none;' class = "loginbutton" type="button" onclick="reloader();">
+			<center>Refresh</center>
+		</button>
+		</center>		
+	</div>
+	</div>
+
+</div>
+
+
+
+<center > 
+<div id = "linkcontainer">
+
+	<div>
+		<center>
+	<div class = "login">
+		
+		<a class = "loginbutton" href="{{url_for('history.history')}}">
+			<center>History</center>
+		</a>
+		</center>		
+	</div>
+	</div>
+</div>
+</div>
+</center>
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+<!-- ..............................footer............................ -->
+
+<footer id = 'footer'>
+
+
+
+<div class="footerians">
+	<header><span style="margin-right: 5px; color: #ffffff; font-size: 25px;">☎</span>Get in touch with us</header>
+
+	<ul>
+
+	<li><a href="#"><div class="case1"></div></a></li>
+	<li><a href="#"><div class="case2"></div></a></li>
+	<li><a href="#"><div class="case3"></div></a></li>
+	<li><a href="#"><div class="case4"></div></a></li>
+
+	</ul>
+	
+
+</div>
+
+
+
+<div class="t_and_t">
+	<ul>
+	<li><a href="#">Terms and conditions</a></li>
+	<li><a href="#">what more can we do?</a></li>
+	<li><a href="#">Ad policy</a></li>
+	<li><a href="#">Content policy</a></li>
+	</ul>
+</div>
+
+
+	
+
+<div id="links">
+	<ul>
+	<li><a href="#">Home</a></li>
+	<li><a href="file:///C:/Users/SIMON/Documents/site%20work/site/Electricity.html">Electricity</a></li>
+	<li><a href="#">History</a></li>
+	<li><a href="#">About Us</a></li>
+	<li><a href="#">FAQS</a></li>
+	<li><a href="{{url_for('security.logout')}}">logout</a></li>
+	</ul>
+
+</div>
+
+
+	
+<div class="copyright">
+	Copyright &copy; 2020-2025 STURF
+	All rights reserved.
+	STURF is among the federally registered trademarks of
+    STURF LLC and may not be used by third parties without explicit permission.
+
+
+</div>
+
+
+
+
+
+	
+</footer>
+
+
+
+
+
+<html>

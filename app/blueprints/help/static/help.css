@@ -1,0 +1,920 @@
+#header{
+  font-family: "Comic Sans MS", "chalkboard", sans-serif;
+  background: linear-gradient(45deg, #FFFFFF 0%, #A0CBA5 0%, #79FF4D 100%);
+  letter-spacing: 6px;
+  color: #ffffff;
+  font-weight:bold;
+  text-align:center;
+  text-shadow: 8px 7px 3px rgba(43,60,44,0.71);
+  position:relative;
+  box-shadow: 8px -3px 29px 0px #000000;
+  min-height: 50px;
+  height: 50px;
+  border-radius: 0px;
+  font-size: 25px;
+}
+
+
+.headtext{ 
+font-size: 15px;
+text-shadow: 5px 4px 3px rgba(0,0,0,0.26);
+margin-top: 75px;
+}
+
+.dots{
+	font-size: 30px;	
+}
+
+
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+/*back button*/
+#check{
+	display: none;
+}
+
+
+
+label #back{
+	position: absolute;
+	left:10px;
+	top: 5px;
+	font-size: 40px;
+	color: #ffffff;
+	background: none;
+	border: none;
+	outline: none;
+	padding:6px 12px;
+	text-shadow: 7px 8.5px 3px rgba(43,60,44,0.71);
+
+
+
+	
+}
+/*end of back button*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*this fix snippet will reduce the header size*/
+
+
+#headtext{
+  display: none;
+}
+
+
+label #back{
+  left:10px;
+  top: -12px;
+  font-size: 35px;
+}
+
+
+label #btn{
+  right: -2px;
+  font-size: 35px;
+}
+
+
+
+/*end of fix*/
+
+
+
+
+
+
+
+.label{
+	max-width: 250px;
+	position: relative;	
+	min-height: 250px;
+	min-width:  250px;
+	margin: 0 auto;
+	margin-bottom: 120px;
+}
+
+
+
+.light{
+	background: url('faq-speech-bubble.png') no-repeat center;
+	background-size: contain;
+	width: 100%;
+	height:100%;
+	padding-top: 100%;
+}
+
+
+
+
+
+
+
+
+
+#textarea{
+	font-size: 18px;
+	text-align: center;
+	padding-bottom: 30px;
+}
+
+
+.text{
+	margin-top: 30px;
+	margin-bottom: 50px;
+	color: #000000;
+	padding-left: 60px;
+	padding-right: 60px;
+}
+
+
+
+
+
+
+
+
+
+#advertisement{
+	position: relative;
+	border-radius: 15px;
+	text-align:center;
+	background-color: #79ff4d;
+	height:200px;
+	margin-bottom: 70px;
+	margin-top: 20px;
+	box-shadow: 5px 4px 17px 3px #848484;
+
+
+}
+
+
+
+
+
+
+
+/*START OF ACORDION*/
+
+#accordion{
+	padding: 15px;
+	margin-bottom: 200px;
+
+}
+
+#accordion .transition, p, ul li i:before, ul li i:after {
+  transition: all 0.25s ease-in-out;
+}
+
+#accordion .flipIn, h1, ul li {
+  animation: flipdown 0.5s ease both;
+}
+
+#accordion .no-select, h2 {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media (max-width: 550px) {
+ #accordion body {
+    box-sizing: border-box;
+    transform: translate(0, 0);
+    max-width: 100%;
+    min-height: 100%;
+    margin: 0;
+    left: 0;
+  }
+}
+
+#accordion h1, h2 {
+  color: #000000;
+  margin-bottom: 50px;
+}
+
+#accordion h1 {
+  margin-top: 120px;
+  text-transform: uppercase;
+  font-size: 40px;
+  line-height: 42px;
+  letter-spacing: 3px;
+  font-weight: 200;
+  text-align: center;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  text-shadow: 2px 0px 3px rgba(28,110,164,0.48);
+  color: #79ff4d;
+ 
+
+}
+
+#accordion h2 {
+  font-size: 26px;
+  line-height: 34px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  display: block;
+  margin: 0;
+  cursor: pointer;
+}
+
+#accordion p {
+  color: #494949;
+  font-size: 17px;
+  line-height: 26px;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  max-height: 800px;
+  opacity: 1;
+  transform: translate(0, 0);
+  margin-top: 14px;
+  z-index: 2;
+}
+
+#accordion ul {
+  list-style: none;
+  perspective: 900;
+  padding: 0;
+  margin: 0;
+}
+#accordion ul li {
+  position: relative;
+  padding: 0;
+  margin-top:  30px;
+  padding-bottom: 4px;
+  padding-top: 18px;
+  border-top: 1px dotted #79ff4d;
+  margin-bottom: 60px;
+}
+#accordion ul li:nth-of-type(1) {
+  animation-delay: 1s;
+}
+#accordion ul li:nth-of-type(2) {
+  animation-delay: 1.5s;
+}
+#accordion ul li:nth-of-type(3) {
+  animation-delay: 2s;
+ }
+
+#accordion ul li:nth-of-type(4) {
+  animation-delay: 2.5s;
+}
+
+#accordion ul li:nth-of-type(5) {
+  animation-delay: 3s;
+}
+#accordion ul li:last-of-type {
+  padding-bottom: 0;
+}
+#accordion ul li i {
+  position: absolute;
+  transform: translate(-6px, 0);
+  margin-top: 16px;
+  right: 0;
+}
+ #accordion ul li i:before, ul li i:after {
+  content: "";
+  position: absolute;
+  background-color: #000000;
+  width: 3px;
+  height: 9px;
+
+}
+#accordion ul li i:before {
+  transform: translate(-2px, 0) rotate(45deg);
+}
+#accordion ul li i:after {
+  transform: translate(2px, 0) rotate(-45deg);
+}
+#accordion ul li input[type=checkbox] {
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+}
+
+
+#accordion ul li input[type=checkbox] .suya {
+  display: none;
+}
+
+
+
+#accordion ul li input[type=checkbox]:checked ~ p {
+  margin-top: 0;
+  max-height: 0;
+  opacity: 0;
+  transform: translate(0, 50%);
+}
+
+#accordion ul li input[type=checkbox]:checked ~ .suya {
+  margin-top: 0;
+  max-height: 0;
+  opacity: 0;
+  transform: translate(0, 50%);
+}
+
+#accordion ul li input[type=checkbox]:checked ~ i:before {
+  transform: translate(2px, 0) rotate(45deg);
+}
+#accordion ul li input[type=checkbox]:checked ~ i:after {
+  transform: translate(-2px, 0) rotate(-45deg);
+}
+
+@keyframes flipdown {
+  0% {
+    opacity: 0;
+    transform-origin: top center;
+    transform: rotateX(-90deg);
+  }
+  5% {
+    opacity: 1;
+  }
+  80% {
+    transform: rotateX(8deg);
+  }
+  83% {
+    transform: rotateX(6deg);
+  }
+  92% {
+    transform: rotateX(-3deg);
+  }
+  100% {
+    transform-origin: top center;
+    transform: rotateX(0deg);
+  }
+}
+
+
+
+
+
+
+/*END OF ACCORDION*/
+
+
+
+
+
+
+
+
+
+
+#advertisement,#accordion{
+	margin-left: 5%;
+	margin-right: 5%;
+
+}
+
+
+
+
+
+
+
+
+
+#goodimg{
+	min-height:200px;
+	position: relative;
+	border-radius: 15px;
+	text-align: center;
+	margin-bottom: 10px;
+	margin-top: 20px;
+	max-width: 250px;
+	margin-top: 10px;
+	max-height:250px;
+
+}
+
+
+
+.bgimage{
+	vertical-align: center;
+	background: url('good.png') no-repeat center;
+	background-size: contain;
+	width: 100%;
+	height:100%;
+	padding-top: 100%;
+	
+}
+
+
+.bgimager{
+	vertical-align: center;
+	background: url('bad.png') no-repeat center;
+	background-size: contain;
+	width: 100%;
+	height:100%;
+	padding-top: 100%;
+	
+}
+
+
+
+.linka{
+color: #000000;
+font-weight: bold;
+text-shadow: 2px 4px 5px rgba(0,0,0,0.7);
+}
+
+
+
+
+
+
+
+
+
+
+
+/*footer section*/
+
+#footer{
+	min-height:300px;
+	font-family: cursive, sans-serif;
+	background: #FFFFFF;
+	background: linear-gradient(45deg, #FFFFFF 0%, #A0CBA5 0%, #79FF4D 100%);
+	text-decoration: none solid rgb(68, 68, 68);
+	font-style: normal;
+	font-variant: normal;
+	color: #000000;
+	position:relative;
+	border-radius: 15px 0px 15px 0px;
+	box-shadow: 8px -3px 29px 0px #000000;
+	margin-top: 200px;
+	justify-content: space-between;
+}
+
+
+
+.footerians{
+	display: inline-grid;
+	position: relative;
+	width: 60px;
+	height: 250px;
+	background: #79ff4d;
+	max-height: 200px;
+	min-height: 200px;
+	transition: all .4s ease;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-weight: bold;
+	text-align:left; 
+	border-radius: 0px 0px 22px 0px;
+}
+
+
+
+.footerians header{
+	width: 250px;
+	height: 70px;
+	font-size: 17px;
+	color: #000000;
+	text-align: left;
+	line-height: 70px;
+	background: none;
+	user-select: none;
+	transition: all .6s ease;
+	border-radius: 0px 50px 50px 0px;
+	text-shadow: 2px 4px 5px rgba(0,0,0,0.7);
+}
+
+.footerians ul a{
+	margin-top: 10px;
+	display: block;
+	height: 100%;
+	width: 10px;
+	line-height: 50px;
+	font-size: 24px;
+	color: #79ff4d;
+	padding-left: 20px;
+	box-sizing: border-box;
+	transition: .3s;
+}
+
+.footerians ul li:hover a{
+	padding-left: 70px;
+}
+
+.footerians ul a {
+	margin-right: 0px;
+}
+.footerians ul {
+width: 20px;
+}
+
+
+.img{
+	margin-right: 10px
+}
+
+.case1,.case2,.case3,.case4{
+	border-radius: 50%;
+	box-shadow: 6px 5px 7px 0px rgba(0,0,0,0.7);
+	vertical-align: center;
+	background-size: contain;
+	max-height: 25px;
+	min-height: 25px;
+	max-width: 25px;
+	min-width: 25px;
+	width: 25px;
+	height: 25px;
+	padding-top: 1%;
+	border-radius: 50%;
+	border: 3px solid #FFFFFF;
+
+}
+
+.case1{
+	background: url('facebook.png') no-repeat center;
+}
+
+.case2{
+	background: url('twitter.png') no-repeat center;
+}
+
+.case3{
+	background: url('linkedin.png') no-repeat center;
+}
+
+.case4{
+	background: url('instagram.png') no-repeat center;
+}
+
+
+
+.linkr{
+color: #ffffff;
+font-weight: bold;
+text-shadow: 2px 4px 5px rgba(0,0,0,0.7);
+}
+
+
+.linkr2{
+color: #000000;
+font-weight: bold;
+text-shadow: 2px 4px 5px rgba(0,0,0,0.7);
+}
+
+
+
+#links {
+	position: relative;
+	display: inline-flex;
+	margin-left: 30%;
+}
+
+#links ul a{
+	margin-top: 0px;
+	display: block;
+	height: 100%;
+	width: 100%;
+	line-height: 25px;
+	font-size: 14px;
+	color: #ffffff;
+	transition: .3s;
+	text-shadow: 2px 4px 5px rgba(0,0,0,0.7);
+}
+
+.copyright{
+	position: relative;
+	display: inline-table;
+	max-width: 500px;
+	float: right;
+	font-size: 10px; 
+	margin-top:20px; 
+}
+
+.t_and_t{
+	position: relative;
+	display: inline-flex;
+	margin-left: 20%;
+	font-size: 14px;
+	transition: .3s;
+	text-shadow: 2px 4px 5px rgba(0,0,0,0.7);
+	line-height: 40px;
+	margin-bottom: 25px;
+}
+
+.t_and_t ul a{
+color: #ffffff;
+	
+}
+
+/*end of footer section*/
+
+
+
+#menu,#body,#advertisement,#textarea,.refresh,.container,#buttonscontainer{
+	margin-left: 5%;
+	margin-right: 5%;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*-----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------*/
+/*-------------------------------ALL HEADERS ONLY------------------------------*/
+/*-----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------
+--------------------MEDIA SCREEN 600--------------------
+--------------------------------------------------------*/
+
+
+/*---------------HEADER-------------*/
+@media screen and (max-width: 600px){
+#header{
+	min-height: 50px;
+	height: 50px;
+	border-radius: 0px;
+	font-size: 25px;
+}
+
+#headtext{
+	display: none;
+}
+}
+/*----------------------------------*/
+
+/*------------------------------------------------------
+--------------------END OF MEDIA SCREEN 600-------------
+--------------------------------------------------------*/
+
+
+/*-----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------*/
+/*-----------------------------END OF ALL HEADERS------------------------------*/
+/*-----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+/*-----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------*/
+/*-------------------------------ALL FOOTERS ONLY------------------------------*/
+/*-----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------*/
+
+
+
+
+/*-------------------------------------------------------
+--------------------MEDIA SCREEN FOOTER 800--------------
+--------------------------------------------------------*/
+
+
+@media screen and (max-width: 800px){
+.footerians header{
+	font-size: 12px;
+	color: #000000;
+}
+
+#links {
+	margin-left: 20%;
+}
+
+
+/*------------------------------------------------------
+--------------------END OF MEDIA SCREEN 800-------------
+--------------------------------------------------------*/
+
+
+/*-------------------------------------------------------
+--------------------MEDIA SCREEN FOOTER 600--------------
+--------------------------------------------------------*/
+
+/*--------------FOOTER-------------*/
+@media screen and (max-width: 600px){
+
+.footerians header{
+	font-size: 12px;
+}
+
+.copyright{
+	max-width: 250px;
+}
+
+#footer{
+	min-height: 500px;
+}
+
+#links {
+	margin-left: 60%;
+}
+
+.t_and_t{
+	margin-left: 40%;
+}
+
+}
+
+/*------------------------------------------------------
+--------------------END OF MEDIA SCREEN 600--------------------
+--------------------------------------------------------*/
+
+
+
+/*------------------------------------------------------
+--------------------MEDIA SCREEN FOOTER 346--------------------
+--------------------------------------------------------*/
+
+/*--------------FOOTER-------------*/
+@media screen and (max-width: 346px){
+.t_and_t{
+	margin-left: 22%;
+}
+
+.footerians header{
+	font-size: 10px;
+}
+}
+/*----------------------------------*/
+
+/*------------------------------------------------------
+--------------------END OF MEDIA SCREEN 346---------------
+--------------------------------------------------------*/
+
+
+
+
+/*------------------------------------------------------
+--------------------MEDIA SCREEN FOOTER 320--------------------
+--------------------------------------------------------*/
+
+/*--------------FOOTER-------------*/
+@media screen and (max-width: 320px){
+.footerians header{
+	font-size: 10px;
+}
+
+.copyright{
+	max-width: 150px;
+}
+
+#footer{
+	min-height: 600px;
+}
+
+
+.t_and_t{
+	margin-left: 23%;
+}
+
+}
+/*----------------------------------*/
+
+/*------------------------------------------------------
+--------------------END OF MEDIA SCREEN 320--------------
+--------------------------------------------------------*/
+
+
+
+/*------------------------------------------------------
+--------------------MEDIA SCREEN FOOTER 240--------------------
+--------------------------------------------------------*/
+
+/*--------------FOOTER-------------*/
+@media screen and (max-width: 240px){
+.t_and_t{
+	margin-left: 30%;
+}
+}
+/*----------------------------------*/
+
+
+/*------------------------------------------------------
+--------------------END OF MEDIA SCREEN 240--------------
+--------------------------------------------------------*/
+
+
+/*-----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------*/
+/*-----------------------------END OF ALL FOOTERS------------------------------*/
+/*-----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+/*-----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------*/
+/*-------------------------------ALL OTHERS------------------------------*/
+/*-----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------
+--------------------MEDIA SCREEN BACK BUTTON 600--------
+--------------------------------------------------------*/
+
+
+/*---------------BACK BUTTON-------------*/
+@media screen and (max-width: 600px){
+label #btn{
+	left:10px;
+	top: -16px;
+	font-size: 40px;
+}
+
+.headtext{
+	display: none;
+}
+
+}
+/*----------------------------------*/
+
+
+/*------------------------------------------------------
+--------------------END OF MEDIA SCREEN 600-------------
+--------------------------------------------------------*/
+
+
+
+
+/*-----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------*/
+/*-----------------------------END OF ALL OTHERS------------------------------*/
+/*-----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+viewport{
+	zoom:1.0;
+	width:extend-to-zoom;
+}
+
+@-ms-viewport{
+	width:extend-to-zoom;
+	zoom:1.0;
+}
+
+

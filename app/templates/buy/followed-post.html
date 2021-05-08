@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta name="viewport" content = "width = device-width, initial-scale = 1" >
+
+    <link href="{{url_for('post.static', filename='post-page.css' )}}" rel="stylesheet" type="text/css" />
+
+    <title>Stay up to date unobstrusively </title>
+    <script >
+        function back(){
+            history.back()
+        }
+
+    </script>
+
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+
+<!-- header section -->
+
+
+
+
+
+
+<div id = "header">
+
+    <label>
+        <button  id="back" type="button" onclick="back()";>&#10094;</button>
+    </label>
+
+
+        
+    <a class="header_link" href="{{url_for('home.general')}}">  
+    STURF
+    </a>
+
+
+    <!----------- REPORT BUTTON ---------------->
+    <input type="checkbox" id="check">
+
+    <label for="check">
+        <i  id="btn">&#10011;</i>
+        <i  id="cancel">╳</i>
+    </label>
+
+
+
+
+
+    <div class="sidebar">
+
+            
+
+    <ul>
+
+
+
+
+
+
+
+    {% if  current_user.generic or current_user.paid %}
+
+        <li>
+            <a  href="{{url_for('post.post_type')}}">
+
+                <i style="font-style: normal;font-size: 30px; margin-right: 0px; ">&#9997;</i>
+
+                 New Post
+
+            </a>
+
+        </li>
+
+        {% else %}
+
+
+        <li>
+            <a  href="{{url_for('post.post_payment_page')}}">
+
+                <i style="font-style: normal;font-size: 30px; margin-right: 0px; ">&#9997;</i>
+
+                 I want to post
+
+            </a>
+
+        </li>
+
+        
+    {% endif %}
+
+
+
+        <li>   
+            <a  href="{{url_for('post.post')}}">
+
+                <i style="font-style: normal;font-size: 30px; margin-right: 0px; ">&#9997;</i>
+
+                 Explore
+
+            </a>
+
+        </li>
+
+
+
+
+        <li>    
+            <a  href="{{url_for('post.followed_post')}}">
+
+                <i style="font-style: normal;font-size: 30px; margin-right: 0px; ">&#9997;</i>
+
+                 Followed
+
+            </a>
+
+        </li>
+
+
+
+
+
+
+        
+
+
+    <li>
+        <a style="color: gold;" href="{{url_for('post.post_payment_page')}}">
+
+            <i style="font-style: normal;font-size: 30px; margin-right: 0px; color: gold;">&starf;</i>
+
+        VIP
+
+        </a>
+
+    </li>
+
+
+
+    <li>
+        <a href="{{url_for('help.index')}}">
+            <i style="font-style: normal;">&#10067;</i>
+
+        Help 
+
+        </a>
+
+    </li>
+
+
+    </ul>
+            
+            
+
+    </div>
+
+<!----------- END OF REPORT BUTTON ---------------->
+
+
+
+
+
+
+
+    <div id="headtext">
+        Improving your wellbeing <span class="dots">...</span>
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+
+        <ul class=flashes>
+
+        {% for category, message in messages %}
+            <center>
+
+            <li class="{{ category }}">
+                {{ message }}
+            </li>
+
+            </center>
+        {% endfor %}
+
+        </ul>
+        
+    {% endif %}
+{% endwith %}
+
+
+
+
+
+
+
+
+
+
+<!-- <center > 
+<div id = "linkcontainer">
+
+    <div>
+        <center>
+    <div class = "login">
+        
+        <a class = "loginbutton" href="#">
+            <center>explore</center>
+        </a>
+        </center>       
+    </div>
+    </div>
+</div>
+</div>
+</center>
+
+
+
+
+<center > 
+<div id = "linkcontainer">
+
+    <div>
+        <center>
+    <div class = "login">
+        
+        <a class = "loginbutton" href="#">
+            <center>followed</center>
+        </a>
+        </center>       
+    </div>
+    </div>
+</div>
+</div>
+</center>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {%if page < 2 %}
+
+
+
+
+
+
+                {% if post_value == 'normal'  %}
+
+
+
+
+
+
+                <div class = "topicsentence" >
+
+
+                       
+                               Explore posts by everyone
+                            
+                                <br>
+                                <br>    
+                        
+                </div>
+
+
+                {% else %}
+
+
+
+
+
+
+                <div class = "topicsentence" >
+
+                        
+                       
+                               Users you're following
+                            
+                                <br>
+                                <br>    
+                        
+                </div>
+
+                {% endif %}
+
+
+
+
+        {% else %}
+
+
+                                <br>
+                                <br>
+                                <br>
+
+        <!-- do nothing -->
+
+
+        {% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p class="users_count">
+
+<span style='color: #79ff4d; font-size: 17px; font-weight: bold; font-family: "Comic Sans MS", cursive, sans-serif;
+'> 90 </span> % of all our users visited this page today
+
+</p>
+
+
+
+<p class="users_count">
+
+<span style='color: #79ff4d; font-size: 17px; font-weight: bold; font-family: "Comic Sans MS", cursive, sans-serif;
+'> {{ posts.total }} </span> 
+
+
+
+    {% if posts.total > 1  %}
+
+            posts
+
+    {% else %}
+
+            post
+
+    {% endif %}
+
+
+
+
+  in total
+
+</p>
+
+
+
+
+
+</div>
+
+  
+
+
+
+
+
+
+        
+
+
+
+
+{% if posts.total >= 1  %}
+
+  
+
+        {% for post in posts.items %}
+        <!-- <div class="individual-post"> -->
+              
+        <div class="wrap">
+
+                                
+
+                                                <a  href="{{url_for('post.post_view_page', post_id = post.id )}}">
+                        <div class="img"  >
+
+                                                    <h1 class="chk" style="font-size: 17px;  ">view</h1>
+                                                </a>
+                                                    
+                                                    <i style="
+                                                    position: absolute;
+                                                    z-index: 1;
+                                                    padding:5px;
+                                                    padding-top: 0px;
+                                                    font-size: 20px;
+                                                    font-style: normal;
+                                                    color: #79ff4d;
+                                                    text-shadow: 2px 3px 2px #000000;
+                                                    ">
+
+
+                                                    {% if  post.is_event %}
+
+                                                    &#9873; 
+
+                                                    {% else %}
+
+                                                    &#10148;
+                                                    
+
+                                                    {% endif %}
+
+                                                    
+
+                                                    </i>
+
+
+                                                    
+                                                    <img src="{{url_for('static', filename='post_sturf/' + post.image_file )}}" alt="{{post.author.first_name}}" width="300" height="200">
+                                                   
+
+                                                    <h1>
+
+                                                        {% if post.title.__len__() >= 15  %}
+
+                                                        {{ post.title[0:15].upper() }}...
+
+                                                        {% else %}
+
+                                                        {{ post.title.upper()}}
+
+                                                        {% endif %}
+
+                                                    </h1>
+
+
+
+                                                    <div class="desc">
+
+                                                        {% if post.content.__len__() >= 20  %}
+
+                                                        {{ post.content[0:20] }}...
+
+                                                        {% else %}
+
+                                                        {{ post.content}}
+
+                                                        {% endif %}
+
+                                                    </div>
+
+
+
+                                                    <p>
+
+                                                    <span style="color: green; ">by:</span>
+
+                                                    {{post.author.first_name}} 
+
+                                                    </p>
+                                                    
+                                                    <p>
+
+                                                    <span style="color: green;">on:</span>
+
+                                                    {{post.date_posted.strftime("%a %d %B, %Y")}}
+
+                                                    </p>
+                        </div>
+                    
+             
+
+    </div>              
+        {%endfor%}
+
+
+
+
+
+{% else %}
+
+
+
+
+
+<center>
+    <i style="
+    padding:5px;
+    padding-top: 0px;
+    font-size: 70px;
+    font-style: normal;
+    color: #79ff4d;
+    text-shadow: 2px 3px  black;
+    font-weight: bold
+    ">
+
+
+    &#9925;
+
+
+
+    </i>
+
+    <h1 class="damn">
+    Damn!....no posts? well don't just stare, do something about it will ya?
+    </h1>
+
+</center>
+
+
+
+
+
+
+
+{% endif %}
+    
+    
+</body>
+
+
+
+
+
+
+
+<script>
+function openCity(evt, cityName) {
+
+
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+
+
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+
+
+
+
+
+
+<center>
+    <div class="pagination"> 
+    {% for page_num in posts.iter_pages(left_edge=1, right_edge = 1, left_current = 1, right_current = 2) %}
+
+
+        {%if page_num %}
+
+
+            
+
+                    {%if posts.page == page_num%}
+                    <a  class="pagination_highlight" href="{{url_for('post.followed_post', page = page_num, post_type = 'followed')}}">{{page_num}}</a>
+
+                    {% else %}
+
+                     <a  class="pagination_normal" href="{{url_for('post.followed_post', page = page_num, post_type = 'followed')}}">{{page_num}}</a>
+                    {% endif %}
+
+            
+
+
+
+        {% else %}
+
+        ...
+
+
+        {% endif %}
+
+
+
+    {% endfor %}
+    </div>
+</center>
+
+
+
+
+
+
+
+<!-- ..............................footer............................ -->
+
+<footer id = 'footer' style="margin-top: 10%">
+
+
+
+<div class="footerians">
+    <header><span style="margin-right: 5px; color: #ffffff; font-size: 25px;">☎</span>Get in touch with us</header>
+
+    <ul>
+
+    <li><a href="#"><div class="case1"></div></a></li>
+    <li><a href="#"><div class="case2"></div></a></li>
+    <li><a href="#"><div class="case3"></div></a></li>
+    <li><a href="#"><div class="case4"></div></a></li>
+
+    </ul>
+    
+
+</div>
+
+
+
+<div class="t_and_t">
+    <ul>
+    <li><a href="#">Terms and conditions</a></li>
+    <li><a href="#">what more can we do?</a></li>
+    <li><a href="#">Ad policy</a></li>
+    <li><a href="#">Content policy</a></li>
+    </ul>
+</div>
+
+
+    
+
+<div id="links">
+    <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="file:///C:/Users/SIMON/Documents/site%20work/site/Electricity.html">Electricity</a></li>
+    <li><a href="#">History</a></li>
+    <li><a href="#">About Us</a></li>
+    <li><a href="#">FAQS</a></li>
+    <li><a href="#">logout</a></li>
+    </ul>
+
+</div>
+
+
+    
+<div class="copyright">
+    Copyright &copy; 2020-2025 STURF
+    All rights reserved.
+    STURF is among the federally registered trademarks of
+    STURF LLC and may not be used by third parties without explicit permission.
+
+
+</div>
+
+
+
+
+
+    
+</footer>
+
+
+</html>
+
+
+
+
+	
+

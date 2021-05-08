@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+	<title>Where do you want to check?</title>
+
+	<link href="{{url_for('electricity.static', filename='where.css' )}}" rel="stylesheet" type="text/css" />
+
+	<meta name="viewport" content = "width = device-width, initial-scale = 1" charset="utf-8" >
+
+	<script type="text/javascript">
+    function back(){
+        history.back();
+       
+    }
+	</script>
+
+</head>
+
+
+
+
+
+<body> 
+
+
+
+
+<!-- header section -->
+
+<div id = "header">
+
+	<label for="check">
+		<button  id="btn" type="button" onclick="back()";>&#10094;</button>
+	</label>
+
+
+		
+	STURF
+
+	<div id="headtext">
+		Improving your wellbeing <span class="dots">...</span>
+	</div>
+
+
+</div>
+
+
+
+<!-- end of header section -->
+
+
+
+
+
+
+
+
+
+
+
+
+<div id = "advertisement">
+		<center> AD</center>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="reduce">
+
+			<h1 class="penny" >WHERE DO YOU WANT TO CHECK?</h1>
+
+
+			<!-- ..............................section ............................ -->
+
+			<center>
+			<div class="tryme">
+
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span> 
+				
+
+			<main class = "label1">
+				<div class = "light" /></div>
+			</main>
+
+
+
+
+			<div id = "textarea">
+				<header class="headr">CAMPUS</header>
+				
+
+			<center > 
+
+			<div id = "buttonscontainer">
+
+
+
+				<div>
+					<center>
+				<div class = "login">
+					
+					<a class = "loginbutton" href="{{url_for('electricity.campus')}}">
+						<center>CHECK</center>
+					</a>
+					</center>		
+				</div>
+				</div>
+
+
+
+			</div>
+
+
+			</div>
+			</center>
+
+
+			 <!-- ----------------------------------------------------------------------------------------
+ -->
+
+
+
+			<!-- ..............................section ............................ -->
+
+			<center>
+			<div class="tryme">
+
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span> 
+				
+
+
+			<main class = "label1">
+				<div class = "light2" /></div>
+			</main>
+
+
+			<div id = "textarea">
+				<header class="headr">OFF CAMPUS</header>
+				
+
+			<center > 
+
+			<div id = "buttonscontainer">
+
+
+
+				<div>
+					<center>
+				<div class = "login">
+					
+					<a class = "loginbutton" href="{{url_for('electricity.offcampus')}}">
+						<center>CHECK</center>
+					</a>
+					</center>		
+				</div>
+				</div>
+
+
+
+
+
+			</div>
+
+				
+
+			</div>
+			</center>
+
+			<!-- ------------------------------------------------------------------------------------------>
+
+</div>
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+<!-- ..............................footer............................ -->
+
+<footer id = 'footer'>
+
+
+
+<div class="footerians">
+	<header><span style="margin-right: 5px; color: #ffffff; font-size: 25px;">☎</span>Get in touch with us</header>
+
+	<ul>
+
+	<li><a href="#"><div class="case1"></div></a></li>
+	<li><a href="#"><div class="case2"></div></a></li>
+	<li><a href="#"><div class="case3"></div></a></li>
+	<li><a href="#"><div class="case4"></div></a></li>
+
+	</ul>
+	
+
+</div>
+
+
+
+<div class="t_and_t">
+	<ul>
+	<li><a href="#">Terms and conditions</a></li>
+	<li><a href="#">what more can we do?</a></li>
+	<li><a href="#">Ad policy</a></li>
+	<li><a href="#">Content policy</a></li>
+	</ul>
+</div>
+
+
+	
+
+<div id="links">
+	<ul>
+	<li><a href="#">Home</a></li>
+	<li><a href="file:///C:/Users/SIMON/Documents/site%20work/site/Electricity.html">Electricity</a></li>
+	<li><a href="#">History</a></li>
+	<li><a href="#">About Us</a></li>
+	<li><a href="#">FAQS</a></li>
+	<li><a href="{{url_for('security.logout')}}">logout</a></li>
+	</ul>
+
+</div>
+
+
+	
+<div class="copyright">
+	Copyright &copy; 2020-2025 STURF
+	All rights reserved.
+	STURF is among the federally registered trademarks of
+    STURF LLC and may not be used by third parties without explicit permission.
+
+
+</div>
+
+
+
+
+
+	
+</footer>
+
+
+
+</html>

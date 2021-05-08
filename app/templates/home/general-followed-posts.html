@@ -1,0 +1,515 @@
+<div id = "advertisement">
+        <center> AD</center>
+</div>
+
+                            {% if post_value == 'normal'  %}
+
+                            <div class = "topicsentence">
+
+                      
+                                           
+                                   
+                                           Explore posts by everyone
+                                        
+                                            <br>
+                                            <br>    
+                                    
+                            </div>
+
+
+                            {% elif post_value == 'followed'  %}
+
+
+                            <div class = "topicsentence">
+
+                                         
+                                   
+                                           Posts from those you followed  
+                                        
+                                            <br>
+                                            <br>    
+                                    
+                            </div>
+
+
+
+
+                            {% elif post_value == 'lost_and_searching'  %}
+
+
+                            <div class = "topicsentence" >
+
+                                         
+                                   
+                                           Lost items around you 
+                                        
+                                            <br>
+                                            <br>  
+
+<div class="filterformcover"> 
+
+                                            <p style="  font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+
+                                                font-size: 11px;  
+                                                
+                                                color: black;
+                                                margin-bottom: -20px;   
+
+                                            "> 
+
+                                            Filter by item type
+
+
+                                            </p>
+
+
+
+
+                                            <select id="lost_item_category" page = "{{page}}" >
+
+                                            {% for each in item_list %}
+                                              <option each = "{{each}}" id="{{ each }}">{{ each }}</option>
+                                            }
+
+                                            {% endfor %}
+
+                                            </select> 
+
+                                            <input id="filterbtn"  type="submit" value="&check;">
+
+
+
+                                            <br>
+                                     
+
+
+
+
+</div>
+                                    
+                            </div>
+
+
+
+
+                            {% elif post_value == 'lost_and_found'  %}
+
+
+                            <div class = "topicsentence">
+
+                                         
+                                   
+                                           Found items around you 
+                                        
+                                            <br>
+                                            <br>    
+
+
+<div class="filterformcover"> 
+
+                                            <p style="  font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+
+                                                font-size: 11px;  
+                                                
+                                                color: black;
+                                                margin-bottom: -20px;   
+
+                                            "> 
+
+                                            Filter by item type
+
+
+                                            </p>
+
+
+
+
+                                            <select page = "{{page}}" id="lost_item_category">
+
+                                            {% for each in item_list  %}
+                                              <option each = "{{each}}" id="{{ each }}">{{ each }}</option>
+                                            }
+
+                                            {% endfor %}
+
+                                            </select> 
+
+                                            <input id="foundbtn"  type="submit" value="&check;">
+
+
+
+                                            <br>
+                                     
+
+
+
+
+</div>
+                                    
+                            </div>
+
+
+
+            
+
+                            {% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="small_content">
+
+            <p class="users_count">
+
+            <span style='color: #79ff4d; font-size: 17px; font-weight: bold; font-family: "Comic Sans MS", cursive, sans-serif;
+            '> {{ posts.total }} </span> 
+
+
+
+                {% if posts.total > 1  %}
+
+                        posts
+
+                {% else %}
+
+                        post
+
+                {% endif %}
+
+
+
+
+              in total
+
+            </p>
+
+
+
+
+
+           
+              
+
+
+
+
+
+
+                    
+
+
+
+
+            {% if posts.total >= 1  %}
+
+              
+
+                    {% for post in posts.items %}
+                    <!-- <div class="individual-post"> -->
+                          
+                    <div class="wrap">
+
+                                            
+
+                                                            <a  href="{{url_for('post.post_view_page', post_id = post.id )}}">
+                                    <div class="img"  >
+
+                                                                <h1 class="chk" style="font-size: 17px;  ">view</h1>
+                                                            </a>
+                                                                
+                                                                <i style="
+                                                                position: absolute;
+                                                                z-index: 1;
+                                                                padding:5px;
+                                                                padding-top: 0px;
+                                                                font-size: 20px;
+                                                                font-style: normal;
+                                                                color: #79ff4d;
+                                                                text-shadow: 2px 3px 2px #000000;
+                                                                ">
+
+
+                                                                {% if  post.is_event %}
+
+                                                                &#9873; 
+
+
+                                                                {% elif  post.is_Lost_and_found %}
+
+
+                                                                &#10004;
+
+
+                                                                {% elif  post.is_Lost_and_searching%}
+
+
+                                                                !
+
+                                                                {% else %}
+
+                                                                &#10148;
+                                                                
+
+                                                                {% endif %}
+
+                                                                
+
+                                                                
+
+                                                                </i>
+
+
+
+
+
+
+
+
+
+                                                               {% if post.author.paid  %} 
+
+                                                                </i>
+
+
+
+
+                                                                
+                                                                <i style="
+                                                                position: absolute;
+                                                                z-index: 1;
+                                                                padding-top: 4px;
+                                                                font-size: 23px;
+                                                                font-style: normal;
+                                                                color: #79ff4d;
+                                                                
+                                                               
+                                                                ">
+
+                                                                <br>
+
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="gold" width="24" height="24" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+
+
+                                                                </i>
+
+
+
+                                                                {% else %}
+
+                                                                     </i>
+
+                                                                {% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                
+                                                                <img src="{{url_for('static', filename='post_sturf/' + post.image_file )}}" alt="{{post.author.first_name}}" width="300" height="200">
+
+
+
+
+
+
+                                                                <h1 >
+
+                                                                    {% if post.title.__len__() >= 15  %}
+
+                                                                    {{ post.title[0:15].upper() }}...
+
+                                                                    {% else %}
+
+                                                                    {{ post.title.upper()}}
+
+                                                                    {% endif %}
+
+                                                                </h1>
+
+
+
+                                                                <div class="desc">
+
+                                                                    {% if post.content.__len__() >= 20  %}
+
+                                                                    {{ post.content[0:20] }}...
+
+                                                                    {% else %}
+
+                                                                    {{ post.content}}
+
+                                                                    {% endif %}
+
+                                                                </div>
+
+
+
+                                                                <p>
+
+                                                                <span style="color: green; ">by:</span>
+
+
+                                                                {% if post.author == current_user %}
+
+                                                                    you
+
+                                                                    {% else %}
+
+                                                                    {{post.author.first_name}} 
+
+                                                                    {% endif %}
+
+                                                                
+
+                                                                </p>
+                                                                
+                                                                <p>
+
+                                                                <span style="color: green;">on:</span>
+
+                                                                {{post.date_posted.strftime("%a %d %b, %Y")}}
+
+                                                                </p>
+                                    </div>
+                                
+                         
+
+                </div>              
+                    {%endfor%}
+
+
+
+
+
+            {% else %}
+
+
+
+                        {% if post_value == "normal"  %}
+
+                        <center>
+                            <i style="
+                            padding:5px;
+                            padding-top: 0px;
+                            font-size: 70px;
+                            font-style: normal;
+                            color: #79ff4d;
+                            text-shadow: 2px 3px  black;
+                            font-weight: bold
+                            ">
+
+
+                            &#9925;
+
+
+
+                            </i>
+
+                            <h1 class="damn">
+                            Damn!....no posts? well don't just stare, do something about it will ya?
+                            </h1>
+
+                        </center>
+
+                        {% elif post_value == "followed" %}
+
+                        <center>
+                            <i style="
+                            padding:5px;
+                            padding-top: 0px;
+                            font-size: 70px;
+                            font-style: normal;
+                            color: #79ff4d;
+                            text-shadow: 2px 3px  black;
+                            font-weight: bold
+                            ">
+
+
+
+
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><path d="M23.99 4C12.94 4 4 12.95 4 24s8.94 20 19.99 20S44 35.05 44 24 35.04 4 23.99 4zM24 40c-8.84 0-16-7.16-16-16S15.16 8 24 8s16 7.16 16 16-7.16 16-16 16zm7-18c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3zm-14 0c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3zm17.21 13c-1.6-4.09-5.55-7-10.21-7s-8.61 2.91-10.21 7"/></svg>
+
+
+                            </i>
+
+                            <h1 class="damn">
+                            You're not following anyone yet...
+                            </h1>
+
+                        </center>
+
+                        {% endif %}
+
+
+
+            {% endif %}
+
+
+
+
+
+
+
+
+                
+                
+            </body>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<a class="add_post_link" href="{{url_for('post.post_type' )}}" >
+    
+   <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg> 
+
+</a>
+
+
+
+

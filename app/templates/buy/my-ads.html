@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<title>Your posts</title>
+
+	<link href="{{url_for('post.static', filename='my-posts.css' )}}" rel="stylesheet" type="text/css" />
+
+	<meta name="viewport" content = "width = device-width, initial-scale = 1" charset="utf-8" >
+
+	<script type="text/javascript">
+
+    function back(){
+    	history.back();
+    }
+	
+	</script>
+
+
+
+</head> 
+
+
+
+
+
+<body> 
+
+
+
+<div id = "header">
+
+<label for="check">
+	<buttom  id="btn" type="button" onclick="back()";>&#10095;</button>
+	
+</label>
+
+
+		<a class="header_link" href="{{url_for('home.general')}}">	
+		STURF
+		</a>
+
+
+<div class="headtext">
+	Improving your wellbeing <span class="dots">...</span>
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class = "topicsentence">
+
+
+
+
+		<center class = "pennyless">
+
+		here is a list of all your posts. 
+				<br>
+				  
+				You have made <span style="color: black;">{{ post_count.__len__() }} </span>post(s) in total 
+				<br>
+				<br>	
+		</center>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="bio">
+	<br>
+	<br>
+
+
+		<div class="bio-content">
+			
+				{% for post in post %}
+					<div class="wrapper">
+
+						<a  href="{{url_for('post.post_view_page', post_id = post.id )}}">
+
+
+							
+							<p>
+								<img  class="image"  src="{{url_for('static', filename='post_sturf/' + post.image_file )}}" alt="{{post.author.first_name}}" width="35" height="35">
+
+
+
+								{% if  post.is_event %}
+
+								  <i class= "icon"> &#9873; </i> 
+								
+								{% else %}
+
+								  <i class= "icon"> &#10148; </i> 
+								
+								{% endif %}
+
+
+
+
+
+
+								<div class="date">
+								 {{post.date_posted.strftime("%A, %d %B %Y")}}
+								</div>
+
+
+								{% if post.title.__len__() >= 20  %}
+
+									{{ post.title[0:20] }}...
+
+								{% else %}
+
+									{{ post.title}}
+
+								{% endif %}
+
+
+
+
+
+								
+							</p>
+
+
+							
+
+
+						</a>
+
+					</div>
+				{% endfor %}
+
+
+				<center>
+				<a href="">see more</a>
+				</center>
+
+		</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+<footer id = 'footer'>
+
+
+
+<div class="footerians">
+	<header><span style="margin-right: 5px; color: #ffffff; font-size: 25px;">☎</span>Get in touch with us</header>
+
+	<ul>
+
+	<li><a href="#"><div class="case1"></div></a></li>
+	<li><a href="#"><div class="case2"></div></a></li>
+	<li><a href="#"><div class="case3"></div></a></li>
+	<li><a href="#"><div class="case4"></div></a></li>
+
+	</ul>
+	
+
+</div>
+
+
+
+<div class="t_and_t">
+	<ul>
+	<li><a href="#">Terms and conditions</a></li>
+	<li><a href="#">what more can we do?</a></li>
+	<li><a href="#">Ad policy</a></li>
+	<li><a href="#">Content policy</a></li>
+	</ul>
+</div>
+
+
+	
+
+<div class="links">
+	<ul>
+	<li><a href="#">Home</a></li>
+	<li><a href="file:///C:/Users/SIMON/Documents/site%20work/site/Electricity.html">Electricity</a></li>
+	<li><a href="#">History</a></li>
+	<li><a href="#">About Us</a></li>
+	<li><a href="#">FAQS</a></li>
+	<li><a href="{{url_for('security.logout')}}">logout</a></li>
+	</ul>
+
+</div>
+
+
+	
+<div class="copyright">
+	Copyright &copy; 2020-2025 STURF
+	All rights reserved.
+	STURF is among the federally registered trademarks of
+    STURF LLC and may not be used by third parties without explicit permission.
+
+
+</div>
+
+
+
+
+
+	
+</footer>
+
+
+
+
+
+</html>

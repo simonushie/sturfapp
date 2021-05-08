@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="dropdown.css">
+</head>
+
+
+<body>
+
+
+
+<div class="sidenav">
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#clients">Clients</a>
+  <a href="#contact">Contact</a>
+  <button class="dropdown-btn">Sort by</button>
+
+
+  <div class="dropdown-container">
+
+    <button class="dropdown-btn" style="color:red; font-size:15px;">Religion</button>
+          <div class="dropdown-container">
+          <a href="#">Christainity</a>
+          <a href="#">Islam</a>
+          <a href="#">Other</a>
+          </div>
+
+    <button class="dropdown-btn" style="color:red; font-size:15px;">Level</button>
+          <div class="dropdown-container">
+          <a href="#">100l</a>
+          <a href="#">200l</a>
+          <a href="#">300l</a>
+          <a href="#">400l</a>
+          <a href="#">500l</a>
+          </div>
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+    <a href="#contact">Contact1</a>
+
+    <a href="#contact">Contact2</a>
+
+    <a href="#contact">Contact3</a>
+
+
+
+</div>
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+</script>
+
+</html> 

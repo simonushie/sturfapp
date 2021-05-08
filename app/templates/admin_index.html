@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+
+<head>
+	<title>Welcome simon</title>
+
+
+<link href="{{url_for('static', filename='profile.css' )}}" rel="stylesheet" type="text/css" />
+
+
+
+	<meta name="viewport" content = "width = device-width, initial-scale = 1" charset="utf-8" >
+
+	<script type="text/javascript">
+    function back(){
+        history.back();
+    
+    }
+	</script>
+
+</head> 
+
+
+
+
+
+<body> 
+
+
+
+<div id = "header">
+
+<label for="check">
+	<button  id="back"  onclick="back()";>&#10094;</button>
+	
+</label>
+
+
+		<a class="header_link" href="{{url_for('home.general')}}">	
+		STURF
+		</a>
+
+
+<div id="headtext">
+	Improving your wellbeing <span class="dots">...</span>
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br><br>
+
+
+
+{{ report }}
+
+
+<br>
+<br>
+<br>
+<br>
+<br><br>
+
+
+
+
+
+
+
+<div class="contact">
+	<h1>admin actions</h1>
+	<br>
+	<br>
+		<div class="contact-content">
+
+
+			<p>
+
+				     <section class="sectioncover">
+                        <a href="{{url_for('admin_ops' , request_type = 'remove_seeks_roomate')}}">
+                        <i class = "edit_pic" >
+
+
+							                            
+							<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 48 48"><path d="M6 34.5V42h7.5l22.13-22.13-7.5-7.5L6 34.5zm35.41-20.41c.78-.78.78-2.05 0-2.83l-4.67-4.67c-.78-.78-2.05-.78-2.83 0l-3.66 3.66 7.5 7.5 3.66-3.66z"/></svg>
+                            
+                        </i>
+                        </a>
+                    </section>
+
+				<span  style="color: black; font-style: normal;"> REMOVE ALL SEEKS ROOMATE?</span>
+
+				<br>
+
+			</p>
+
+
+<br>
+<br>
+<br>
+
+
+			<p>
+
+				     <section class="sectioncover">
+                        <a href="{{url_for('admin_ops' , request_type = 'remove_all_phone_nos')}}">
+                        <i class = "edit_pic" >
+
+
+							                            
+							<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 48 48"><path d="M6 34.5V42h7.5l22.13-22.13-7.5-7.5L6 34.5zm35.41-20.41c.78-.78.78-2.05 0-2.83l-4.67-4.67c-.78-.78-2.05-.78-2.83 0l-3.66 3.66 7.5 7.5 3.66-3.66z"/></svg>
+                            
+                        </i>
+                        </a>
+                    </section>
+
+				<span  style="color: black; font-style: normal;"> REMOVE ALL PHONE NUMBERS?</span>
+
+				<br>
+
+			</p>
+
+
+
+		</div>
+	
+</div>
+
+
+<br>
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+</html>

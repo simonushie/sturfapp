@@ -1,0 +1,297 @@
+{% from '_formhelpers.html' import render_field %}
+
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<title>{{page_title}}</title>
+
+	<link href="{{url_for('buy.static', filename='post.css' )}}" rel="stylesheet" type="text/css" />
+
+	<meta name="viewport" content = "width = device-width, initial-scale = 1" charset="utf-8" >
+
+	<script type="text/javascript">
+
+    function back(){
+    	history.back();
+    }
+	
+	</script>
+
+
+
+</head> 
+
+
+
+
+
+<body> 
+
+
+
+<div id = "header">
+
+<label for="check">
+	<buttom  id="btn" type="button" onclick="back()";>&#10095;</button>
+	
+</label>
+
+
+		
+STURF
+
+<div class="headtext">
+	Improving your wellbeing <span class="dots">...</span>
+</div>
+
+
+</div>
+
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+
+        <ul class=flashes>
+
+        {% for category, message in messages %}
+
+            <li class="{{ category }}">
+                {{ message }}
+            </li>
+
+        {% endfor %}
+
+        </ul>
+        
+    {% endif %}
+{% endwith %}
+
+
+
+
+
+
+
+
+
+
+
+
+<div class = "topicsentence">
+		<center class = "pennyless">  
+				create new post
+				<br>
+				<br>	
+		</center>
+</div>
+
+
+
+
+
+
+
+
+
+
+<center>
+        <div class="container">
+
+                        <form method="POST" enctype="multipart/form-data">
+                            <dl>
+                                {{form.csrf_token}}
+                            
+                                {{ form.hidden_tag() }}
+
+
+
+                                <label class="choose_file">
+                                    {{ render_field(form.photo) }}
+                                    ADD  IMAGE &#10011; 
+                                </label>
+
+
+
+
+
+                                {{ render_field(form.title) }}
+
+                                {{ render_field(form.content, cols="7", rows="7") }}
+
+
+
+
+                                
+                            </dl>
+
+
+
+                            <p><input type=submit value= "create Post"  class="loginbutton"></p>
+                           
+                        </form>
+
+
+                        
+                       
+        </div>           
+</center>
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<div class = "topicsentence">
+        <center class = "add_picture">  
+                Add Picture
+                <br>                 
+        </center>
+</div>
+
+ -->
+
+<!-- UPLOAD PROFILE PHOTO FORM -->
+<!-- <center>
+    <div class="upload_container">
+        <form class="upload-form" method=post enctype=multipart/form-data>
+
+            <label class="choose_file">
+                <input  type=file name=file>
+                CHOOSE FILE &#10011;
+            </label>
+            <br>
+            <br>
+            <br>
+
+            <p><input type=submit value= Post  class="loginbutton"></p>
+        
+        </form>
+
+
+    </div>
+</center>
+
+
+
+<br>
+ -->
+
+
+
+
+
+
+   
+
+
+
+<!-- <div class = "topicsentence">
+		<center class = "pennyless">  
+				UPLOAD PROFILE PICTURE
+				<br>
+				<br>	
+		</center>
+</div> -->
+
+
+
+
+<!-- UPLOAD PROFILE PHOTO FORM -->
+<!-- <center>
+	<div class="container">
+		<form class="upload-form" method=post enctype=multipart/form-data>
+
+			<label class="choose_file">
+				<input  type=file name=file>
+				CHOOSE FILE &#10011;
+			</label>
+		
+
+			<input class="all_done" type=submit value= 'Upload &#10148;'>
+
+		</form>
+	</div>
+</center>
+ -->
+
+
+
+
+
+
+
+
+<footer id = 'footer'>
+
+
+
+<div class="footerians">
+	<header><span style="margin-right: 5px; color: #ffffff; font-size: 25px;">☎</span>Get in touch with us</header>
+
+	<ul>
+
+	<li><a href="{{url_for('home.set_avatar', email = current_user.email, img = 'default2.jpg')}}"><div class="case1"></div></a></li>
+	<li><a href="{{url_for('home.set_avatar', email = current_user.email, img = 'default2.jpg')}}"><div class="case2"></div></a></li>
+	<li><a href="{{url_for('home.set_avatar', email = current_user.email, img = 'default2.jpg')}}"><div class="case3"></div></a></li>
+	<li><a href="{{url_for('home.set_avatar', email = current_user.email, img = 'default2.jpg')}}"><div class="case4"></div></a></li>
+
+	</ul>
+	
+
+</div>
+
+
+
+<div class="t_and_t">
+	<ul>
+	<li><a href="{{url_for('home.set_avatar', email = current_user.email, img = 'default2.jpg')}}">Terms and conditions</a></li>
+	<li><a href="{{url_for('home.set_avatar', email = current_user.email, img = 'default2.jpg')}}">what more can we do?</a></li>
+	<li><a href="{{url_for('home.set_avatar', email = current_user.email, img = 'default2.jpg')}}">Ad policy</a></li>
+	<li><a href="{{url_for('home.set_avatar', email = current_user.email, img = 'default2.jpg')}}">Content policy</a></li>
+	</ul>
+</div>
+
+
+	
+
+<div class="links">
+	<ul>
+	<li><a href="{{url_for('home.set_avatar', email = current_user.email, img = 'default2.jpg')}}">Home</a></li>
+	<li><a href="file:///C:/Users/SIMON/Documents/site%20work/site/Electricity.html">Electricity</a></li>
+	<li><a href="{{url_for('home.set_avatar', email = current_user.email, img = 'default2.jpg')}}">History</a></li>
+	<li><a href="{{url_for('home.set_avatar', email = current_user.email, img = 'default2.jpg')}}">About Us</a></li>
+	<li><a href="{{url_for('home.set_avatar', email = current_user.email, img = 'default2.jpg')}}">FAQS</a></li>
+	<li><a href="{{url_for('security.logout')}}">logout</a></li>
+	</ul>
+
+</div>
+
+
+	
+<div class="copyright">
+	Copyright &copy; 2020-2025 STURF
+	All rights reserved.
+	STURF is among the federally registered trademarks of
+    STURF LLC and may not be used by third parties without explicit permission.
+
+
+</div>
+
+
+
+
+
+	
+</footer>
+
+
+
+
+
+</html>

@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<title>{{roomie.candidate.first_name}}</title>
+
+	<link href="{{url_for('roomie.static', filename='roomie-template.css' )}}" rel="stylesheet" type="text/css" />
+
+	<meta name="viewport" content = "width = device-width, initial-scale = 1" charset="utf-8" >
+
+	<script type="text/javascript">
+
+    function die(){
+    	window.close();
+    }
+	
+	</script>
+
+
+
+</head> 
+
+
+
+
+
+<body> 
+
+
+
+<div id = "header">
+
+<label for="check">
+		<buttom  id="btn" type="button" onclick="die()";>&#10006;</button>
+</label>
+
+
+		<a class="header_link" href="{{url_for('home.general')}}">	
+		STURF
+		</a>
+
+
+<div class="headtext">
+	Improving your wellbeing <span class="dots">...</span>
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<center>
+
+<div class="tryme">
+
+	<span></span>
+	<span></span>
+	<span></span>
+	<span></span> 
+	
+		<div class = "section1">
+
+
+					<div class="text_container">
+						<p class="p1">
+
+
+								{% if  current_user == roomie.candidate%}
+
+								You
+
+								{% else%}
+
+								{{roomie.candidate.first_name.upper()}}
+
+								{% endif %}
+						
+						</p>
+						<p class="p2">
+							<span style="background-color: white;  border-radius: 25px 25px 0px 25px;" class="tooltiptext">
+							        
+									{% if  current_user ==  roomie.candidate%}
+
+									Your Caption
+
+									{% else%}
+
+									{{roomie.candidate.first_name.upper()}}'s Caption
+
+									{% endif %}
+																
+
+							</span>
+
+							{% if  current_user ==  roomie.candidate%}
+
+							You are
+
+							{% else%}
+
+							<b>{{roomie.candidate.first_name}}</b> is
+
+							{% endif %}
+
+
+
+
+							{{roomie.candidate.caption}}
+							
+						</p>
+
+
+						<p class="p2">
+
+							{% if  current_user.is_authenticated  %}
+
+								<p class="online_indicator">
+								<b> last login:</b> 
+								{{roomie.candidate.last_login_at.strftime("%I : %M  %p ")}}
+								</p>
+	
+							{% endif %}
+						
+						</p>
+
+
+
+					</div>
+
+
+
+					<main class = "label1">
+
+						<a href="{{url_for('roomie.polaroid_person', email = roomie.candidate.email )}}">
+					    
+					    
+						<div id="light" 
+						style="background: url('{{img}}') no-repeat center;
+								background-size: cover;
+								width: 100%;
+								height:100%;
+								padding-top: 100%;
+								border-radius: 15px 150px 150px 150px;
+								margin-left: 15px;
+								margin-top: 3px;
+								vertical-align: center;
+								max-width: 200px;
+								max-height: 200px;
+								border: 0.5px solid #79ff4d"
+
+	 					/></div>
+
+	 					</a>
+					</main>
+
+					
+		</div>
+</div>
+</center>
+
+
+
+
+
+<div class="contact">
+	<h1>CONTACT</h1>
+	<br>
+	<br>
+		<div class="contact-content">
+
+			{% if roomie.candidate.phone %}
+
+			<p><span> <i style="color: black; font-style: normal;">&phone;</i>Tel: </span>{{roomie.candidate.phone}}
+
+			</p>
+			{% endif %}
+
+
+
+			<br>
+
+			{% if roomie.candidate.email %}
+
+			<p><span><i style="color: black; font-style: normal; font-size:23px;">&commat;</i>Email: </span> 
+
+
+						{{roomie.candidate.email}}
+
+
+						</p>
+
+
+			{% endif %}
+
+		</div>
+	
+</div>
+
+
+<div class="bio">
+	<h1>BIO</h1>
+	<br>
+	<br>
+		<div class="bio-content">
+			<center>
+
+				{% if roomie.candidate.more_about %}
+				<p>
+					<span>
+
+						<i style="color: black; font-style: normal;font-size:30px;">&#9997;</i>More about {{roomie.candidate.first_name}}</span><br>
+						{{roomie.candidate.more_about}}
+				</p>
+
+				{% endif %}
+
+				<br>
+
+
+				{% if roomie.candidate.birth_day %}
+				<p><span>
+
+					<i style="color: black; font-style: normal;font-size:30px;">&#9832;</i>Birthday </span> <br>
+					{{roomie.candidate.birth_day}}
+				</p>
+
+				{% endif %}
+
+
+				{% if roomie.candidate.likes %}
+				<p><span>
+
+					<i style="color: black; font-style: normal; font-size:30px;">&#10084;</i>{{roomie.candidate.first_name}} likes </span> <br>
+					{{roomie.candidate.likes}}
+				</p>
+
+				{% endif %}
+
+
+				{% if roomie.candidate.dislikes %}
+				<p>
+					<span>
+
+					<i style="color: black; font-style: normal; font-size:30px; ">&#9876;</i>{{roomie.candidate.first_name}} dislikes 
+					</span> 
+
+					<br>
+					{{roomie.candidate.dislikes}}
+				</p>
+
+				{% endif %}
+
+
+
+
+
+				<p>
+					<span>
+
+					<i style="color: black; font-style: normal;  font-size:30px;">&#9876;</i>Level
+					</span> 
+
+					<br>
+					{{roomie.level}}
+				</p>
+
+
+
+				<p>
+					<span>
+
+					<i style="color: black; font-style: normal;  font-size:30px;">&#9876;</i>Based currently in
+					</span> 
+
+					<br>
+					{{roomie.based}}
+				</p>
+
+
+
+
+				<p>
+					<span>
+
+
+					{% if roomie.religion == "Christianity" %}
+					<i style="color: black; font-style: normal; font-size:30px; ">
+
+						&#10015;
+
+					</i>
+					{% elif roomie.religion == "Islam" %}
+
+					<i style="color: black; font-style: normal; font-size:30px; ">
+
+						&#9770;
+
+					</i>
+
+					{% elif roomie.religion == "other" %}
+
+					<i style="color: black; font-style: normal; font-size:30px;">
+
+						&#10022;
+
+					</i>
+
+					{% endif %}
+
+
+
+
+
+					Religion 
+					</span> 
+
+					<br>
+					{{roomie.religion}}
+				</p>
+
+
+
+
+
+
+
+				<p>
+					<span>
+
+					<i style="color: black; font-style: normal;  font-size:30px;">&#9876;</i>
+
+					{{roomie.candidate.first_name}} can afford an amount
+
+					</span> 
+
+					<br>
+					{{ roomie.budget }}
+				</p>
+
+
+
+
+
+
+
+
+				<p>
+					<span>
+
+					<i style="color: black; font-style: normal;  font-size:30px;">&#9876;</i>
+
+					started searching on
+
+					</span> 
+
+					<br>
+					{{roomie.date_joined.strftime("%A, %d %B %Y")}}
+				</p>
+
+
+
+
+
+				
+
+			</center>
+		</div>
+</div>
+
+
+
+
+
+
+
+
+<center>
+
+<!-- if the curremt_user has sent the other user -->
+{% if current_user.has_sent_roomie_request_to(roomie.candidate) %}
+
+
+
+				{% if roomie.candidate != current_user %}
+
+
+				<center>you have sent <b>{{ roomie.candidate.first_name }} </b>a roomie request</center>
+				<br>
+				<br>
+				<br>
+
+							<a  href="{{url_for('roomie.send_roomie_request', id = roomie.candidate.id, request_type = 'unrequest_roomie') }}" >
+				             Cancel Request
+				            </a>
+				{% endif %}
+
+
+
+
+
+{% elif  roomie.candidate.has_sent_roomie_request_to(current_user) %}
+
+				
+				{% if roomie.candidate != current_user %}
+
+
+					<b>{{ roomie.candidate.first_name }}</b> already sent you a roomie request, check your  <a href="{{url_for('roomie.roomie_requests', request_type = 'requesters' )}}"> Requests </a>
+
+				{% endif %}
+
+
+
+
+
+
+
+{% elif  roomie.candidate.is_following_roomie(current_user) %}
+
+				
+				{% if roomie.candidate != current_user %}
+
+							<center>you accepted <b>{{ roomie.candidate.first_name }}'s</b> roomie request, now they are following you</center>
+
+				{% endif %}
+
+
+
+
+
+
+{% elif  current_user.is_following_roomie(roomie.candidate) %}
+
+				
+				{% if roomie.candidate != current_user %}
+
+							<center> <b>{{ roomie.candidate.first_name }}</b> accepted your roomie request, now you are following them </center>
+
+				{% endif %}
+
+
+
+
+
+
+
+{% else %} 
+
+				{% if roomie.candidate != current_user %}
+
+
+				            <a  href="{{url_for('roomie.send_roomie_request', id = roomie.candidate.id, request_type = 'request_roomie') }}" >
+				             Send Request
+				            </a>
+				{% endif %}
+
+
+
+{% endif %} 
+				
+
+		
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+				            <a  href="{{url_for('roomie.remove_roomie', id = roomie.candidate.id, request_type = 'remove') }}" >
+				             remove roomie
+				            </a>
+
+
+
+
+</center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+<footer id = 'footer'>
+
+
+
+<div class="footerians">
+	<header><span style="margin-right: 5px; color: #ffffff; font-size: 25px;">☎</span>Get in touch with us</header>
+
+	<ul>
+
+	<li><a href="#"><div class="case1"></div></a></li>
+	<li><a href="#"><div class="case2"></div></a></li>
+	<li><a href="#"><div class="case3"></div></a></li>
+	<li><a href="#"><div class="case4"></div></a></li>
+
+	</ul>
+	
+
+</div>
+
+
+
+<div class="t_and_t">
+	<ul>
+	<li><a href="#">Terms and conditions</a></li>
+	<li><a href="#">what more can we do?</a></li>
+	<li><a href="#">Ad policy</a></li>
+	<li><a href="#">Content policy</a></li>
+	</ul>
+</div>
+
+
+	
+
+<div class="links">
+	<ul>
+	<li><a href="#">Home</a></li>
+	<li><a href="file:///C:/Users/SIMON/Documents/site%20work/site/Electricity.html">Electricity</a></li>
+	<li><a href="#">History</a></li>
+	<li><a href="#">About Us</a></li>
+	<li><a href="#">FAQS</a></li>
+	<li><a href="{{url_for('security.logout')}}">logout</a></li>
+	</ul>
+
+</div>
+
+
+	
+<div class="copyright">
+	Copyright &copy; 2020-2025 STURF
+	All rights reserved.
+	STURF is among the federally registered trademarks of
+    STURF LLC and may not be used by third parties without explicit permission.
+
+
+</div>
+
+
+
+
+
+	
+</footer>
+
+
+
+
+
+</html>

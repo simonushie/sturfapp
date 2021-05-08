@@ -1,0 +1,356 @@
+
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<title>Sturf Rent</title>
+
+	<link href="{{url_for('static', filename='rent_sturf.css' )}}" rel="stylesheet" type="text/css" />
+
+	<meta name="viewport" content = "width = device-width, initial-scale = 1" charset="utf-8" >
+
+
+	<script type="text/javascript">
+
+	    function back(){
+	    	history.back();
+	    }
+	    
+	</script>
+
+</head> 
+
+
+
+
+
+<body> 
+
+
+
+
+
+<!-- header section -->
+
+<div id = "header">
+
+	<label for="check">
+		<button  id="btn" type="button" onclick="back()";>&#10094;</button>
+	</label>
+		
+	STURF
+
+	<div class="headtext">
+		Improving your wellbeing <span class="dots">...</span>
+	</div>
+
+
+</div>
+
+
+
+<!-- end of header section -->
+
+
+
+
+
+
+
+<div class = "topicsentence">
+		<center> 
+			Let's help you <span class ="span">eliminate</span> the <span class ="span">stress</span> involved in seeking accomodation.  
+			This is your one stop shop for finding the right apartment  you want
+		</center>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id = "advertisement">
+		<center> AD</header>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<center>
+<div class = "section1">
+
+
+			<div class="text_container">
+			It's no news that finding accomodaton as a student can be very challenging but it shouldn't be, being a student is already stressful as it is....
+				
+			</div>
+
+			<main class = "label1">
+				<div class = "light" /></div>
+			</main>
+
+			
+</div>
+</center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<center>
+<div class = "section2">
+
+
+			<div class="text_container2">
+			Fortunately, we have devised a smart solution that is easy to access and completely <b>FREE!</b> 
+			</div>
+
+			<main class = "label2">
+				<div class = "light2" /></div>
+			</main>
+
+			
+</div>
+</center>
+
+
+
+
+
+
+
+
+<center>
+<div class = "section3">
+
+
+			<div class="text_container3">
+				Choose from a plethora of daily listings for the place that best suits both your taste and budget.  
+			</div>
+
+			<main class = "label3">
+				<div class = "light3" /></div>
+			</main>
+
+			
+</div>
+</center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<center>
+<div class = "section4">
+
+
+<div class="text_container4">
+	After finding a good place to rent, you might want to split the rent with a roomate....well we got you covered too!
+
+</div>
+
+
+<main class = "label4">
+	<div class = "light4" /></div>
+</main>
+
+			
+</div>
+</center>
+
+
+
+
+
+<div id="feedback_container">
+
+<center>
+<h1 class="penny" >SHARE WITH PEERS!</h1>
+</center>
+
+<center>
+<div class="penny-container">
+
+<a href = '#' class="pen">
+	<div class = "bgimage1"></div>
+</a>
+
+<a href = '#' class="pen">
+	<div class = "bgimage2"></div>
+</a>
+
+<a href = '#' class="pen">
+	<div class = "bgimage3"></div>
+</a>
+
+<a href = '#' class="pen">
+	<div class = "bgimage4"></div>
+</a>
+
+</div>
+
+
+</center>
+
+
+
+</div>
+
+
+
+
+
+
+<div id = "buttonscontainer2">
+
+
+
+	<div>
+		<center>
+	<div class = "login">
+		
+		<a class = "loginbutton" href="{{url_for('rent.index')}}">
+			<center> Proceed &#10095;</center>
+		</a>
+		</center>		
+	</div>
+	</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<p class="bottomsentence">This page will disappear after your <span class="linkr2">10th</span> Login</p>
+
+
+
+
+
+
+</body>
+
+
+<!-- ..............................footer............................ -->
+
+<footer id = 'footer'>
+
+
+
+<div class="footerians">
+	<header><span style="margin-right: 5px; color: #ffffff; font-size: 25px;">☎</span>Get in touch with us</header>
+
+	<ul>
+
+	<li><a href="#"><div class="case1"></div></a></li>
+	<li><a href="#"><div class="case2"></div></a></li>
+	<li><a href="#"><div class="case3"></div></a></li>
+	<li><a href="#"><div class="case4"></div></a></li>
+
+	</ul>
+	
+
+</div>
+
+
+
+<div class="t_and_t">
+	<ul>
+	<li><a href="#">Terms and conditions</a></li>
+	<li><a href="#">what more can we do?</a></li>
+	<li><a href="#">Ad policy</a></li>
+	<li><a href="#">Content policy</a></li>
+	</ul>
+</div>
+
+
+	
+
+<div id="links">
+	<ul>
+	<li><a href="#">Home</a></li>
+	<li><a href="file:///C:/Users/SIMON/Documents/site%20work/site/Electricity.html">Electricity</a></li>
+	<li><a href="#">History</a></li>
+	<li><a href="#">About Us</a></li>
+	<li><a href="#">FAQS</a></li>
+	<li><a href="{{url_for('security.logout')}}">logout</a></li>
+	</ul>
+
+</div>
+
+
+	
+<div class="copyright">
+	Copyright &copy; 2020-2025 STURF
+	All rights reserved.
+	STURF is among the federally registered trademarks of
+    STURF LLC and may not be used by third parties without explicit permission.
+
+
+</div>
+
+
+
+
+
+	
+</footer>
+
+
+
+
+</html>

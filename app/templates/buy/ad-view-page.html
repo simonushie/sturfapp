@@ -1,0 +1,1155 @@
+{% from "_formhelpers.html" import render_field %}
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta name="viewport" content = "width = device-width, initial-scale = 1" >
+
+    <link href="{{url_for('buy.static', filename='ad-view-page.css' )}}" rel="stylesheet" type="text/css" />
+
+    <title>{{ad.seller.first_name}}'s {{ad.ad_type}} ad </title>
+    <script >
+        function back(){
+            history.back()
+        }
+
+        function close(){
+        modal.style.display = "none";
+    }
+    </script>
+
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+
+<!-- header section -->
+
+
+
+
+
+
+<div id = "header">
+
+    <label >
+        <button  id="back" type="button" onclick="back()";>&#10094;</button>
+    </label>
+
+
+
+
+
+
+
+        
+    <a class="header_link" href="{{url_for('home.general')}}">  
+        STURF
+    </a>
+
+
+
+
+
+    <!----------- REPORT BUTTON ---------------->
+    <input type="checkbox" id="check">
+
+    <label for="check">
+        <i  id="btn">&#9868;</i>
+        <i  id="cancel">╳</i>
+    </label>
+
+
+
+
+
+    <div class="sidebar">
+
+            
+
+    <ul>
+        
+    
+
+    <li>
+        <a href="{{url_for('home.profile', email = current_user.email)}}">
+            <i style="font-style: normal; margin-right: 0px;">&#9888;</i>
+
+        Report
+
+        </a>
+
+    </li>
+
+
+
+
+
+
+    {% if  not current_user.paid %}
+
+
+    <li>
+        <a style="color: gold;" href="{{url_for('ad.ad_payment_page')}}">
+
+            <i style="font-style: normal;font-size: 30px; margin-right: 0px; color: gold;">&starf;</i>
+
+        VIP
+
+        </a>
+
+    </li>
+            
+
+
+
+
+    {% endif %}
+
+
+    
+
+
+
+    <li>
+        <a href="{{url_for('help.index')}}">
+            <i style="font-style: normal;">&#10067;</i>
+
+        Help 
+
+        </a>
+
+    </li>
+
+
+    </ul>
+            
+            
+
+    </div>
+
+<!----------- END OF REPORT BUTTON ---------------->
+
+
+
+
+
+
+
+
+    <div id="headtext">
+        Improving your wellbeing <span class="dots">...</span>
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+
+        <ul class=flashes>
+
+        {% for category, message in messages %}
+            <center>
+            <li class="{{ category }}">
+                {{ message }}
+            </li>
+            </center>
+        {% endfor %}
+
+        </ul>
+        
+    {% endif %}
+{% endwith %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% if ad.seller == current_user %}
+ <center > 
+        <div id = "linkcontainer">
+
+            <div>
+                <center>
+            <div class = "login">
+                
+                <a class = "loginbutton" href="{{url_for('buy.update_ad_image', ad_id = ad.id)}}">
+                    <center>change pic</center>
+                </a>
+                </center>       
+            </div>
+            </div>
+        </div>
+        </div>
+        </center>
+            
+{% endif %}
+
+
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container"  >
+
+
+        <div class="time">
+
+           {{ad.date_of_post.strftime("%I : %M  %p ")}}
+
+        </div>
+
+
+
+        <a  href="{{url_for('home.user', email = ad.seller.email )}}">
+        <p class="profile">
+
+            <img src="{{url_for('static', filename='profile_pics/uploads/' + ad.seller.image_file )}}" alt="{{ad.seller.first_name}}" width="35" height="35">
+
+            <label>
+
+
+            {% if ad.seller == current_user %}
+
+            You
+
+            {% else %}
+
+
+            
+            {{ad.seller.first_name}}   {{ad.seller.last_name}}
+            
+            {% endif %}
+
+
+            
+
+
+
+                
+            {% if ad.seller.paid %}
+            <i style=" ">&starf;</i>
+            
+            {% endif %}
+            
+            </label>
+
+            
+
+
+            <br>
+
+            
+            
+
+
+        </p>
+        </a>
+
+
+        
+
+
+
+
+        {% for img in ad.image_files %}
+        
+        <img src="{{url_for('static', filename='buy_sturf/' + img )}}" alt="{{ad.title}}" >
+
+        {% endfor %}
+                       
+
+        <h1>{{ad.title.upper()}}</h1>
+
+
+        <h3>#{{ad.price}}</h3>
+
+
+
+
+
+        <div class="date">
+            
+           {{ad.date_of_post.strftime("%a %d %B, %Y")}}
+
+        </div>
+        
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- display the content  -->
+<div class="content"  >
+
+
+
+        <p >
+
+        {% if ad.brand %}
+
+        <h2>Brand</h2>
+        <br>
+
+        {{ad.brand}}
+
+        {% endif %}
+
+        </p>
+
+
+
+        <br>
+        <br>
+        <p >
+
+        {% if ad.condition %}
+
+        <h2>Condition</h2>
+        <br>
+
+        {{ad.condition}}
+
+        {% endif %}
+
+        </p>
+
+
+                <br>
+        <br>
+        <p >
+
+        {% if ad.storage_capacity %}
+
+        <h2>Storage_capacity</h2>
+        <br>
+
+        {{ad.storage_capacity}}
+
+        {% endif %}
+
+        </p>
+
+
+
+
+        <br>
+        <br>
+        <p >
+
+        {% if ad.operating_system %}
+
+        <h2>OS</h2>
+        <br>
+
+        {{ad.operating_system}}
+
+        {% endif %}
+
+        </p>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- display the content  -->
+<div class="content2"  >
+
+
+
+        <p >
+
+        {% if ad.ram %}
+
+        <h2>Ram</h2>
+        <br>
+
+        {{ad.ram}}
+
+        {% endif %}
+
+        </p>
+
+
+
+        <br>
+        <br>
+        <p >
+
+        {% if ad.screen_size %}
+
+        <h2>screen_size</h2>
+        <br>
+
+        {{ad.screen_size}}
+
+        {% endif %}
+
+        </p>
+
+
+                <br>
+        <br>
+        <p >
+
+        {% if ad.colour%}
+
+        <h2>colour</h2>
+        <br>
+
+        {{ad.colour}}
+
+        {% endif %}
+
+        </p>
+
+
+
+
+        <br>
+        <br>
+        <p >
+
+        {% if ad.camera%}
+
+        <h2>camera</h2>
+        <br>
+
+        {{ad.camera}}
+
+        {% endif %}
+
+        </p>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- display the content  -->
+<div class="content"  >
+
+
+
+        <p >
+
+        {% if ad.description %}
+
+        <h2>Description</h2>
+        <br>
+        <br>
+        <br>
+
+        {{ad.description}}
+
+        {% endif %}
+
+        </p>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- display the content  -->
+<div class="content"  >
+
+
+        <center><h2> <b> CONTACT DETAILS </b> </h2></center>
+        <br>
+        <br>
+
+        <p >
+
+                    {% if ad.seller.phone %}
+
+                    <h2>Phone</h2>
+                    <br>
+
+                    {{ad.seller.phone}}
+
+                    {% endif %}
+
+                    </p>
+
+
+
+                    <br>
+                    <br>
+                    <p >
+
+                    {% if ad.seller.email %}
+
+                    <h2>Email</h2>
+                    <br>
+
+                    {{ad.seller.email}}
+
+                    {% endif %}
+
+
+
+
+                    <br>
+                    <br>
+                    <p >
+
+                    {% if ad.seller.address %}
+
+                    <h2>Address</h2>
+                    <br>
+
+                    {{ad.seller.address}}
+
+                    {% endif %}
+
+        </p>
+
+
+        <br>
+        <br>
+
+       {% if ad.seller.whatssap_number %} 
+
+        <div id = "linkscontainer">
+
+            <div>
+                
+            <div class = "login">
+                
+                <a class = "loginbutton" href="https://wa.me/
+
+
+                {{ad.seller.whatssap_number[1:20]}}
+
+                ?text=Hey,%i'm%{{current_user.first_name}}%i%saw%your%contact%on%www.sturf.com%is%the%{{ad.title}}%you%posted%still%available?">
+
+                    <center>{{ad.seller.first_name}} on Whatssap </center>
+
+
+                </a>
+                      
+            </div>
+            </div>
+        </div>
+        </div>
+
+        {% else %}
+
+
+                         {% if ad.seller == current_user%} 
+
+                                others can't contact you via Whatssap  <br>
+
+                                because you haven't provided your whatssap number <br>
+
+                               
+
+                                <a class = "loginbutton" href="{{ url_for('home.edit_profile', email = current_user.email  )  }}">
+
+                                            <center>update your profile  </center>
+
+
+                                </a>  
+                                
+
+                        {% elif ad.seller != current_user %}
+
+                                you can't contact {{ad.seller.first_name}} via Whatssap  <br>
+
+                                because they haven't provided their whatssap number to us 
+
+                        {% endif %} 
+
+        
+       {% endif %} 
+
+
+
+         
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% if ad.seller == current_user %}
+
+<center>
+
+
+<p class="users_count">
+
+
+<i style="color: black; font-style: normal; font-size: 23px; margin-right: 5px;">✨</i>
+ This
+
+
+ad
+
+
+ was created by you, {{current_user.first_name}}
+
+</p>
+ 
+
+
+
+<p style="color: #787878; font-size: 13px;">
+
+
+ &#9751; only you can see this
+</p>
+
+</center>
+
+
+
+
+
+
+
+
+
+
+
+
+<div id = "buttonscontainer">
+
+
+
+
+<!-- buttons -->
+<center>
+
+                            
+            <a class = "loginbutton1" href="{{url_for('buy.ad_update', ad_id = ad.id, ad_type = ad.ad_type )}}">
+                    Update this ad &#10095;
+            </a>  
+                          
+    
+             
+
+</center>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div id = "buttonscontainer">
+<!-- buttons -->
+<center>
+            
+                       
+            <button class="modalbutton" onclick="showmodal()">
+                    Delete this ad &#10006;
+            </button >  
+                          
+
+
+</center>
+
+</div>
+
+
+
+
+
+
+
+        
+
+
+{% endif %}
+
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+
+
+
+<!-- if there is no similar ad dont show -->
+
+{% if similar_ads.count() - 1 != 0 %}
+
+
+        <h3 style = "margin-left: 30px; "> <b> Similar Ads </b> </h3>
+        <br>
+        <br>
+
+
+
+
+
+
+        <center>
+
+        <div id="cover" style="margin-bottom: 800px;
+                                 border: 2px solid #79ff4d;
+                                 max-width: 80%;
+                                 min-width: 80%;">
+
+
+            {% for item in similar_ads %}
+
+                <!-- dont show the current ad in similar ads -->
+                {% if item == ad %}
+
+                <!-- do  nothing-->
+                {% else %}
+
+
+                    <div class="imgr">
+                        <a href="{{url_for('buy.ad_view_page', ad_id = item.id, ad_type = item.ad_type   )}}">
+                        <img src="{{url_for('static', filename='buy_sturf/' + item.image_files[0] )}}" alt="{{ad.title}}">
+                        <p> <b> {{item.title [0:10] }} </b> </p>
+                        <p> <b> #{{item.price}} </b> </p>
+                        </a>
+                    </div>
+
+
+                {% endif  %}
+
+            {% endfor %}
+
+                            
+        </div>
+
+        </center>
+
+
+{% endif  %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- The Modal box -->
+
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+
+    <!-- modal header -->
+        <div class="modal-header">
+          <span class="close">╳</span>
+          <h2>Sturf</h2>
+        </div>
+    <!---->
+
+
+    <!--modal body -->
+        <div class="modal-body">
+
+
+            {% if ad.is_event %}
+
+            <p class="texte">Are you sure you wish to delete this event?, it can't be undone.
+          </p>
+    
+
+            {% else %}
+                         
+                            
+            <p class="texte">Are you sure you wish to delete this ad?.....it can't be undone.
+          </p>
+     
+                          
+            {% endif %}   
+          
+          
+        </div>
+    <!-- -->
+
+
+    <!-- modal footer -->
+        <div class="modal-footer">
+
+          <div class = "btnwrap">
+            
+            <button class = "button" >
+                <center>Cancel</center>
+            </button>
+
+            <form action="{{url_for('buy.delete_ad', ad_id = ad.id)}}" method="POST">
+            <input class = "button1" type="submit" value="Delete">
+            </form>  
+
+          </div>
+
+        </div>
+    <!-- -->
+
+      </div>
+
+    </div>
+
+
+    <script>
+    // Get the modal
+    var modal = document.getElementById('myModal');
+
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+
+
+    // Get the <span> element that closes the modal
+    var btn = document.getElementsByClassName("button")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+
+
+    btn.onclick = function() {
+        modal.style.display = "none";
+    }
+
+
+    function close(){
+        modal.style.display = "none";
+    }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+    <script type="text/javascript">
+            function showmodal(){document.getElementById('myModal').style.display = "block";}
+    </script>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+<!-- ..............................footer............................ -->
+
+<footer id = 'footer' style="margin-top: 500px;">
+
+
+
+<div class="footerians" style="position: absolute;">
+    <header><span style="margin-right: 5px; color: #ffffff; font-size: 25px; ">☎</span>Get in touch with us</header>
+
+    <ul>
+
+    <li><a href="#"><div class="case1"></div></a></li>
+    <li><a href="#"><div class="case2"></div></a></li>
+    <li><a href="#"><div class="case3"></div></a></li>
+    <li><a href="#"><div class="case4"></div></a></li>
+
+    </ul>
+    
+
+</div>
+
+
+
+<div class="t_and_t">
+    <ul>
+    <li><a href="#">Terms and conditions</a></li>
+    <li><a href="#">what more can we do?</a></li>
+    <li><a href="#">Ad policy</a></li>
+    <li><a href="#">Content policy</a></li>
+    </ul>
+</div>
+
+
+    
+
+<div id="links">
+    <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="file:///C:/Users/SIMON/Documents/site%20work/site/Electricity.html">Electricity</a></li>
+    <li><a href="#">History</a></li>
+    <li><a href="#">About Us</a></li>
+    <li><a href="#">FAQS</a></li>
+    <li><a href="#">logout</a></li>
+    </ul>
+
+</div>
+
+
+    
+<div class="copyright">
+    Copyright &copy; 2020-2025 STURF
+    All rights reserved.
+    STURF is among the federally registered trademarks of
+    STURF LLC and may not be used by third parties without explicit permission.
+
+
+</div>
+
+
+
+
+
+    
+</footer>
+
+
+</html>
