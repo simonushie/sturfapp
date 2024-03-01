@@ -1,5 +1,4 @@
 # sturfapp
-sturf inc
+sturf v1
 
-
-prototype site for sturf project built with flask in the main branch
+prototype package for sturf project built with flask in the main branch
